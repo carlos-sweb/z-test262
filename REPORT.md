@@ -1,138 +1,138 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 34330 tests | corridos: 32645 | **PASS: 7730 (23.7% de los corridos)** | FAIL: 24915 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1685
+Total: 34330 tests | corridos: 32645 | **PASS: 10430 (31.9% de los corridos)** | FAIL: 22215 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1685
 
 
 ## Pass-rate por área
 
 | área | pass | fail | crash | timeout | skip | % pass |
 |---|---|---|---|---|---|---|
-| test/built-ins/Array | 177 | 2868 | 0 | 0 | 36 | 5.8% |
-| test/built-ins/Boolean | 11 | 40 | 0 | 0 | 0 | 21.6% |
-| test/built-ins/Date | 17 | 577 | 0 | 0 | 0 | 2.9% |
-| test/built-ins/Error | 0 | 93 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Function | 16 | 405 | 0 | 0 | 88 | 3.8% |
-| test/built-ins/JSON | 20 | 145 | 0 | 0 | 0 | 12.1% |
-| test/built-ins/Math | 45 | 282 | 0 | 0 | 0 | 13.8% |
-| test/built-ins/NativeErrors | 4 | 90 | 0 | 0 | 0 | 4.3% |
-| test/built-ins/Number | 26 | 314 | 0 | 0 | 0 | 7.6% |
-| test/built-ins/Object | 12 | 3388 | 0 | 0 | 11 | 0.4% |
-| test/built-ins/Promise | 9 | 717 | 0 | 0 | 3 | 1.2% |
-| test/built-ins/String | 142 | 1078 | 0 | 0 | 3 | 11.6% |
+| test/built-ins/Array | 369 | 2676 | 0 | 0 | 36 | 12.1% |
+| test/built-ins/Boolean | 17 | 34 | 0 | 0 | 0 | 33.3% |
+| test/built-ins/Date | 28 | 566 | 0 | 0 | 0 | 4.7% |
+| test/built-ins/Error | 4 | 89 | 0 | 0 | 0 | 4.3% |
+| test/built-ins/Function | 66 | 355 | 0 | 0 | 88 | 15.7% |
+| test/built-ins/JSON | 50 | 115 | 0 | 0 | 0 | 30.3% |
+| test/built-ins/Math | 56 | 271 | 0 | 0 | 0 | 17.1% |
+| test/built-ins/NativeErrors | 12 | 82 | 0 | 0 | 0 | 12.8% |
+| test/built-ins/Number | 54 | 286 | 0 | 0 | 0 | 15.9% |
+| test/built-ins/Object | 1130 | 2270 | 0 | 0 | 11 | 33.2% |
+| test/built-ins/Promise | 32 | 694 | 0 | 0 | 3 | 4.4% |
+| test/built-ins/String | 198 | 1022 | 0 | 0 | 3 | 16.2% |
 | test/language/arguments-object | 1 | 205 | 0 | 0 | 57 | 0.5% |
-| test/language/asi | 95 | 7 | 0 | 0 | 0 | 93.1% |
+| test/language/asi | 98 | 4 | 0 | 0 | 0 | 96.1% |
 | test/language/block-scope | 144 | 1 | 0 | 0 | 0 | 99.3% |
 | test/language/comments | 38 | 14 | 0 | 0 | 0 | 73.1% |
-| test/language/computed-property-names | 3 | 45 | 0 | 0 | 0 | 6.2% |
-| test/language/destructuring | 13 | 5 | 0 | 0 | 1 | 72.2% |
+| test/language/computed-property-names | 7 | 41 | 0 | 0 | 0 | 14.6% |
+| test/language/destructuring | 15 | 3 | 0 | 0 | 1 | 83.3% |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
-| test/language/eval-code | 4 | 123 | 0 | 0 | 220 | 3.1% |
+| test/language/eval-code | 10 | 117 | 0 | 0 | 220 | 7.9% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 3204 | 7310 | 0 | 0 | 588 | 30.5% |
-| test/language/function-code | 75 | 33 | 0 | 0 | 109 | 69.4% |
+| test/language/expressions | 3762 | 6752 | 0 | 0 | 588 | 35.8% |
+| test/language/function-code | 86 | 22 | 0 | 0 | 109 | 79.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
-| test/language/global-code | 15 | 22 | 0 | 0 | 5 | 40.5% |
+| test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
 | test/language/identifier-resolution | 6 | 3 | 0 | 0 | 5 | 66.7% |
 | test/language/identifiers | 200 | 68 | 0 | 0 | 0 | 74.6% |
 | test/language/import | 13 | 115 | 0 | 0 | 0 | 10.2% |
 | test/language/keywords | 25 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/line-terminators | 27 | 14 | 0 | 0 | 0 | 65.9% |
-| test/language/literals | 423 | 97 | 0 | 0 | 14 | 81.3% |
+| test/language/literals | 442 | 78 | 0 | 0 | 14 | 85.0% |
 | test/language/module-code | 217 | 382 | 0 | 0 | 0 | 36.2% |
 | test/language/punctuators | 10 | 1 | 0 | 0 | 0 | 90.9% |
-| test/language/reserved-words | 15 | 12 | 0 | 0 | 0 | 55.6% |
+| test/language/reserved-words | 27 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/rest-parameters | 6 | 5 | 0 | 0 | 0 | 54.5% |
 | test/language/source-text | 0 | 1 | 0 | 0 | 0 | 0.0% |
 | test/language/statementList | 32 | 48 | 0 | 0 | 0 | 40.0% |
-| test/language/statements | 2545 | 6320 | 0 | 0 | 472 | 28.7% |
-| test/language/types | 58 | 46 | 0 | 0 | 9 | 55.8% |
+| test/language/statements | 3072 | 5793 | 0 | 0 | 472 | 34.7% |
+| test/language/types | 75 | 29 | 0 | 0 | 9 | 72.1% |
 | test/language/white-space | 26 | 41 | 0 | 0 | 0 | 38.8% |
 
 ## Top causas de FAIL (mensaje normalizado)
 
 - **4901x** `SyntaxError: UnexpectedToken`
-  - ej: `test/language/arguments-object/gen-meth-args-trailing-comma-multiple.js`
+  - ej: `test/language/arguments-object/cls-decl-gen-meth-args-trailing-comma-multiple.js`
 - **4082x** `async incomplete: SyntaxError: UnexpectedToken`
   - ej: `test/language/arguments-object/async-gen-meth-args-trailing-comma-multiple.js`
-- **2655x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+- **2491x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+  - ej: `test/language/asi/S7.9_A10_T1.js`
+- **2471x** `Uncaught [object]`
   - ej: `test/language/arguments-object/10.5-1-s.js`
-- **2074x** `Uncaught ReferenceError: Function is not defined`
-  - ej: `test/language/arguments-object/10.6-11-b-1.js`
-- **1801x** `Uncaught TypeError: defineProperty is not a function`
-  - ej: `test/language/expressions/array/11.1.4_4-5-1.js`
-- **1632x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
-  - ej: `test/language/arguments-object/S10.6_A5_T3.js`
-- **1219x** `Uncaught [object]`
-  - ej: `test/language/arguments-object/S10.6_A1.js`
-- **640x** `Uncaught ReferenceError: Symbol is not defined`
-  - ej: `test/language/computed-property-names/basics/symbol.js`
-- **379x** `Uncaught TypeError: String is not a constructor`
-  - ej: `test/language/expressions/addition/S11.6.1_A3.2_T1.1.js`
-- **377x** `async incomplete: Uncaught TypeError: async generators are not supported yet`
-  - ej: `test/language/arguments-object/async-gen-named-func-expr-args-trailing-comma-multiple.js`
-- **331x** `Uncaught TypeError: getOwnPropertyDescriptor is not a function`
-  - ej: `test/language/arguments-object/10.6-13-c-2-s.js`
-- **329x** `Uncaught ReferenceError: eval is not defined`
-  - ej: `test/language/comments/mongolian-vowel-separator-single-eval.js`
-- **272x** `Uncaught TypeError: Array is not a constructor`
-  - ej: `test/language/statements/throw/S12.13_A2_T7.js`
-- **265x** `Uncaught ReferenceError: arguments is not defined`
+- **1557x** `Uncaught ReferenceError: arguments is not defined`
   - ej: `test/language/arguments-object/10.5-7-b-2-s.js`
-- **255x** `Uncaught TypeError: Boolean is not a constructor`
-  - ej: `test/language/expressions/addition/S11.6.1_A3.1_T1.1.js`
-- **226x** `Uncaught TypeError: object is not iterable`
+- **1334x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+  - ej: `test/language/comments/S7.4_A2_T1.js`
+- **893x** `Uncaught ReferenceError: Symbol is not defined`
+  - ej: `test/language/computed-property-names/basics/symbol.js`
+- **488x** `Uncaught TypeError: Object.defineProperty called on non-object`
+  - ej: `test/language/eval-code/indirect/var-env-func-init-global-update-configurable.js`
+- **401x** `async incomplete: Uncaught TypeError: async generators are not supported yet`
+  - ej: `test/language/arguments-object/async-gen-named-func-expr-args-trailing-comma-multiple.js`
+- **343x** `Uncaught ReferenceError: eval is not defined`
+  - ej: `test/language/comments/mongolian-vowel-separator-single-eval.js`
+- **235x** `Uncaught TypeError: object is not iterable`
   - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-ary-elision-init.js`
-- **209x** `Uncaught TypeError: Number is not a constructor`
-  - ej: `test/language/expressions/addition/S11.6.1_A3.1_T1.2.js`
 - **197x** `SyntaxError: MissingSemicolon`
   - ej: `test/language/asi/do-while-same-line.js`
-- **161x** `async incomplete: `
-  - ej: `test/language/expressions/async-function/try-return-finally-return.js`
-- **153x** `Uncaught TypeError: Cannot set properties of undefined (setting '…')`
-  - ej: `test/language/expressions/postfix-decrement/S11.3.2_A2.1_T1.js`
-- **146x** `Uncaught TypeError: create is not a function`
-  - ej: `test/language/expressions/object/accessor-name-computed-err-to-prop-key.js`
-- **145x** `Uncaught TypeError: defineProperties is not a function`
-  - ej: `test/language/expressions/typeof/get-value.js`
-- **115x** `Uncaught TypeError: Object is not a constructor`
-  - ej: `test/language/asi/S7.9_A5.5_T2.js`
-- **106x** `Uncaught TypeError: hasOwnProperty is not a function`
-  - ej: `test/language/expressions/array/spread-obj-manipulate-outter-obj-in-getter.js`
+- **175x** `async incomplete: `
+  - ej: `test/language/expressions/async-function/named-dflt-params-abrupt.js`
+- **124x** `Uncaught ReferenceError: RegExp is not defined`
+  - ej: `test/language/expressions/class/subclass-builtins/subclass-RegExp.js`
+- **114x** `Uncaught TypeError: getPrototypeOf is not a function`
+  - ej: `test/language/arguments-object/10.6-5-1.js`
+- **108x** `async incomplete: Uncaught ReferenceError: globalThis is not defined`
+  - ej: `test/language/expressions/await/await-awaits-thenable-not-callable.js`
+- **105x** `Uncaught TypeError: Object.getOwnPropertyDescriptor called on non-object`
+  - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
+- **102x** `Uncaught ReferenceError: UintNArray is not defined`
+  - ej: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
 - **102x** `async incomplete: SyntaxError: MissingSemicolon`
   - ej: `test/language/expressions/async-arrow-function/dflt-params-abrupt.js`
-- **99x** `Uncaught ReferenceError: UintNArray is not defined`
-  - ej: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
-- **97x** `async incomplete: Uncaught TypeError: Cannot read properties of undefined (reading '…')`
-  - ej: `test/language/expressions/await/await-awaits-thenable-not-callable.js`
-- **92x** `Uncaught TypeError: getPrototypeOf is not a function`
-  - ej: `test/language/arguments-object/10.6-5-1.js`
-- **85x** `Uncaught ReferenceError: Proxy is not defined`
+- **101x** `Uncaught ReferenceError: Proxy is not defined`
   - ej: `test/language/expressions/typeof/proxy.js`
-- **78x** `Uncaught ReferenceError: RegExp is not defined`
-  - ej: `test/language/expressions/class/subclass-builtins/subclass-RegExp.js`
+- **87x** `Uncaught TypeError: hasOwnProperty is not a function`
+  - ej: `test/language/expressions/arrow-function/ArrowFunction_restricted-properties.js`
+- **78x** `async incomplete: Uncaught ReferenceError: print is not defined`
+  - ej: `test/built-ins/Promise/all/iter-arg-is-false-reject.js`
+- **69x** `Uncaught TypeError: Property description must be an object`
+  - ej: `test/built-ins/Object/create/15.2.3.5-4-10.js`
+- **65x** `Uncaught ReferenceError: $N is not defined`
+  - ej: `test/language/eval-code/indirect/realm.js`
+- **61x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+  - ej: `test/language/expressions/async-function/named-dflt-params-ref-self.js`
+- **60x** `Uncaught TypeError: Object.defineProperties called on non-object`
+  - ej: `test/language/expressions/typeof/get-value.js`
+- **51x** `async incomplete: Uncaught ReferenceError: Symbol is not defined`
+  - ej: `test/language/expressions/async-generator/dstr/dflt-ary-init-iter-close.js`
+- **51x** `Uncaught TypeError: split is not a function`
+  - ej: `test/built-ins/String/prototype/split/arguments-are-boolean-expression-function-call-and-null-and-instance-is-boolean.js`
+- **49x** `Uncaught TypeError: hasOwn is not a function`
+  - ej: `test/built-ins/Object/hasOwn/hasown_inherited_exists.js`
+- **47x** `Uncaught TypeError: Cannot set properties of undefined (setting '…')`
+  - ej: `test/language/expressions/postfix-increment/S11.3.1_A2.1_T1.js`
 
 ## Top features presentes en FAILs
 
-- 4997x destructuring-binding
-- 4172x async-iteration
-- 3739x class
-- 3229x generators
+- 4251x destructuring-binding
+- 4124x async-iteration
+- 3735x class
+- 3183x generators
 - 1757x class-fields-public
-- 1700x default-parameters
 - 1697x Symbol.iterator
+- 1478x default-parameters
 - 1356x class-methods-private
 - 1342x class-static-methods-private
-- 744x class-fields-private
+- 743x class-fields-private
 - 604x dynamic-import
 - 532x Symbol.asyncIterator
-- 400x Symbol
 - 399x computed-property-names
-- 353x async-functions
-- 345x object-rest
+- 386x Symbol
+- 352x async-functions
+- 339x object-rest
 - 325x class-static-fields-private
-- 302x arrow-function
-- 269x Reflect.construct
 - 258x top-level-await
+- 242x arrow-function
+- 208x Reflect.construct
 - 204x BigInt
 - 185x class-static-fields-public
 - 154x import-defer
@@ -141,28 +141,39 @@ Total: 34330 tests | corridos: 32645 | **PASS: 7730 (23.7% de los corridos)** | 
 
 ---
 
-## Análisis de divergencias (actualizado 2026-07-18, post-fase "stack")
+## Análisis de divergencias (actualizado 2026-07-19, post property descriptors + constructores)
 
-### Cambio vs el baseline inicial
+### Delta de esta fase
 
-**CRASH: 30 → 0.** Las dos causas raíz de crash fueron eliminadas:
-1. Los 28 `tco-*` (recursión de 100k frames esperando proper tail calls) ahora tiran el `RangeError: Maximum call stack size exceeded` real, atrapable — guard de stack por bytes (`@frameAddress()`) que se adapta a Debug/Release y a los stacks de fibers.
-2. Los 2 de `JSON.stringify` circular ahora tiran el `TypeError: Converting circular structure to JSON` real — detección de ciclos por path en z-json (los diamantes siguen siendo legales).
+**PASS 23.7% → 31.9% (+2.700 tests).** built-ins/Object saltó de 0.4% a
+33.2% (×83), language/expressions 30.5% → 35.8%, statements 28.7% →
+34.7%. Lo que entró: Object.defineProperty/getOwnPropertyDescriptor/
+getOwnPropertyNames/create/freeze/seal + enforcement strict de
+descriptors (readonly/frozen/delete = TypeErrors reales), los métodos de
+Object.prototype en todo objeto plano, constructores reales (Object/
+Array/Function-que-parsea/String/Number/Boolean + statics), y
+`.constructor` en errores — el contrato exacto de assert.throws.
+CRASH sigue en 0.
 
-**El intérprete ya no tiene ninguna forma conocida de segfaultear desde JS.**
+### Historial
 
-### Lectura correcta del 23.7%
+| corrida | PASS | delta |
+|---|---|---|
+| baseline 2026-07-18 | 23.7% (7.730) | — |
+| + stack guard / JSON ciclos | 23.7%, CRASH 30→0 | robustez |
+| + descriptors y constructores | **31.9% (10.430)** | +2.700 |
 
-Dominado por features deliberadamente diferidas, no por bugs. Las áreas implementadas: keywords/export/future-reserved 100% · block-scope 99.3% · asi 93.1% · literals 81.3% · identifiers 74.6% · destructuring 72.2%.
+### Prioridades restantes (por costo/beneficio)
 
-### Prioridades restantes para Etapa D (por costo/beneficio)
-
-1. ~~Stack guard~~ HECHO.
-2. **Property descriptors** (`defineProperty`/`getOwnPropertyDescriptor`) + constructores reales (`Function`, `new Array/String/Number/Boolean`): ~8k tests dependen de esto (built-ins/Object 0.4% es casi todo este único gap del harness).
-3. **Gramática restante 12/13b**: métodos generator/async, async arrows, `yield*` (~9k tests, el bucket más grande).
-4. **arguments object** (265+ tests, ES1 básico).
-5. **Bug real de ASI en do-while** (197 fails en un área de 93% — chico).
-6. TCO real (los tco-* ahora fallan limpio; implementarlo es opcional — ni V8 lo tiene completo).
+1. **Gramática restante 12/13b**: métodos generator/async en objetos y
+   clases, async arrows, `yield*` — sigue siendo el bucket más grande
+   (~9k tests con UnexpectedToken).
+2. **arguments object** (ES1 básico, ~265 directos y muchos indirectos).
+3. **Bug ASI do-while** (197 fails, área de 93%).
+4. Métodos faltantes de Array.prototype (splice/sort/flat/findIndex/
+   lastIndexOf...) y String.prototype (charCodeAt/replace/substring/
+   padStart...) — ahora que el harness corre, estos cuentan de verdad.
+5. Wrapper objects reales / Symbol / eval — gaps grandes de diseño.
 
 ### Cómo re-correr
 

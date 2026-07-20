@@ -9,7 +9,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 |---|---|---|---|---|---|---|
 | test/built-ins/Array | 616 | 2408 | 0 | 21 | 36 | 20.2% |
 | test/built-ins/Boolean | 17 | 34 | 0 | 0 | 0 | 33.3% |
-| test/built-ins/Date | 31 | 563 | 0 | 0 | 0 | 5.2% |
+| test/built-ins/Date | 148 | 446 | 0 | 0 | 0 | 24.9% |
 | test/built-ins/Error | 4 | 89 | 0 | 0 | 0 | 4.3% |
 | test/built-ins/Function | 79 | 342 | 0 | 0 | 88 | 18.8% |
 | test/built-ins/JSON | 65 | 100 | 0 | 0 | 0 | 39.4% |
@@ -152,6 +152,23 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 ---
 
 ## Análisis (actualizado 2026-07-19, post regex)
+
+### Delta 2026-07-20: Date completado (5.2% → 24.9%)
+
+Se completó la API de `Date` en el intérprete (z-interpreter, sin tocar
+z-date/z-value que ya estaban listos): todos los getters local+UTC, todos los
+setters local+UTC (con guardas NaN/rango → Invalid Date, sin panics), formatters
+(`toString`/`toDateString`/`toTimeString`/`toUTCString`/`toGMTString`/`toJSON`/
+`toLocale*`/`valueOf`), estáticos (`now`/`parse`/`UTC`), constructor multi-arg y
+`new Date(dateValue)`. `ToString(date)` ahora usa `toString()` (no ISO).
+Barrido `test/built-ins/Date`: **PASS 31 → 148 (5.2% → 24.9%)**, 0 crashes.
+
+Los FAIL restantes NO son de la lógica de Date sino de la **capa de reflexión
+compartida**: ~208 `verifyProperty`, ~100 `Object.getOwnPropertyDescriptor`
+sobre `Date.prototype` (los métodos se despachan por un StaticStringMap, no son
+own-props reales), ~104 features no implementadas. Es la misma palanca que
+subiría Object/Array/String: **hacer que los prototipos builtin sean objetos
+reales con descriptores**.
 
 ### Delta 2026-07-19 (post-fixes): CRASH → 0
 

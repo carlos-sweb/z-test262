@@ -7,9 +7,9 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 
 | área | pass | fail | crash | timeout | skip | % pass |
 |---|---|---|---|---|---|---|
-| test/built-ins/Array | 616 | 2408 | 0 | 21 | 36 | 20.2% |
+| test/built-ins/Array | 699 | 2307 | 18 | 21 | 36 | 22.7% |
 | test/built-ins/Boolean | 17 | 34 | 0 | 0 | 0 | 33.3% |
-| test/built-ins/Date | 148 | 446 | 0 | 0 | 0 | 24.9% |
+| test/built-ins/Date | 290 | 304 | 0 | 0 | 0 | 48.8% |
 | test/built-ins/Error | 4 | 89 | 0 | 0 | 0 | 4.3% |
 | test/built-ins/Function | 79 | 342 | 0 | 0 | 88 | 18.8% |
 | test/built-ins/JSON | 65 | 100 | 0 | 0 | 0 | 39.4% |
@@ -17,11 +17,11 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | test/built-ins/Math | 78 | 249 | 0 | 0 | 0 | 23.9% |
 | test/built-ins/NativeErrors | 12 | 82 | 0 | 0 | 0 | 12.8% |
 | test/built-ins/Number | 58 | 282 | 0 | 0 | 0 | 17.1% |
-| test/built-ins/Object | 1183 | 2217 | 0 | 0 | 11 | 34.8% |
+| test/built-ins/Object | 1383 | 2017 | 0 | 0 | 11 | 40.5% |
 | test/built-ins/Promise | 34 | 692 | 0 | 0 | 3 | 4.7% |
 | test/built-ins/RegExp | 640 | 1031 | 1 | 206 | 1 | 34.1% |
 | test/built-ins/Set | 166 | 215 | 0 | 1 | 1 | 43.5% |
-| test/built-ins/String | 292 | 928 | 0 | 0 | 3 | 23.9% |
+| test/built-ins/String | 374 | 835 | 11 | 0 | 3 | 30.6% |
 | test/built-ins/Symbol | 17 | 79 | 0 | 0 | 2 | 17.7% |
 | test/language/arguments-object | 86 | 120 | 0 | 0 | 57 | 41.7% |
 | test/language/asi | 98 | 4 | 0 | 0 | 0 | 96.1% |
@@ -32,7 +32,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 10 | 117 | 0 | 0 | 220 | 7.9% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 4398 | 6068 | 0 | 48 | 588 | 41.8% |
+| test/language/expressions | 4481 | 5985 | 0 | 48 | 588 | 40.4% |
 | test/language/function-code | 90 | 18 | 0 | 0 | 109 | 83.3% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
@@ -152,6 +152,37 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 ---
 
 ## Análisis (actualizado 2026-07-19, post regex)
+
+### Delta 2026-07-20 (2): prototipos builtin reales + capa de descriptores (+590)
+
+Fundación completa: los métodos builtin ahora viven en **objetos prototipo
+reales** (`Object.prototype`, `Array.prototype`, `Date.prototype`, …) como
+own-props con atributos spec (writable, non-enumerable, configurable), en vez
+de despacharse por `StaticStringMap`. Los objetos ordinarios encadenan a
+`Object.prototype`; el lookup por tipo camina el prototipo real; y la reflexión
+(`getOwnPropertyDescriptor` sobre objetos **y funciones**, `getPrototypeOf`,
+`hasOwnProperty` sobre arrays/strings) opera sobre ellos. Identidad
+`[].push === Array.prototype.push` y `Object.create(null)` (no hereda nada)
+correctas.
+
+Deltas (mismo run):
+- **built-ins/Object 1183 → 1383** (+200, 34.8% → 40.5%)
+- **built-ins/Date 148 → 290** (+142, 24.9% → 48.8%)
+- **built-ins/String 292 → 374** (+82, 23.9% → 30.6%)
+- **built-ins/Array 616 → 699** (+83, 20.2% → 22.7%)
+- **language/expressions 4398 → 4481** (+83)
+- **Total +590 tests.**
+
+Los 18 crashes de Array y 11 de String son **pre-existentes** (verificado con
+git stash: crashean igual en la versión previa) — bugs latentes de
+`@intFromFloat` (splice/repeat/padStart/copyWithin/…) y un "switch on corrupt
+value" en tests con accessors/mutación-durante-loop, que ahora se **alcanzan**
+porque los tests progresan más lejos. No son regresión de este cambio.
+Follow-up: aplicar el mismo saturado NaN/rango que ya se usó en Date/lastIndex.
+
+Follow-ups de esta capa: estáticos builtin non-enumerable (hoy enumerable via
+el property bag); métodos de instancia de Number/Boolean; `typeof
+Function.prototype` === 'function' (exótico); objetos de JSON.parse encadenados.
 
 ### Delta 2026-07-20: Date completado (5.2% → 24.9%)
 

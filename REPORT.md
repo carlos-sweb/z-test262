@@ -145,12 +145,32 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 
 ## CRASHES (los más graves)
 
-- **1x** `exit -N: `
-  - ej: `test/built-ins/RegExp/nullable-quantifier.js`
+- **0** crashes conocidos (2026-07-19). Los 3 crashes de la fase regex ya
+  están arreglados — ver "Delta 2026-07-19 (post-fixes)" abajo. El "CRASH: 1"
+  del encabezado es del último barrido completo previo a los fixes.
 
 ---
 
 ## Análisis (actualizado 2026-07-19, post regex)
+
+### Delta 2026-07-19 (post-fixes): CRASH → 0
+
+Barrido de `test/built-ins/RegExp` (1879 tests): **CRASH 2 → 0**, PASS
+456 → 458, FAIL/TIMEOUT sin cambios. Tres crashes arreglados:
+
+1. **Cuantificador anulable** (`/(a?b??)*/`, `(a?)+`, `(a*)*` …) —
+   desbordaba la pila por recursión infinita. Fix en z-regex
+   `recursive_matcher.zig`: guarda de progreso-cero (`matchBackEdge`) que
+   descarta la iteración vacía (regla ECMA-262), cubriendo ambas formas de
+   back-edge (GOTO del star, rama SPLIT del plus). `[0]` siempre correcto;
+   queda una divergencia documentada en el *valor de captura* de una
+   iteración vacía descartada (fix pleno = RepeatMatcher con contador).
+2. **Cuantificador enorme** (`b{9007199254740991}`) — panic por overflow
+   u32 al desenrollar `min`. Fix en z-regex `lexer.zig`: acumulación
+   saturada + `MAX_REPEAT_UNROLL = 2**16` (max→∞, min acotado; estilo RE2).
+3. **`lastIndex` fuera de rango** (Infinity/MAX_VALUE/2**53) — panic
+   float→int en `exec`. Fix en z-interpreter: conversión saturada + se
+   agregaron `Number.MAX_VALUE/MIN_VALUE/POSITIVE_INFINITY/NEGATIVE_INFINITY`.
 
 ### Delta de esta fase
 
@@ -183,8 +203,8 @@ vuelve a crashear el motor desde JS.
 
 ### Prioridades restantes
 
-1. **z-regex: cuantificadores anulables** (el CRASH — regla de iteración
-   vacía en RecursiveMatcher). Único crash conocido.
+1. ~~z-regex: cuantificadores anulables~~ ✅ ARREGLADO (2026-07-19) junto
+   con los otros 2 crashes de la fase regex. Ver "Delta post-fixes".
 2. Well-known symbols cableados (toPrimitive/hasInstance/toStringTag).
 3. Class fields (`x = 1`, `#private`), computed method keys.
 4. Exotic semantics (sparse arrays, length/prop descriptors, this-coercion

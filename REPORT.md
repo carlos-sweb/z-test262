@@ -8,7 +8,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | área | pass | fail | crash | timeout | skip | % pass |
 |---|---|---|---|---|---|---|
 | test/built-ins/Array | 714 | 2310 | 0 | 21 | 36 | 23.2% |
-| test/built-ins/Boolean | 21 | 30 | 0 | 0 | 0 | 41.2% |
+| test/built-ins/Boolean | 29 | 22 | 0 | 0 | 0 | 56.9% |
 | test/built-ins/Date | 290 | 304 | 0 | 0 | 0 | 48.8% |
 | test/built-ins/Error | 4 | 89 | 0 | 0 | 0 | 4.3% |
 | test/built-ins/Function | 79 | 342 | 0 | 0 | 88 | 18.8% |
@@ -16,7 +16,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | test/built-ins/Map | 80 | 120 | 0 | 3 | 1 | 39.4% |
 | test/built-ins/Math | 81 | 246 | 0 | 0 | 0 | 24.8% |
 | test/built-ins/NativeErrors | 12 | 82 | 0 | 0 | 0 | 12.8% |
-| test/built-ins/Number | 76 | 264 | 0 | 0 | 0 | 22.4% |
+| test/built-ins/Number | 131 | 209 | 0 | 0 | 0 | 38.5% |
 | test/built-ins/Object | 1437 | 1963 | 0 | 0 | 11 | 42.1% |
 | test/built-ins/Promise | 42 | 684 | 0 | 0 | 3 | 5.8% |
 | test/built-ins/RegExp | 640 | 1031 | 1 | 206 | 1 | 34.1% |
@@ -152,6 +152,15 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 ---
 
 ## Análisis (actualizado 2026-07-19, post regex)
+
+### Delta 2026-07-20 (5): métodos de instancia Number/Boolean (+63)
+
+Number.prototype (toString(radix)/toFixed/toExponential/toPrecision/valueOf/
+toLocaleString) y Boolean.prototype (toString/valueOf) cableados sobre el
+receptor primitivo (delegando a z-number FormattingMethods; RangeErrors
+correctos). Number 76→131, Boolean 21→29 (+63, 0 crashes). Narrowing: los
+wrappers `new Number()`/`new Boolean()` (objeto hueco sin [[NumberData]]) no
+soportan estos métodos. Node-verificado.
 
 ### Delta 2026-07-20 (4): estáticos/constantes builtin non-enumerable (+89)
 

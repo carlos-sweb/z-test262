@@ -32,7 +32,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 10 | 117 | 0 | 0 | 220 | 7.9% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 4481 | 5985 | 0 | 48 | 588 | 40.4% |
+| test/language/expressions | 4489 | 5977 | 0 | 48 | 588 | 40.4% |
 | test/language/function-code | 90 | 18 | 0 | 0 | 109 | 83.3% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
@@ -48,7 +48,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | test/language/rest-parameters | 8 | 3 | 0 | 0 | 0 | 72.7% |
 | test/language/source-text | 0 | 1 | 0 | 0 | 0 | 0.0% |
 | test/language/statementList | 40 | 40 | 0 | 0 | 0 | 50.0% |
-| test/language/statements | 3594 | 5244 | 0 | 27 | 472 | 40.5% |
+| test/language/statements | 3606 | 5230 | 2 | 27 | 472 | 40.7% |
 | test/language/types | 80 | 24 | 0 | 0 | 9 | 76.9% |
 | test/language/white-space | 51 | 16 | 0 | 0 | 0 | 76.1% |
 
@@ -152,6 +152,17 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 ---
 
 ## Análisis (actualizado 2026-07-19, post regex)
+
+### Delta 2026-07-20 (7): globalThis (+20 en el subset medido)
+
+`globalThis` cableado como objeto respaldado por el entorno global: sus lecturas
+resuelven bindings globales (`globalThis.Object`, `globalThis.parseInt`) y las
+escrituras crean globales (`globalThis.x = 1` -> `x` global); `globalThis.globalThis
+=== globalThis`. Delta medido: expressions 4481→4489, statements 3594→3606.
+Node-verificado (salvo el prototipo host-específico de globalThis, que no es
+spec). Los 2 crashes de statements/for-of (array/set-contract) son PRE-EXISTENTES
+(verificado con git stash) -- misma clase iteración+mutación que ya se limpió en
+los métodos de Array; el bucle `for-of` cachea el slice. Follow-up.
 
 ### Delta 2026-07-20 (6): reflexión sobre más tipos (+128)
 

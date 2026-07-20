@@ -30,7 +30,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | test/language/computed-property-names | 12 | 36 | 0 | 0 | 0 | 25.0% |
 | test/language/destructuring | 17 | 1 | 0 | 0 | 1 | 94.4% |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
-| test/language/eval-code | 10 | 117 | 0 | 0 | 220 | 7.9% |
+| test/language/eval-code | 92 | 35 | 0 | 0 | 220 | 72.4% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/expressions | 4489 | 5977 | 0 | 48 | 588 | 40.4% |
 | test/language/function-code | 90 | 18 | 0 | 0 | 109 | 83.3% |
@@ -152,6 +152,16 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 ---
 
 ## Análisis (actualizado 2026-07-19, post regex)
+
+### Delta 2026-07-20 (9): eval (Fase A) — eval-code 10 -> 92 (+82)
+
+`eval` cableado reusando `zfunctions.Parser` + `evalBody`: el global `eval`
+(indirecto) corre en scope global; `evalCall` detecta el `eval(...)` literal
+(intrínseco no shadow-eado) como eval DIRECTO y corre en un hijo del scope del
+llamador (always-strict ⇒ scope propio). Arg no-string se devuelve tal cual;
+error de parse ⇒ SyntaxError atrapable; excepciones propagan. language/eval-code
+10→92 (+82), 0 crashes (220 SKIP = noStrict por diseño). Node-verificado. Fuera
+de alcance: realm/$262, var-leaking sloppy. (Falta Fase B: Proxy.)
 
 ### Delta 2026-07-20 (8): for-of iteración viva (crashes -> 0)
 

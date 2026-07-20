@@ -48,7 +48,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | test/language/rest-parameters | 8 | 3 | 0 | 0 | 0 | 72.7% |
 | test/language/source-text | 0 | 1 | 0 | 0 | 0 | 0.0% |
 | test/language/statementList | 40 | 40 | 0 | 0 | 0 | 50.0% |
-| test/language/statements | 3606 | 5230 | 2 | 27 | 472 | 40.7% |
+| test/language/statements | 3612 | 5226 | 0 | 27 | 472 | 40.8% |
 | test/language/types | 80 | 24 | 0 | 0 | 9 | 76.9% |
 | test/language/white-space | 51 | 16 | 0 | 0 | 0 | 76.1% |
 
@@ -152,6 +152,16 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 ---
 
 ## Análisis (actualizado 2026-07-19, post regex)
+
+### Delta 2026-07-20 (8): for-of iteración viva (crashes -> 0)
+
+El bucle `for-of` sobre array/set/map cacheaba el slice/entries, así que un
+cuerpo que mutaba el contenedor (`array.pop()`, `set.delete()`) dejaba una
+lectura colgante ("switch on corrupt value"). Ahora los tres iteran en vivo
+(re-leen longitud/keys cada paso y retienen el elemento), observando la
+mutación como ArrayIterator/SetIterator/MapIterator del spec. language/
+statements 3606→3612, CRASH 2→0. Node-verificado (array/set/map-contract y
+variantes expand/contract).
 
 ### Delta 2026-07-20 (7): globalThis (+20 en el subset medido)
 

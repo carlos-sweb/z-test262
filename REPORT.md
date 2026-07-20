@@ -8,21 +8,21 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | área | pass | fail | crash | timeout | skip | % pass |
 |---|---|---|---|---|---|---|
 | test/built-ins/Array | 714 | 2310 | 0 | 21 | 36 | 23.2% |
-| test/built-ins/Boolean | 17 | 34 | 0 | 0 | 0 | 33.3% |
+| test/built-ins/Boolean | 21 | 30 | 0 | 0 | 0 | 41.2% |
 | test/built-ins/Date | 290 | 304 | 0 | 0 | 0 | 48.8% |
 | test/built-ins/Error | 4 | 89 | 0 | 0 | 0 | 4.3% |
 | test/built-ins/Function | 79 | 342 | 0 | 0 | 88 | 18.8% |
 | test/built-ins/JSON | 65 | 100 | 0 | 0 | 0 | 39.4% |
 | test/built-ins/Map | 80 | 120 | 0 | 3 | 1 | 39.4% |
-| test/built-ins/Math | 78 | 249 | 0 | 0 | 0 | 23.9% |
+| test/built-ins/Math | 81 | 246 | 0 | 0 | 0 | 24.8% |
 | test/built-ins/NativeErrors | 12 | 82 | 0 | 0 | 0 | 12.8% |
-| test/built-ins/Number | 58 | 282 | 0 | 0 | 0 | 17.1% |
-| test/built-ins/Object | 1383 | 2017 | 0 | 0 | 11 | 40.5% |
-| test/built-ins/Promise | 34 | 692 | 0 | 0 | 3 | 4.7% |
+| test/built-ins/Number | 76 | 264 | 0 | 0 | 0 | 22.4% |
+| test/built-ins/Object | 1437 | 1963 | 0 | 0 | 11 | 42.1% |
+| test/built-ins/Promise | 42 | 684 | 0 | 0 | 3 | 5.8% |
 | test/built-ins/RegExp | 640 | 1031 | 1 | 206 | 1 | 34.1% |
 | test/built-ins/Set | 166 | 215 | 0 | 1 | 1 | 43.5% |
 | test/built-ins/String | 387 | 833 | 0 | 0 | 3 | 31.6% |
-| test/built-ins/Symbol | 17 | 79 | 0 | 0 | 2 | 17.7% |
+| test/built-ins/Symbol | 19 | 77 | 0 | 0 | 2 | 19.8% |
 | test/language/arguments-object | 86 | 120 | 0 | 0 | 57 | 41.7% |
 | test/language/asi | 98 | 4 | 0 | 0 | 0 | 96.1% |
 | test/language/block-scope | 144 | 1 | 0 | 0 | 0 | 99.3% |
@@ -152,6 +152,19 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 ---
 
 ## Análisis (actualizado 2026-07-19, post regex)
+
+### Delta 2026-07-20 (4): estáticos/constantes builtin non-enumerable (+89)
+
+Los estáticos builtin (Object.keys, Date.now, Array.isArray, Math.floor,
+Promise.resolve, …) y las constantes (Number.MAX_SAFE_INTEGER, Math.PI, los
+well-known Symbols) se registraban con `.set` (enumerable) en vez de con los
+atributos spec. Ahora: métodos → non-enumerable/writable/configurable
+(`dneMethod`), constantes → non-enumerable/non-writable/non-configurable
+(`dneConst`). `Object.keys`/`values`/`entries` aceptan funciones (devuelven los
+estáticos enumerables del bag, ahora ninguno) → `Object.keys(Date)` === []. Con
+esto `verifyProperty` sobre constructores/namespaces pasa. Deltas: Object
+1383→1437, Number 58→76, Promise 34→42, Boolean 17→21, Math 78→81, Symbol
+17→19 (**+89**, 0 crashes). Node-verificado.
 
 ### Delta 2026-07-20 (3): limpieza de crashes latentes de Array/String (29 → 0)
 

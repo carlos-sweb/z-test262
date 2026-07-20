@@ -17,13 +17,13 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | test/built-ins/Math | 81 | 246 | 0 | 0 | 0 | 24.8% |
 | test/built-ins/NativeErrors | 12 | 82 | 0 | 0 | 0 | 12.8% |
 | test/built-ins/Number | 131 | 209 | 0 | 0 | 0 | 38.5% |
-| test/built-ins/Object | 1437 | 1963 | 0 | 0 | 11 | 42.1% |
+| test/built-ins/Object | 1562 | 1838 | 0 | 0 | 11 | 45.8% |
 | test/built-ins/Promise | 42 | 684 | 0 | 0 | 3 | 5.8% |
 | test/built-ins/RegExp | 640 | 1031 | 1 | 206 | 1 | 34.1% |
 | test/built-ins/Set | 166 | 215 | 0 | 1 | 1 | 43.5% |
 | test/built-ins/String | 387 | 833 | 0 | 0 | 3 | 31.6% |
 | test/built-ins/Symbol | 19 | 77 | 0 | 0 | 2 | 19.8% |
-| test/language/arguments-object | 86 | 120 | 0 | 0 | 57 | 41.7% |
+| test/language/arguments-object | 89 | 117 | 0 | 0 | 57 | 43.2% |
 | test/language/asi | 98 | 4 | 0 | 0 | 0 | 96.1% |
 | test/language/block-scope | 144 | 1 | 0 | 0 | 0 | 99.3% |
 | test/language/comments | 38 | 14 | 0 | 0 | 0 | 73.1% |
@@ -152,6 +152,16 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 ---
 
 ## Análisis (actualizado 2026-07-19, post regex)
+
+### Delta 2026-07-20 (6): reflexión sobre más tipos (+128)
+
+`Object.defineProperty`/`defineProperties`/`getOwnPropertyNames` aceptan ahora
+funciones (vía el statics bag, con descriptores completos) y arrays
+(index/length por valor -- best-effort, sin descriptores por-elemento; named
+keys vía el array_props object). Añadidos los estáticos faltantes `Object.is`
+(SameValue), `Object.hasOwn`, `Object.fromEntries` (arrays de pares).
+built-ins/Object 1437→1562, arguments-object 86→89 (+128, 0 crashes).
+Node-verificado. Gap restante: descriptores por-elemento de arrays.
 
 ### Delta 2026-07-20 (5): métodos de instancia Number/Boolean (+63)
 

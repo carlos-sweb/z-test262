@@ -7,7 +7,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 
 | área | pass | fail | crash | timeout | skip | % pass |
 |---|---|---|---|---|---|---|
-| test/built-ins/Array | 699 | 2307 | 18 | 21 | 36 | 22.7% |
+| test/built-ins/Array | 714 | 2310 | 0 | 21 | 36 | 23.2% |
 | test/built-ins/Boolean | 17 | 34 | 0 | 0 | 0 | 33.3% |
 | test/built-ins/Date | 290 | 304 | 0 | 0 | 0 | 48.8% |
 | test/built-ins/Error | 4 | 89 | 0 | 0 | 0 | 4.3% |
@@ -21,7 +21,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | test/built-ins/Promise | 34 | 692 | 0 | 0 | 3 | 4.7% |
 | test/built-ins/RegExp | 640 | 1031 | 1 | 206 | 1 | 34.1% |
 | test/built-ins/Set | 166 | 215 | 0 | 1 | 1 | 43.5% |
-| test/built-ins/String | 374 | 835 | 11 | 0 | 3 | 30.6% |
+| test/built-ins/String | 387 | 833 | 0 | 0 | 3 | 31.6% |
 | test/built-ins/Symbol | 17 | 79 | 0 | 0 | 2 | 17.7% |
 | test/language/arguments-object | 86 | 120 | 0 | 0 | 57 | 41.7% |
 | test/language/asi | 98 | 4 | 0 | 0 | 0 | 96.1% |
@@ -152,6 +152,21 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 ---
 
 ## Análisis (actualizado 2026-07-19, post regex)
+
+### Delta 2026-07-20 (3): limpieza de crashes latentes de Array/String (29 → 0)
+
+Los 29 crashes que la capa de descriptores dejó alcanzables (18 Array, 11
+String) están arreglados: **Array CRASH 18→0** (PASS 699→714), **String
+CRASH 11→0** (PASS 374→387). Dos clases:
+- **`@intFromFloat` sobre NaN/Infinity/huge** en repeat/padStart/padEnd/
+  codePointAt/fromCharCode/fromCodePoint/splice/flat/copyWithin/at/from y
+  `normIndex`: helper `toIntSat` (ToIntegerOrInfinity saturado, NaN→0) + los
+  RangeError correctos (repeat Inf/neg, fromCodePoint fuera de rango).
+- **Slice cacheado colgante** cuando el callback muta el array mid-loop
+  (map/filter/forEach/reduce/some/every/find/findIndex/findLast/reduceRight/
+  flatMap): ahora iteran por índice contra el array vivo con `liveElem`
+  (retiene el elemento durante el callback; captura `len` una vez, salta
+  índices removidos). Node-verificado.
 
 ### Delta 2026-07-20 (2): prototipos builtin reales + capa de descriptores (+590)
 

@@ -32,7 +32,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 92 | 35 | 0 | 0 | 220 | 72.4% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 4489 | 5977 | 0 | 48 | 588 | 40.4% |
+| test/language/expressions | 5228 | 5230 | 0 | 56 | 588 | 49.7% |
 | test/language/function-code | 90 | 18 | 0 | 0 | 109 | 83.3% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
@@ -48,7 +48,7 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 | test/language/rest-parameters | 8 | 3 | 0 | 0 | 0 | 72.7% |
 | test/language/source-text | 0 | 1 | 0 | 0 | 0 | 0.0% |
 | test/language/statementList | 40 | 40 | 0 | 0 | 0 | 50.0% |
-| test/language/statements | 3612 | 5226 | 0 | 27 | 472 | 40.8% |
+| test/language/statements | 4334 | 4496 | 0 | 35 | 472 | 48.9% |
 | test/language/types | 80 | 24 | 0 | 0 | 9 | 76.9% |
 | test/language/white-space | 51 | 16 | 0 | 0 | 0 | 76.1% |
 
@@ -152,6 +152,28 @@ Total: 36894 tests | corridos: 35204 | **PASS: 13100 (37.2% de los corridos)** |
 ---
 
 ## Análisis (actualizado 2026-07-19, post regex)
+
+### Delta 2026-07-20 (10): CLASES MODERNAS — el bucket #1 (+1461)
+
+Gramática y runtime completos para clases modernas: **class fields**
+(públicos/privados/estáticos, con/sin init), **`#private`** (fields, métodos,
+accessors, estáticos, `#x in obj` brand checks), **computed keys** (evaluadas
+una vez en orden, con soporte de Symbol keys → `*[Symbol.iterator]()` hace
+clases iterables), **numeric keys**, y **static blocks**. Cambios coordinados:
+z-functions (AST ClassKey/ClassElement + gramática con lookahead de
+modificadores ampliado), z-parser (`.#x` member + `#x in`), z-interpreter
+(PrivateEnvironment como identidad ClassCtx + claves reservadas `\x00P`,
+orden spec de field-init base/derivada vía pending-super, intercepción de
+get/set/call/in/delete privados; fibers transportan private_ctx para métodos
+async/gen privados). Trailing commas ya funcionaban (los tests así nombrados
+fallaban por las features de clase).
+
+Deltas (mismo run): **statements 3612→4334 (+722, 40.8→48.9%)**,
+**expressions 4489→5228 (+739, 40.4→49.7%)** = **+1461, 0 crashes**. Los dirs
+class/: 2506→3760 (+1254). Node-verificado exhaustivamente (orden de fields,
+brand errors, getters/setters privados, static blocks, frozen-this).
+Narrowing documentado: `delete this.#x` es SyntaxError en runtime (no early),
+async generators siguen fuera (siguiente palanca, ~4500).
 
 ### Delta 2026-07-20 (9): eval (Fase A) — eval-code 10 -> 92 (+82)
 

@@ -1,22 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 18256 (40.0% de los corridos)** | FAIL: 26656 | CRASH: 2 | TIMEOUT: 725 | SKIP (by design): 1742
-
-> Nota: cubre el 100% de `test/language` + `test/built-ins`, incluyendo
-> árboles totalmente fuera de alcance hoy (0% pass): `Temporal`,
-> `TypedArray`+`TypedArrayConstructors`, `Atomics`, `DataView`,
-> `SharedArrayBuffer`, `Proxy`+`Reflect`, `BigInt`, `WeakMap`/`WeakSet`/
-> `WeakRef`/`FinalizationRegistry`, `ArrayBuffer`, etc. El % global no es
-> comparable con ningún "subset comparable" más viejo por eso — usar
-> `language/statements`/`language/expressions` (estables entre corridas)
-> para tendencia real. **Barrido 2026-07-24 (tarde)**: baseline previo
-> PASS 18208/45639 (39.9%) CRASH 2 → este barrido PASS 18256/45639
-> (40.0%) CRASH 2 — mismos 2 crashes de siempre (`Map`/`Set.prototype.
-> forEach` con delete-durante-iteración, bug latente ya documentado, no
-> tocado hoy). La ganancia (+48) es casi toda `built-ins/String`+
-> `Number`+`Boolean` (471+133+31 = 635 pass), consistente con el fix de
-> hoy a `new String()`/`new Number()`/`new Boolean()` — antes esos
-> wrappers tiraban TypeError en cualquier método.
+Total: 47381 tests | corridos: 45639 | **PASS: 18257 (40.0% de los corridos)** | FAIL: 26674 | CRASH: 0 | TIMEOUT: 708 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -48,7 +32,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 18256 (40.0% de los corridos)** |
 | test/built-ins/Infinity | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/Iterator | 7 | 505 | 0 | 2 | 0 | 1.4% |
 | test/built-ins/JSON | 67 | 98 | 0 | 0 | 0 | 40.6% |
-| test/built-ins/Map | 92 | 105 | 1 | 5 | 1 | 45.3% |
+| test/built-ins/Map | 92 | 106 | 0 | 5 | 1 | 45.3% |
 | test/built-ins/MapIteratorPrototype | 0 | 11 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Math | 78 | 246 | 0 | 3 | 0 | 23.9% |
 | test/built-ins/NaN | 2 | 2 | 0 | 0 | 2 | 50.0% |
@@ -58,9 +42,9 @@ Total: 47381 tests | corridos: 45639 | **PASS: 18256 (40.0% de los corridos)** |
 | test/built-ins/Promise | 154 | 572 | 0 | 0 | 3 | 21.2% |
 | test/built-ins/Proxy | 0 | 300 | 0 | 0 | 11 | 0.0% |
 | test/built-ins/Reflect | 0 | 153 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/RegExp | 467 | 1003 | 0 | 408 | 1 | 24.9% |
+| test/built-ins/RegExp | 468 | 1005 | 0 | 405 | 1 | 24.9% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Set | 175 | 205 | 1 | 1 | 1 | 45.8% |
+| test/built-ins/Set | 174 | 207 | 0 | 1 | 1 | 45.5% |
 | test/built-ins/SetIteratorPrototype | 0 | 11 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/ShadowRealm | 0 | 64 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SharedArrayBuffer | 0 | 104 | 0 | 0 | 0 | 0.0% |
@@ -76,10 +60,10 @@ Total: 47381 tests | corridos: 45639 | **PASS: 18256 (40.0% de los corridos)** |
 | test/built-ins/WeakMap | 0 | 141 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakRef | 0 | 29 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakSet | 0 | 85 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/decodeURI | 0 | 32 | 0 | 23 | 0 | 0.0% |
+| test/built-ins/decodeURI | 0 | 35 | 0 | 20 | 0 | 0.0% |
 | test/built-ins/decodeURIComponent | 0 | 36 | 0 | 20 | 0 | 0.0% |
-| test/built-ins/encodeURI | 0 | 26 | 0 | 5 | 0 | 0.0% |
-| test/built-ins/encodeURIComponent | 0 | 26 | 0 | 5 | 0 | 0.0% |
+| test/built-ins/encodeURI | 0 | 31 | 0 | 0 | 0 | 0.0% |
+| test/built-ins/encodeURIComponent | 0 | 31 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/eval | 4 | 6 | 0 | 0 | 0 | 40.0% |
 | test/built-ins/global | 22 | 7 | 0 | 0 | 0 | 75.9% |
 | test/built-ins/isFinite | 4 | 11 | 0 | 0 | 0 | 26.7% |
@@ -108,7 +92,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 18256 (40.0% de los corridos)** |
 | test/language/literals | 468 | 48 | 0 | 4 | 14 | 90.0% |
 | test/language/module-code | 217 | 382 | 0 | 0 | 0 | 36.2% |
 | test/language/punctuators | 10 | 1 | 0 | 0 | 0 | 90.9% |
-| test/language/reserved-words | 26 | 0 | 0 | 1 | 0 | 96.3% |
+| test/language/reserved-words | 27 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/rest-parameters | 9 | 2 | 0 | 0 | 0 | 81.8% |
 | test/language/source-text | 0 | 1 | 0 | 0 | 0 | 0.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
@@ -118,99 +102,74 @@ Total: 47381 tests | corridos: 45639 | **PASS: 18256 (40.0% de los corridos)** |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **2242x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+- **4016x** `Uncaught ReferenceError: Temporal is not defined`
+  - ej: `test/built-ins/Temporal/Duration/compare/builtin.js`
+- **2488x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/asi/S7.9_A10_T1.js`
-- **1526x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet
+- **2076x** `Uncaught ReferenceError: FloatNArray is not defined`
+  - ej: `test/language/expressions/class/subclass-builtins/subclass-Float32Array.js`
+- **1280x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet
 error(DebugAllocator): memory`
   - ej: `test/language/arguments-object/10.6-11-b-1.js`
-- **1248x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet
+- **1190x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet
 error(Debug`
   - ej: `test/language/expressions/async-generator/expression-await-as-yield-operand.js`
+- **576x** `Uncaught ReferenceError: ArrayBuffer is not defined`
+  - ej: `test/language/expressions/class/subclass-builtins/subclass-ArrayBuffer.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
-  - ej: `test/language/expressions/async-function/named-returns-async-function-returns-newtarget.js`
+  - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
 - **518x** `SyntaxError: UnexpectedToken`
   - ej: `test/language/comments/hashbang/line-terminator-line-separator.js`
-- **400x** `Uncaught [object]`
+- **479x** `Uncaught [object]`
   - ej: `test/language/arguments-object/S10.6_A3_T1.js`
-- **392x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')
-error(DebugAllocator): memory address Nx`
+- **457x** `Uncaught ReferenceError: Proxy is not defined`
+  - ej: `test/language/expressions/object/object-spread-proxy-get-not-called-on-dontenum-keys.js`
+- **375x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **372x** `SyntaxError: InvalidUnicodeEscape`
   - ej: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
+- **312x** `Uncaught ReferenceError: Iterator is not defined`
+  - ej: `test/built-ins/Iterator/length.js`
 - **302x** `SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
-- **211x** `Uncaught [object]
-error(DebugAllocator): memory address NxNfNcN leaked: 
-/home/sweb/.local/share/mise/installs`
-  - ej: `test/language/computed-property-names/class/static/getter-prototype.js`
+- **216x** `Uncaught TypeError: Cannot convert undefined or null to object`
+  - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
+- **212x** `Uncaught ReferenceError: $N is not defined`
+  - ej: `test/language/eval-code/indirect/realm.js`
 - **200x** `async incomplete: Uncaught [object]`
   - ej: `test/language/expressions/async-function/named-strict-error-reassign-fn-name-in-body-in-arrow.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - ej: `test/language/asi/do-while-same-line.js`
-- **191x** `Uncaught ReferenceError: Temporal is not defined
+- **193x** `Uncaught [object]
 error(DebugAllocator): memory address NxNfNcN leaked: 
-/home/`
-  - ej: `test/built-ins/Temporal/getOwnPropertyNames.js`
+/home/sweb/.local/share/mise/installs`
+  - ej: `test/language/expressions/assignment/dstr/obj-rest-put-const.js`
+- **175x** `Uncaught ReferenceError: DataView is not defined`
+  - ej: `test/language/expressions/class/subclass-builtins/subclass-DataView.js`
 - **172x** `async incomplete: SyntaxError: InvalidUnicodeEscape`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier.js`
+- **168x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+  - ej: `test/language/expressions/async-function/named-dflt-params-ref-self.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
-- **113x** `Uncaught ReferenceError: FloatNArray is not defined
-error(DebugAllocator): memory address NxNfNcN leaked: 
-/ho`
-  - ej: `test/built-ins/Array/prototype/reduce/callbackfn-resize-arraybuffer.js`
-- **110x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
-  - ej: `test/language/expressions/async-function/nameless-dflt-params-ref-self.js`
-- **109x** `Uncaught TypeError: Array.prototype.reduceRight called on a non-array
-error(DebugAllocator): memory address Nx`
-  - ej: `test/built-ins/Array/prototype/reduceRight/15.4.4.22-8-b-ii-1.js`
-- **108x** `Uncaught [object]
+- **135x** `Uncaught TypeError: expression is not a function`
+  - ej: `test/language/statements/for-of/Array.prototype.Symbol.iterator.js`
+- **123x** `Uncaught ReferenceError: SharedArrayBuffer is not defined`
+  - ej: `test/language/expressions/class/subclass-builtins/subclass-SharedArrayBuffer.js`
+- **120x** `Uncaught [object]
+error(DebugAllocator): memory address NxNfNeNcN leaked: 
+/home/sweb/.local/share/mise/instal`
+  - ej: `test/language/eval-code/indirect/non-definable-global-function.js`
+- **115x** `Uncaught ReferenceError: Reflect is not defined`
+  - ej: `test/built-ins/ArrayBuffer/prototype-from-newtarget.js`
+- **111x** `Uncaught TypeError: Array.prototype.reduce called on a non-array`
+  - ej: `test/built-ins/Array/prototype/reduce/15.4.4.21-2-18.js`
+- **109x** `Uncaught TypeError: Array.prototype.reduceRight called on a non-array`
+  - ej: `test/built-ins/Array/prototype/reduceRight/15.4.4.22-2-12.js`
+- **107x** `Uncaught [object]
 error(DebugAllocator): memory address NxNfNcNcN leaked: 
 /home/sweb/.local/share/mise/instal`
-  - ej: `test/language/expressions/arrow-function/dstr/dflt-obj-ptrn-id-init-fn-name-cover.js`
-- **108x** `Uncaught [object]
-error(DebugAllocator): memory address NxNfNaNcN leaked: 
-/home/sweb/.local/share/mise/instal`
-  - ej: `test/language/expressions/assignment/dstr/array-elem-trlg-iter-elision-iter-nrml-close-null.js`
-- **105x** `Uncaught [object]
-error(DebugAllocator): memory address NxNfNeNcN leaked: 
-/home/sweb/.local/share/mise/instal`
-  - ej: `test/language/expressions/arrow-function/dstr/dflt-ary-ptrn-elem-id-init-fn-name-arrow.js`
-- **103x** `Uncaught ReferenceError: Temporal is not defined
-error(DebugAllocator): memory address NxNfNcNcN leaked: 
-/hom`
-  - ej: `test/built-ins/Temporal/Duration/years-undefined.js`
-- **90x** `Uncaught ReferenceError: Temporal is not defined
-error(DebugAllocator): memory address NxNfNaNcN leaked: 
-/hom`
-  - ej: `test/built-ins/Temporal/Duration/prototype/round/branding.js`
-- **88x** `Uncaught ReferenceError: Temporal is not defined
-error(DebugAllocator): memory address NxNfN leaked: 
-/home/sw`
-  - ej: `test/built-ins/Temporal/Duration/months-undefined.js`
-- **86x** `Uncaught ReferenceError: FloatNArray is not defined
-error(DebugAllocator): memory address NxNfNeNcN leaked: 
-/`
-  - ej: `test/language/expressions/class/subclass-builtins/subclass-Float64Array.js`
-- **83x** `Uncaught ReferenceError: Temporal is not defined
-error(DebugAllocator): memory address NxNfNeNcN leaked: 
-/hom`
-  - ej: `test/built-ins/Temporal/Duration/compare/relativeto-propertybag-invalid.js`
-- **81x** `Uncaught TypeError: Array.prototype.lastIndexOf called on a non-array
-error(DebugAllocator): memory address Nx`
-  - ej: `test/built-ins/Array/prototype/lastIndexOf/15.4.4.15-1-6.js`
-- **79x** `Uncaught ReferenceError: Temporal is not defined
-error(DebugAllocator): memory address NxNfNbNcN leaked: 
-/hom`
-  - ej: `test/built-ins/Temporal/Duration/subclass.js`
-- **76x** `Uncaught [object]
-error(DebugAllocator): memory address NxNfNdNcN leaked: 
-/home/sweb/.local/share/mise/instal`
-  - ej: `test/language/expressions/async-generator/named-dflt-params-abrupt.js`
-- **76x** `Uncaught ReferenceError: FloatNArray is not defined
-error(DebugAllocator): memory address NxNfNaNcN leaked: 
-/`
-  - ej: `test/built-ins/Atomics/and/non-shared-bufferdata.js`
+  - ej: `test/language/expressions/arrow-function/dstr/dflt-obj-ptrn-id-init-fn-name-fn.js`
 
 ## Top features presentes en FAILs
 
@@ -239,9 +198,3 @@ error(DebugAllocator): memory address NxNfNaNcN leaked:
 - 386x iterator-helpers
 - 382x Atomics
 - 356x explicit-resource-management
-
-## CRASHES (los más graves)
-
-- **2x** `exit -N: thread N panic: switch on corrupt value
-/home/sweb/z-value/src/zvalue.zig:N:N: NxNcN in retain (zvalu`
-  - ej: `test/built-ins/Map/prototype/forEach/deleted-values-during-foreach.js`

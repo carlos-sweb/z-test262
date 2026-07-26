@@ -102,7 +102,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 18576 (40.7% de los corridos)** |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **5702x** `Uncaught [object]`
+- **5818x** `Uncaught [object]`
   - ej: `test/language/arguments-object/S10.6_A3_T1.js`
 - **4151x** `Uncaught ReferenceError: Temporal is not defined`
   - ej: `test/built-ins/Temporal/getOwnPropertyNames.js`
@@ -113,27 +113,27 @@ Total: 47381 tests | corridos: 45639 | **PASS: 18576 (40.7% de los corridos)** |
 - **1057x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet
 error(DebugAllocator): memory`
   - ej: `test/language/arguments-object/10.6-11-b-1.js`
-- **856x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
-  - ej: `test/language/expressions/async-function/nameless-dflt-params-ref-self.js`
+- **820x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+  - ej: `test/language/expressions/async-function/named-dflt-params-ref-self.js`
 - **577x** `Uncaught ReferenceError: ArrayBuffer is not defined`
   - ej: `test/language/expressions/class/subclass-builtins/subclass-ArrayBuffer.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
-  - ej: `test/language/expressions/async-function/named-returns-async-function-returns-newtarget.js`
+  - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
+- **542x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet
+error(Debug`
+  - ej: `test/language/expressions/async-generator/named-yield-promise-reject-next-yield-star-sync-iterator.js`
 - **518x** `SyntaxError: UnexpectedToken`
   - ej: `test/language/expressions/arrow-function/lexical-new.target-closure-returned.js`
-- **506x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet
-error(Debug`
-  - ej: `test/language/expressions/async-generator/dstr/dflt-ary-ptrn-elem-ary-elision-init.js`
 - **385x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **372x** `SyntaxError: InvalidUnicodeEscape`
   - ej: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
 - **328x** `Uncaught ReferenceError: Iterator is not defined`
-  - ej: `test/built-ins/Iterator/concat/single-argument.js`
+  - ej: `test/built-ins/Iterator/length.js`
 - **302x** `SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
 - **235x** `async incomplete: Uncaught [object]`
-  - ej: `test/language/expressions/async-function/named-strict-error-reassign-fn-name-in-body-in-arrow.js`
+  - ej: `test/language/expressions/async-generator/dflt-params-trailing-comma.js`
 - **227x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
 - **212x** `Uncaught ReferenceError: $N is not defined`
@@ -163,7 +163,7 @@ error(Debug`
 - **88x** `Uncaught TypeError: Array.prototype.filter called on a non-array`
   - ej: `test/built-ins/Array/prototype/filter/15.4.4.20-1-9.js`
 - **86x** `Uncaught TypeError: Array.prototype.some called on a non-array`
-  - ej: `test/built-ins/Array/prototype/some/15.4.4.17-3-18.js`
+  - ej: `test/built-ins/Array/prototype/some/15.4.4.17-1-4.js`
 
 ## Top features presentes en FAILs
 

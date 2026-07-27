@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 19093 (41.8% de los corridos)** | FAIL: 25866 | CRASH: 0 | TIMEOUT: 680 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 19102 (41.9% de los corridos)** | FAIL: 25857 | CRASH: 0 | TIMEOUT: 680 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -9,7 +9,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 19093 (41.8% de los corridos)** |
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 0 | 25 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Array | 745 | 2273 | 0 | 27 | 36 | 24.5% |
+| test/built-ins/Array | 746 | 2272 | 0 | 27 | 36 | 24.5% |
 | test/built-ins/ArrayBuffer | 17 | 204 | 0 | 0 | 0 | 7.7% |
 | test/built-ins/ArrayIteratorPrototype | 0 | 19 | 0 | 0 | 8 | 0.0% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
@@ -55,7 +55,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 19093 (41.8% de los corridos)** |
 | test/built-ins/Temporal | 0 | 4603 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/ThrowTypeError | 0 | 14 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/TypedArray | 27 | 1410 | 0 | 1 | 8 | 1.9% |
-| test/built-ins/TypedArrayConstructors | 197 | 525 | 0 | 0 | 16 | 27.3% |
+| test/built-ins/TypedArrayConstructors | 205 | 517 | 0 | 0 | 16 | 28.4% |
 | test/built-ins/Uint8Array | 5 | 65 | 0 | 0 | 0 | 7.1% |
 | test/built-ins/WeakMap | 0 | 141 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakRef | 0 | 29 | 0 | 0 | 0 | 0.0% |
@@ -102,21 +102,21 @@ Total: 47381 tests | corridos: 45639 | **PASS: 19093 (41.8% de los corridos)** |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **6274x** `Uncaught [object]`
+- **6269x** `Uncaught [object]`
   - ej: `test/language/arguments-object/S10.6_A3_T1.js`
 - **4151x** `Uncaught ReferenceError: Temporal is not defined`
   - ej: `test/built-ins/Temporal/getOwnPropertyNames.js`
 - **2903x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/asi/S7.9_A10_T1.js`
-- **1078x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet
+- **1079x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet
 error(DebugAllocator): memory`
   - ej: `test/language/arguments-object/10.6-11-b-1.js`
 - **820x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
-  - ej: `test/language/expressions/async-function/named-dflt-params-ref-self.js`
+  - ej: `test/language/expressions/async-function/nameless-dflt-params-ref-self.js`
 - **709x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
-  - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
+  - ej: `test/language/expressions/async-function/named-returns-async-function-returns-newtarget.js`
 - **542x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet
 error(Debug`
   - ej: `test/language/expressions/async-generator/named-yield-promise-reject-next-yield-star-sync-iterator.js`
@@ -125,7 +125,7 @@ error(Debug`
 - **372x** `SyntaxError: InvalidUnicodeEscape`
   - ej: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
 - **328x** `Uncaught ReferenceError: Iterator is not defined`
-  - ej: `test/built-ins/Iterator/length.js`
+  - ej: `test/built-ins/Iterator/concat/single-argument.js`
 - **322x** `Uncaught ReferenceError: $N is not defined`
   - ej: `test/language/eval-code/indirect/realm.js`
 - **307x** `Uncaught TypeError: Cannot convert undefined or null to object`
@@ -138,10 +138,10 @@ error(Debug`
   - ej: `test/language/expressions/async-generator/dflt-params-trailing-comma.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - ej: `test/language/asi/do-while-same-line.js`
-- **191x** `Uncaught TypeError: object is not iterable (Testing with BigIntNArray and makeArrayLike.)`
-  - ej: `test/built-ins/TypedArray/prototype/copyWithin/BigInt/coerced-values-end.js`
-- **183x** `Uncaught TypeError: object is not iterable (Testing with FloatNArray and makeArrayLike.)`
-  - ej: `test/built-ins/TypedArray/prototype/copyWithin/return-this.js`
+- **191x** `Uncaught TypeError: expression is not a function (Testing with BigIntNArray and makeIterable.)`
+  - ej: `test/built-ins/TypedArray/prototype/entries/BigInt/return-itor.js`
+- **184x** `Uncaught TypeError: expression is not a function (Testing with FloatNArray and makeIterable.)`
+  - ej: `test/built-ins/TypedArray/prototype/entries/return-itor.js`
 - **177x** `Uncaught RangeError: Invalid length: must be a non-negative safe integer
 error(DebugAllocator): memory address`
   - ej: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
@@ -164,20 +164,20 @@ error(DebugAllocator): memory address`
 - **88x** `Uncaught TypeError: Array.prototype.filter called on a non-array`
   - ej: `test/built-ins/Array/prototype/filter/15.4.4.20-1-9.js`
 - **86x** `Uncaught TypeError: Array.prototype.some called on a non-array`
-  - ej: `test/built-ins/Array/prototype/some/15.4.4.17-3-18.js`
+  - ej: `test/built-ins/Array/prototype/some/15.4.4.17-1-4.js`
 
 ## Top features presentes en FAILs
 
 - 4611x Temporal
-- 2238x TypedArray
 - 2234x class
+- 2230x TypedArray
 - 2079x async-iteration
 - 1938x destructuring-binding
 - 1859x generators
 - 1525x class-fields-public
-- 1162x BigInt
-- 1112x Symbol
-- 1077x Symbol.iterator
+- 1159x BigInt
+- 1111x Symbol
+- 1076x Symbol.iterator
 - 714x default-parameters
 - 673x class-static-methods-private
 - 639x class-methods-private

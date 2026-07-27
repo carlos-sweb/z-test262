@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 19504 (42.7% de los corridos)** | FAIL: 25455 | CRASH: 0 | TIMEOUT: 680 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 19555 (42.8% de los corridos)** | FAIL: 25404 | CRASH: 0 | TIMEOUT: 680 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -9,7 +9,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 19504 (42.7% de los corridos)** |
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 0 | 25 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Array | 750 | 2268 | 0 | 27 | 36 | 24.6% |
+| test/built-ins/Array | 751 | 2267 | 0 | 27 | 36 | 24.7% |
 | test/built-ins/ArrayBuffer | 17 | 204 | 0 | 0 | 0 | 7.7% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
@@ -24,7 +24,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 19504 (42.7% de los corridos)** |
 | test/built-ins/DataView | 229 | 332 | 0 | 0 | 0 | 40.8% |
 | test/built-ins/Date | 291 | 303 | 0 | 0 | 0 | 49.0% |
 | test/built-ins/DisposableStack | 0 | 93 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Error | 9 | 84 | 0 | 0 | 0 | 9.7% |
+| test/built-ins/Error | 10 | 83 | 0 | 0 | 0 | 10.8% |
 | test/built-ins/FinalizationRegistry | 0 | 47 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Function | 112 | 306 | 0 | 3 | 88 | 26.6% |
 | test/built-ins/GeneratorFunction | 4 | 18 | 0 | 1 | 0 | 17.4% |
@@ -38,24 +38,24 @@ Total: 47381 tests | corridos: 45639 | **PASS: 19504 (42.7% de los corridos)** |
 | test/built-ins/NaN | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/NativeErrors | 18 | 76 | 0 | 0 | 0 | 19.1% |
 | test/built-ins/Number | 134 | 206 | 0 | 0 | 0 | 39.4% |
-| test/built-ins/Object | 1589 | 1795 | 0 | 16 | 11 | 46.7% |
-| test/built-ins/Promise | 156 | 570 | 0 | 0 | 3 | 21.5% |
+| test/built-ins/Object | 1596 | 1788 | 0 | 16 | 11 | 46.9% |
+| test/built-ins/Promise | 158 | 568 | 0 | 0 | 3 | 21.8% |
 | test/built-ins/Proxy | 77 | 223 | 0 | 0 | 11 | 25.7% |
-| test/built-ins/Reflect | 65 | 88 | 0 | 0 | 0 | 42.5% |
+| test/built-ins/Reflect | 69 | 84 | 0 | 0 | 0 | 45.1% |
 | test/built-ins/RegExp | 469 | 1007 | 0 | 402 | 1 | 25.0% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 177 | 204 | 0 | 1 | 1 | 46.3% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/ShadowRealm | 0 | 64 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SharedArrayBuffer | 0 | 104 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/String | 474 | 746 | 0 | 0 | 3 | 38.9% |
+| test/built-ins/String | 485 | 735 | 0 | 0 | 3 | 39.8% |
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 0 | 22 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Symbol | 19 | 77 | 0 | 0 | 2 | 19.8% |
 | test/built-ins/Temporal | 0 | 4603 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/ThrowTypeError | 0 | 14 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/TypedArray | 379 | 1058 | 0 | 1 | 8 | 26.4% |
-| test/built-ins/TypedArrayConstructors | 234 | 488 | 0 | 0 | 16 | 32.4% |
+| test/built-ins/TypedArray | 380 | 1057 | 0 | 1 | 8 | 26.4% |
+| test/built-ins/TypedArrayConstructors | 240 | 482 | 0 | 0 | 16 | 33.2% |
 | test/built-ins/Uint8Array | 6 | 64 | 0 | 0 | 0 | 8.6% |
 | test/built-ins/WeakMap | 0 | 141 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakRef | 0 | 29 | 0 | 0 | 0 | 0.0% |
@@ -80,7 +80,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 19504 (42.7% de los corridos)** |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 92 | 35 | 0 | 0 | 220 | 72.4% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 6066 | 4361 | 0 | 87 | 588 | 57.7% |
+| test/language/expressions | 6084 | 4343 | 0 | 87 | 588 | 57.9% |
 | test/language/function-code | 99 | 9 | 0 | 0 | 109 | 91.7% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
@@ -102,21 +102,21 @@ Total: 47381 tests | corridos: 45639 | **PASS: 19504 (42.7% de los corridos)** |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **6279x** `Uncaught [object]`
+- **6317x** `Uncaught [object]`
   - ej: `test/language/arguments-object/S10.6_A3_T1.js`
 - **4151x** `Uncaught ReferenceError: Temporal is not defined`
-  - ej: `test/built-ins/Temporal/getOwnPropertyNames.js`
-- **2861x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+  - ej: `test/built-ins/Temporal/Duration/hours-undefined.js`
+- **2735x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/asi/S7.9_A10_T1.js`
-- **1079x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet
+- **1085x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet
 error(DebugAllocator): memory`
   - ej: `test/language/arguments-object/10.6-11-b-1.js`
-- **820x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
-  - ej: `test/language/expressions/async-function/nameless-dflt-params-ref-self.js`
-- **739x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+- **813x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+  - ej: `test/language/expressions/async-function/named-dflt-params-ref-self.js`
+- **742x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
-  - ej: `test/language/expressions/async-function/named-returns-async-function-returns-newtarget.js`
+  - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
 - **542x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet
 error(Debug`
   - ej: `test/language/expressions/async-generator/named-yield-promise-reject-next-yield-star-sync-iterator.js`
@@ -126,7 +126,7 @@ error(Debug`
   - ej: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
 - **333x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
-- **328x** `Uncaught ReferenceError: Iterator is not defined`
+- **329x** `Uncaught ReferenceError: Iterator is not defined`
   - ej: `test/built-ins/Iterator/concat/single-argument.js`
 - **322x** `Uncaught ReferenceError: $N is not defined`
   - ej: `test/language/eval-code/indirect/realm.js`
@@ -134,7 +134,7 @@ error(Debug`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
 - **260x** `Uncaught ReferenceError: SharedArrayBuffer is not defined`
   - ej: `test/language/expressions/class/subclass-builtins/subclass-SharedArrayBuffer.js`
-- **235x** `async incomplete: Uncaught [object]`
+- **237x** `async incomplete: Uncaught [object]`
   - ej: `test/language/expressions/async-generator/dflt-params-trailing-comma.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - ej: `test/language/asi/do-while-same-line.js`
@@ -145,7 +145,7 @@ error(DebugAllocator): memory address`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
-- **120x** `Uncaught TypeError: Object.defineProperty called on non-object`
+- **129x** `Uncaught TypeError: Object.defineProperty called on non-object`
   - ej: `test/language/eval-code/indirect/var-env-func-init-global-update-configurable.js`
 - **111x** `Uncaught TypeError: Array.prototype.reduce called on a non-array`
   - ej: `test/built-ins/Array/prototype/reduce/15.4.4.21-1-10.js`
@@ -160,7 +160,7 @@ error(DebugAllocator): memory address`
 - **88x** `Uncaught TypeError: Array.prototype.filter called on a non-array`
   - ej: `test/built-ins/Array/prototype/filter/15.4.4.20-1-9.js`
 - **86x** `Uncaught TypeError: Array.prototype.some called on a non-array`
-  - ej: `test/built-ins/Array/prototype/some/15.4.4.17-3-18.js`
+  - ej: `test/built-ins/Array/prototype/some/15.4.4.17-1-4.js`
 - **86x** `Uncaught ReferenceError: DisposableStack is not defined`
   - ej: `test/built-ins/DisposableStack/instance-extensible.js`
 - **85x** `Uncaught TypeError: Array.prototype.every called on a non-array`
@@ -172,12 +172,12 @@ error(DebugAllocator): memory address`
 - 2234x class
 - 2079x async-iteration
 - 1938x destructuring-binding
-- 1859x generators
-- 1839x TypedArray
+- 1857x generators
+- 1832x TypedArray
 - 1525x class-fields-public
-- 1071x Symbol
-- 1052x Symbol.iterator
-- 962x BigInt
+- 1054x Symbol
+- 1032x Symbol.iterator
+- 959x BigInt
 - 714x default-parameters
 - 673x class-static-methods-private
 - 639x class-methods-private
@@ -191,5 +191,5 @@ error(DebugAllocator): memory address`
 - 382x Atomics
 - 369x Reflect.construct
 - 368x Proxy
-- 368x Reflect
+- 364x Reflect
 - 356x explicit-resource-management

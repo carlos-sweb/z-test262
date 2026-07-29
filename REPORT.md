@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 19555 (42.8% de los corridos)** | FAIL: 25404 | CRASH: 0 | TIMEOUT: 680 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 20334 (44.6% de los corridos)** | FAIL: 24623 | CRASH: 0 | TIMEOUT: 682 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -52,7 +52,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 19555 (42.8% de los corridos)** |
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 0 | 22 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Symbol | 19 | 77 | 0 | 0 | 2 | 19.8% |
-| test/built-ins/Temporal | 0 | 4603 | 0 | 0 | 0 | 0.0% |
+| test/built-ins/Temporal | 781 | 3822 | 0 | 0 | 0 | 17.0% |
 | test/built-ins/ThrowTypeError | 0 | 14 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/TypedArray | 380 | 1057 | 0 | 1 | 8 | 26.4% |
 | test/built-ins/TypedArrayConstructors | 240 | 482 | 0 | 0 | 16 | 33.2% |
@@ -85,7 +85,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 19555 (42.8% de los corridos)** |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
 | test/language/identifier-resolution | 6 | 3 | 0 | 0 | 5 | 66.7% |
-| test/language/identifiers | 230 | 12 | 0 | 26 | 0 | 85.8% |
+| test/language/identifiers | 228 | 12 | 0 | 28 | 0 | 85.1% |
 | test/language/import | 13 | 115 | 0 | 0 | 0 | 10.2% |
 | test/language/keywords | 25 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/line-terminators | 36 | 5 | 0 | 0 | 0 | 87.8% |
@@ -102,19 +102,19 @@ Total: 47381 tests | corridos: 45639 | **PASS: 19555 (42.8% de los corridos)** |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **6317x** `Uncaught [object]`
+- **7844x** `Uncaught [object]`
   - ej: `test/language/arguments-object/S10.6_A3_T1.js`
-- **4151x** `Uncaught ReferenceError: Temporal is not defined`
-  - ej: `test/built-ins/Temporal/Duration/hours-undefined.js`
-- **2735x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+- **2763x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/asi/S7.9_A10_T1.js`
-- **1085x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet
+- **1178x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet
 error(DebugAllocator): memory`
   - ej: `test/language/arguments-object/10.6-11-b-1.js`
+- **1095x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+  - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **813x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/expressions/async-function/named-dflt-params-ref-self.js`
-- **742x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
-  - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
+- **640x** `Uncaught TypeError: expression is not a constructor`
+  - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
   - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
 - **542x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet
@@ -122,12 +122,12 @@ error(Debug`
   - ej: `test/language/expressions/async-generator/named-yield-promise-reject-next-yield-star-sync-iterator.js`
 - **518x** `SyntaxError: UnexpectedToken`
   - ej: `test/language/expressions/arrow-function/lexical-new.target-closure-returned.js`
+- **383x** `Uncaught TypeError: Cannot convert undefined or null to object`
+  - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
 - **372x** `SyntaxError: InvalidUnicodeEscape`
   - ej: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
-- **333x** `Uncaught TypeError: Cannot convert undefined or null to object`
-  - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
 - **329x** `Uncaught ReferenceError: Iterator is not defined`
-  - ej: `test/built-ins/Iterator/concat/single-argument.js`
+  - ej: `test/built-ins/Iterator/length.js`
 - **322x** `Uncaught ReferenceError: $N is not defined`
   - ej: `test/language/eval-code/indirect/realm.js`
 - **302x** `SyntaxError: UnexpectedCharacter`
@@ -135,7 +135,7 @@ error(Debug`
 - **260x** `Uncaught ReferenceError: SharedArrayBuffer is not defined`
   - ej: `test/language/expressions/class/subclass-builtins/subclass-SharedArrayBuffer.js`
 - **237x** `async incomplete: Uncaught [object]`
-  - ej: `test/language/expressions/async-generator/dflt-params-trailing-comma.js`
+  - ej: `test/language/expressions/async-function/named-dflt-params-trailing-comma.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - ej: `test/language/asi/do-while-same-line.js`
 - **177x** `Uncaught RangeError: Invalid length: must be a non-negative safe integer
@@ -145,7 +145,7 @@ error(DebugAllocator): memory address`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
-- **129x** `Uncaught TypeError: Object.defineProperty called on non-object`
+- **130x** `Uncaught TypeError: Object.defineProperty called on non-object`
   - ej: `test/language/eval-code/indirect/var-env-func-init-global-update-configurable.js`
 - **111x** `Uncaught TypeError: Array.prototype.reduce called on a non-array`
   - ej: `test/built-ins/Array/prototype/reduce/15.4.4.21-1-10.js`
@@ -160,7 +160,7 @@ error(DebugAllocator): memory address`
 - **88x** `Uncaught TypeError: Array.prototype.filter called on a non-array`
   - ej: `test/built-ins/Array/prototype/filter/15.4.4.20-1-9.js`
 - **86x** `Uncaught TypeError: Array.prototype.some called on a non-array`
-  - ej: `test/built-ins/Array/prototype/some/15.4.4.17-1-4.js`
+  - ej: `test/built-ins/Array/prototype/some/15.4.4.17-3-18.js`
 - **86x** `Uncaught ReferenceError: DisposableStack is not defined`
   - ej: `test/built-ins/DisposableStack/instance-extensible.js`
 - **85x** `Uncaught TypeError: Array.prototype.every called on a non-array`
@@ -168,28 +168,28 @@ error(DebugAllocator): memory address`
 
 ## Top features presentes en FAILs
 
-- 4611x Temporal
+- 3830x Temporal
 - 2234x class
 - 2079x async-iteration
 - 1938x destructuring-binding
 - 1857x generators
 - 1832x TypedArray
 - 1525x class-fields-public
-- 1054x Symbol
 - 1032x Symbol.iterator
-- 959x BigInt
+- 932x BigInt
+- 907x Symbol
 - 714x default-parameters
 - 673x class-static-methods-private
 - 639x class-methods-private
 - 604x dynamic-import
 - 547x class-fields-private
 - 490x Symbol.asyncIterator
-- 478x arrow-function
+- 467x arrow-function
 - 459x resizable-arraybuffer
 - 459x SharedArrayBuffer
 - 386x iterator-helpers
 - 382x Atomics
-- 369x Reflect.construct
 - 368x Proxy
 - 364x Reflect
 - 356x explicit-resource-management
+- 325x object-rest

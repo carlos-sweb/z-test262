@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 20374 (44.6% de los corridos)** | FAIL: 24658 | CRASH: 0 | TIMEOUT: 607 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 21309 (46.7% de los corridos)** | FAIL: 23703 | CRASH: 0 | TIMEOUT: 627 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -9,14 +9,14 @@ Total: 47381 tests | corridos: 45639 | **PASS: 20374 (44.6% de los corridos)** |
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 0 | 25 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Array | 754 | 2268 | 0 | 23 | 36 | 24.8% |
+| test/built-ins/Array | 762 | 2259 | 0 | 24 | 36 | 25.0% |
 | test/built-ins/ArrayBuffer | 17 | 204 | 0 | 0 | 0 | 7.7% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/AsyncFromSyncIteratorPrototype | 3 | 22 | 0 | 13 | 0 | 7.9% |
+| test/built-ins/AsyncFromSyncIteratorPrototype | 4 | 21 | 0 | 13 | 0 | 10.5% |
 | test/built-ins/AsyncFunction | 6 | 12 | 0 | 0 | 0 | 33.3% |
-| test/built-ins/AsyncGeneratorFunction | 3 | 20 | 0 | 0 | 0 | 13.0% |
-| test/built-ins/AsyncGeneratorPrototype | 0 | 47 | 0 | 1 | 0 | 0.0% |
+| test/built-ins/AsyncGeneratorFunction | 4 | 19 | 0 | 0 | 0 | 17.4% |
+| test/built-ins/AsyncGeneratorPrototype | 1 | 46 | 0 | 1 | 0 | 2.1% |
 | test/built-ins/AsyncIteratorPrototype | 0 | 13 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Atomics | 0 | 387 | 0 | 0 | 2 | 0.0% |
 | test/built-ins/BigInt | 27 | 50 | 0 | 0 | 0 | 35.1% |
@@ -26,61 +26,61 @@ Total: 47381 tests | corridos: 45639 | **PASS: 20374 (44.6% de los corridos)** |
 | test/built-ins/DisposableStack | 0 | 93 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Error | 10 | 83 | 0 | 0 | 0 | 10.8% |
 | test/built-ins/FinalizationRegistry | 0 | 47 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Function | 112 | 309 | 0 | 0 | 88 | 26.6% |
-| test/built-ins/GeneratorFunction | 5 | 18 | 0 | 0 | 0 | 21.7% |
+| test/built-ins/Function | 132 | 289 | 0 | 0 | 88 | 31.4% |
+| test/built-ins/GeneratorFunction | 6 | 17 | 0 | 0 | 0 | 26.1% |
 | test/built-ins/GeneratorPrototype | 14 | 46 | 0 | 1 | 0 | 23.0% |
 | test/built-ins/Infinity | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/Iterator | 7 | 507 | 0 | 0 | 0 | 1.4% |
 | test/built-ins/JSON | 71 | 94 | 0 | 0 | 0 | 43.0% |
-| test/built-ins/Map | 95 | 103 | 0 | 5 | 1 | 46.8% |
+| test/built-ins/Map | 96 | 102 | 0 | 5 | 1 | 47.3% |
 | test/built-ins/MapIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/Math | 81 | 246 | 0 | 0 | 0 | 24.8% |
 | test/built-ins/NaN | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/NativeErrors | 18 | 76 | 0 | 0 | 0 | 19.1% |
-| test/built-ins/Number | 134 | 206 | 0 | 0 | 0 | 39.4% |
-| test/built-ins/Object | 1596 | 1788 | 0 | 16 | 11 | 46.9% |
-| test/built-ins/Promise | 158 | 568 | 0 | 0 | 3 | 21.8% |
+| test/built-ins/Number | 149 | 191 | 0 | 0 | 0 | 43.8% |
+| test/built-ins/Object | 1609 | 1775 | 0 | 16 | 11 | 47.3% |
+| test/built-ins/Promise | 171 | 555 | 0 | 0 | 3 | 23.6% |
 | test/built-ins/Proxy | 77 | 223 | 0 | 0 | 11 | 25.7% |
-| test/built-ins/Reflect | 69 | 84 | 0 | 0 | 0 | 45.1% |
-| test/built-ins/RegExp | 469 | 1020 | 0 | 389 | 1 | 25.0% |
+| test/built-ins/Reflect | 70 | 83 | 0 | 0 | 0 | 45.8% |
+| test/built-ins/RegExp | 564 | 924 | 0 | 390 | 1 | 30.0% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 177 | 204 | 0 | 1 | 1 | 46.3% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/ShadowRealm | 0 | 64 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SharedArrayBuffer | 0 | 104 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/String | 485 | 735 | 0 | 0 | 3 | 39.8% |
+| test/built-ins/String | 500 | 720 | 0 | 0 | 3 | 41.0% |
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 0 | 22 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Symbol | 19 | 77 | 0 | 0 | 2 | 19.8% |
-| test/built-ins/Temporal | 781 | 3822 | 0 | 0 | 0 | 17.0% |
+| test/built-ins/Temporal | 1233 | 3370 | 0 | 0 | 0 | 26.8% |
 | test/built-ins/ThrowTypeError | 0 | 14 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/TypedArray | 381 | 1057 | 0 | 0 | 8 | 26.5% |
-| test/built-ins/TypedArrayConstructors | 240 | 482 | 0 | 0 | 16 | 33.2% |
+| test/built-ins/TypedArrayConstructors | 249 | 473 | 0 | 0 | 16 | 34.5% |
 | test/built-ins/Uint8Array | 6 | 64 | 0 | 0 | 0 | 8.6% |
 | test/built-ins/WeakMap | 0 | 141 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakRef | 0 | 29 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakSet | 0 | 85 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/decodeURI | 0 | 55 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/decodeURIComponent | 0 | 56 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/encodeURI | 0 | 31 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/encodeURIComponent | 0 | 31 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/eval | 4 | 6 | 0 | 0 | 0 | 40.0% |
-| test/built-ins/global | 22 | 7 | 0 | 0 | 0 | 75.9% |
+| test/built-ins/decodeURI | 40 | 7 | 0 | 8 | 0 | 72.7% |
+| test/built-ins/decodeURIComponent | 41 | 7 | 0 | 8 | 0 | 73.2% |
+| test/built-ins/encodeURI | 16 | 14 | 0 | 1 | 0 | 51.6% |
+| test/built-ins/encodeURIComponent | 16 | 14 | 0 | 1 | 0 | 51.6% |
+| test/built-ins/eval | 5 | 5 | 0 | 0 | 0 | 50.0% |
+| test/built-ins/global | 25 | 4 | 0 | 0 | 0 | 86.2% |
 | test/built-ins/isFinite | 4 | 11 | 0 | 0 | 0 | 26.7% |
 | test/built-ins/isNaN | 4 | 11 | 0 | 0 | 0 | 26.7% |
-| test/built-ins/parseFloat | 42 | 12 | 0 | 0 | 0 | 77.8% |
+| test/built-ins/parseFloat | 43 | 11 | 0 | 0 | 0 | 79.6% |
 | test/built-ins/parseInt | 39 | 16 | 0 | 0 | 0 | 70.9% |
 | test/built-ins/undefined | 2 | 3 | 0 | 0 | 3 | 40.0% |
 | test/language/arguments-object | 189 | 17 | 0 | 0 | 57 | 91.7% |
 | test/language/asi | 98 | 4 | 0 | 0 | 0 | 96.1% |
-| test/language/block-scope | 144 | 1 | 0 | 0 | 0 | 99.3% |
+| test/language/block-scope | 145 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/comments | 44 | 8 | 0 | 0 | 0 | 84.6% |
 | test/language/computed-property-names | 28 | 20 | 0 | 0 | 0 | 58.3% |
 | test/language/destructuring | 17 | 1 | 0 | 0 | 1 | 94.4% |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
-| test/language/eval-code | 92 | 35 | 0 | 0 | 220 | 72.4% |
+| test/language/eval-code | 95 | 32 | 0 | 0 | 220 | 74.8% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 6085 | 4343 | 0 | 86 | 588 | 57.9% |
+| test/language/expressions | 6233 | 4195 | 0 | 86 | 588 | 59.3% |
 | test/language/function-code | 99 | 9 | 0 | 0 | 109 | 91.7% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
@@ -89,26 +89,26 @@ Total: 47381 tests | corridos: 45639 | **PASS: 20374 (44.6% de los corridos)** |
 | test/language/import | 13 | 115 | 0 | 0 | 0 | 10.2% |
 | test/language/keywords | 25 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/line-terminators | 36 | 5 | 0 | 0 | 0 | 87.8% |
-| test/language/literals | 488 | 28 | 0 | 4 | 14 | 93.8% |
+| test/language/literals | 497 | 19 | 0 | 4 | 14 | 95.6% |
 | test/language/module-code | 217 | 382 | 0 | 0 | 0 | 36.2% |
 | test/language/punctuators | 10 | 1 | 0 | 0 | 0 | 90.9% |
 | test/language/reserved-words | 27 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/rest-parameters | 9 | 2 | 0 | 0 | 0 | 81.8% |
 | test/language/source-text | 0 | 1 | 0 | 0 | 0 | 0.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 5685 | 3112 | 0 | 68 | 472 | 64.1% |
+| test/language/statements | 5695 | 3102 | 0 | 68 | 472 | 64.2% |
 | test/language/types | 88 | 16 | 0 | 0 | 9 | 84.6% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **3943x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+- **3782x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/arguments-object/10.6-11-b-1.js`
-- **1355x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+- **1352x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/expressions/async-arrow-function/dflt-params-ref-self.js`
-- **1108x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+- **1144x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
-- **714x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+- **715x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - ej: `test/language/arguments-object/10.6-13-c-1-s.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
   - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
@@ -116,9 +116,9 @@ Total: 47381 tests | corridos: 45639 | **PASS: 20374 (44.6% de los corridos)** |
   - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
 - **518x** `SyntaxError: UnexpectedToken`
   - ej: `test/language/comments/hashbang/line-terminator-line-separator.js`
-- **474x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
+- **472x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
-- **428x** `Uncaught { message: name should be an own property }`
+- **432x** `Uncaught { message: name should be an own property }`
   - ej: `test/language/expressions/arrow-function/name.js`
 - **408x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
@@ -165,28 +165,28 @@ Total: 47381 tests | corridos: 45639 | **PASS: 20374 (44.6% de los corridos)** |
 
 ## Top features presentes en FAILs
 
-- 3830x Temporal
-- 2234x class
-- 2079x async-iteration
+- 3378x Temporal
+- 2232x class
+- 2076x async-iteration
 - 1938x destructuring-binding
-- 1857x generators
-- 1832x TypedArray
+- 1856x generators
+- 1823x TypedArray
 - 1525x class-fields-public
 - 1032x Symbol.iterator
-- 932x BigInt
-- 907x Symbol
+- 930x BigInt
+- 905x Symbol
 - 714x default-parameters
 - 673x class-static-methods-private
 - 639x class-methods-private
 - 604x dynamic-import
-- 547x class-fields-private
+- 545x class-fields-private
 - 490x Symbol.asyncIterator
-- 468x arrow-function
 - 459x resizable-arraybuffer
 - 459x SharedArrayBuffer
+- 454x arrow-function
 - 386x iterator-helpers
 - 382x Atomics
 - 368x Proxy
-- 365x Reflect
+- 364x Reflect
 - 356x explicit-resource-management
 - 325x object-rest

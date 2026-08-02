@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24443 (53.6% de los corridos)** | FAIL: 20553 | CRASH: 0 | TIMEOUT: 643 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24445 (53.6% de los corridos)** | FAIL: 20547 | CRASH: 0 | TIMEOUT: 647 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -60,16 +60,16 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24443 (53.6% de los corridos)** |
 | test/built-ins/WeakMap | 0 | 141 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakRef | 0 | 29 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakSet | 0 | 85 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/decodeURI | 43 | 4 | 0 | 8 | 0 | 78.2% |
-| test/built-ins/decodeURIComponent | 44 | 4 | 0 | 8 | 0 | 78.6% |
+| test/built-ins/decodeURI | 41 | 4 | 0 | 10 | 0 | 74.5% |
+| test/built-ins/decodeURIComponent | 42 | 4 | 0 | 10 | 0 | 75.0% |
 | test/built-ins/encodeURI | 19 | 11 | 0 | 1 | 0 | 61.3% |
 | test/built-ins/encodeURIComponent | 19 | 11 | 0 | 1 | 0 | 61.3% |
 | test/built-ins/eval | 8 | 2 | 0 | 0 | 0 | 80.0% |
 | test/built-ins/global | 25 | 4 | 0 | 0 | 0 | 86.2% |
 | test/built-ins/isFinite | 4 | 11 | 0 | 0 | 0 | 26.7% |
 | test/built-ins/isNaN | 4 | 11 | 0 | 0 | 0 | 26.7% |
-| test/built-ins/parseFloat | 43 | 11 | 0 | 0 | 0 | 79.6% |
-| test/built-ins/parseInt | 38 | 16 | 0 | 1 | 0 | 69.1% |
+| test/built-ins/parseFloat | 42 | 11 | 0 | 1 | 0 | 77.8% |
+| test/built-ins/parseInt | 39 | 16 | 0 | 0 | 0 | 70.9% |
 | test/built-ins/undefined | 2 | 3 | 0 | 0 | 3 | 40.0% |
 | test/language/arguments-object | 189 | 15 | 0 | 2 | 57 | 91.7% |
 | test/language/asi | 98 | 4 | 0 | 0 | 0 | 96.1% |
@@ -80,7 +80,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24443 (53.6% de los corridos)** |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 95 | 32 | 0 | 0 | 220 | 74.8% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 6985 | 3443 | 0 | 86 | 588 | 66.4% |
+| test/language/expressions | 6991 | 3437 | 0 | 86 | 588 | 66.5% |
 | test/language/function-code | 99 | 9 | 0 | 0 | 109 | 91.7% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |

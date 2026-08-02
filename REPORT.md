@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 23057 (50.5% de los corridos)** | FAIL: 21943 | CRASH: 0 | TIMEOUT: 639 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 23115 (50.6% de los corridos)** | FAIL: 21896 | CRASH: 0 | TIMEOUT: 628 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -9,7 +9,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23057 (50.5% de los corridos)** |
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 0 | 25 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Array | 843 | 2176 | 0 | 26 | 36 | 27.7% |
+| test/built-ins/Array | 846 | 2176 | 0 | 23 | 36 | 27.8% |
 | test/built-ins/ArrayBuffer | 22 | 199 | 0 | 0 | 0 | 10.0% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
@@ -38,11 +38,11 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23057 (50.5% de los corridos)** |
 | test/built-ins/NaN | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/NativeErrors | 30 | 64 | 0 | 0 | 0 | 31.9% |
 | test/built-ins/Number | 186 | 154 | 0 | 0 | 0 | 54.7% |
-| test/built-ins/Object | 1980 | 1404 | 0 | 16 | 11 | 58.2% |
+| test/built-ins/Object | 1982 | 1402 | 0 | 16 | 11 | 58.3% |
 | test/built-ins/Promise | 185 | 541 | 0 | 0 | 3 | 25.5% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
 | test/built-ins/Reflect | 90 | 63 | 0 | 0 | 0 | 58.8% |
-| test/built-ins/RegExp | 580 | 905 | 0 | 393 | 1 | 30.9% |
+| test/built-ins/RegExp | 580 | 908 | 0 | 390 | 1 | 30.9% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 198 | 183 | 0 | 1 | 1 | 51.8% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -60,15 +60,15 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23057 (50.5% de los corridos)** |
 | test/built-ins/WeakMap | 0 | 141 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakRef | 0 | 29 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakSet | 0 | 85 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/decodeURI | 40 | 5 | 0 | 10 | 0 | 72.7% |
-| test/built-ins/decodeURIComponent | 41 | 5 | 0 | 10 | 0 | 73.2% |
+| test/built-ins/decodeURI | 42 | 5 | 0 | 8 | 0 | 76.4% |
+| test/built-ins/decodeURIComponent | 43 | 5 | 0 | 8 | 0 | 76.8% |
 | test/built-ins/encodeURI | 18 | 12 | 0 | 1 | 0 | 58.1% |
 | test/built-ins/encodeURIComponent | 18 | 12 | 0 | 1 | 0 | 58.1% |
 | test/built-ins/eval | 7 | 3 | 0 | 0 | 0 | 70.0% |
 | test/built-ins/global | 25 | 4 | 0 | 0 | 0 | 86.2% |
 | test/built-ins/isFinite | 4 | 11 | 0 | 0 | 0 | 26.7% |
 | test/built-ins/isNaN | 4 | 11 | 0 | 0 | 0 | 26.7% |
-| test/built-ins/parseFloat | 42 | 11 | 0 | 1 | 0 | 77.8% |
+| test/built-ins/parseFloat | 43 | 11 | 0 | 0 | 0 | 79.6% |
 | test/built-ins/parseInt | 39 | 16 | 0 | 0 | 0 | 70.9% |
 | test/built-ins/undefined | 2 | 3 | 0 | 0 | 3 | 40.0% |
 | test/language/arguments-object | 189 | 15 | 0 | 2 | 57 | 91.7% |
@@ -80,7 +80,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23057 (50.5% de los corridos)** |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 95 | 32 | 0 | 0 | 220 | 74.8% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 6413 | 4015 | 0 | 86 | 588 | 61.0% |
+| test/language/expressions | 6443 | 3985 | 0 | 86 | 588 | 61.3% |
 | test/language/function-code | 99 | 9 | 0 | 0 | 109 | 91.7% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
@@ -96,7 +96,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23057 (50.5% de los corridos)** |
 | test/language/rest-parameters | 9 | 2 | 0 | 0 | 0 | 81.8% |
 | test/language/source-text | 0 | 1 | 0 | 0 | 0 | 0.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 6076 | 2721 | 0 | 68 | 472 | 68.5% |
+| test/language/statements | 6094 | 2703 | 0 | 68 | 472 | 68.7% |
 | test/language/types | 88 | 16 | 0 | 0 | 9 | 84.6% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -132,10 +132,10 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23057 (50.5% de los corridos)** |
   - ej: `test/language/expressions/class/subclass-builtins/subclass-SharedArrayBuffer.js`
 - **228x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: TypeError Expected SameValue(«[object Object]`
   - ej: `test/language/expressions/async-generator/named-yield-star-getiter-async-not-callable-boolean-throw.js`
-- **220x** `Uncaught { message: length descriptor value should be N; length value should be N }`
-  - ej: `test/language/expressions/arrow-function/length-dflt.js`
 - **207x** `async incomplete: Uncaught { message: asyncTest called without async flag }`
   - ej: `test/language/expressions/async-function/named-strict-error-reassign-fn-name-in-body-in-arrow.js`
+- **204x** `Uncaught { message: length descriptor value should be N; length value should be N }`
+  - ej: `test/built-ins/Array/prototype/at/length.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - ej: `test/language/asi/do-while-same-line.js`
 - **192x** `Uncaught { message: m descriptor should not be enumerable }`
@@ -151,7 +151,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23057 (50.5% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
+  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
@@ -168,15 +168,15 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23057 (50.5% de los corridos)** |
 - 3194x Temporal
 - 2106x class
 - 1800x TypedArray
-- 1781x async-iteration
-- 1726x generators
+- 1773x async-iteration
+- 1714x generators
 - 1560x destructuring-binding
 - 1465x class-fields-public
 - 1022x Symbol.iterator
 - 898x BigInt
 - 878x Symbol
-- 659x default-parameters
 - 645x class-static-methods-private
+- 643x default-parameters
 - 611x class-methods-private
 - 604x dynamic-import
 - 541x class-fields-private

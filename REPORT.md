@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24263 (53.2% de los corridos)** | FAIL: 20740 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24428 (53.5% de los corridos)** | FAIL: 20574 | CRASH: 0 | TIMEOUT: 637 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -42,7 +42,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24263 (53.2% de los corridos)** |
 | test/built-ins/Promise | 193 | 533 | 0 | 0 | 3 | 26.6% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
 | test/built-ins/Reflect | 100 | 53 | 0 | 0 | 0 | 65.4% |
-| test/built-ins/RegExp | 582 | 903 | 0 | 393 | 1 | 31.0% |
+| test/built-ins/RegExp | 582 | 904 | 0 | 392 | 1 | 31.0% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 202 | 179 | 0 | 1 | 1 | 52.9% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -60,7 +60,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24263 (53.2% de los corridos)** |
 | test/built-ins/WeakMap | 0 | 141 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakRef | 0 | 29 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakSet | 0 | 85 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/decodeURI | 43 | 4 | 0 | 8 | 0 | 78.2% |
+| test/built-ins/decodeURI | 41 | 4 | 0 | 10 | 0 | 74.5% |
 | test/built-ins/decodeURIComponent | 42 | 4 | 0 | 10 | 0 | 75.0% |
 | test/built-ins/encodeURI | 19 | 11 | 0 | 1 | 0 | 61.3% |
 | test/built-ins/encodeURIComponent | 19 | 11 | 0 | 1 | 0 | 61.3% |
@@ -80,7 +80,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24263 (53.2% de los corridos)** |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 95 | 32 | 0 | 0 | 220 | 74.8% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 6894 | 3534 | 0 | 86 | 588 | 65.6% |
+| test/language/expressions | 6976 | 3452 | 0 | 86 | 588 | 66.3% |
 | test/language/function-code | 99 | 9 | 0 | 0 | 109 | 91.7% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
@@ -96,7 +96,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24263 (53.2% de los corridos)** |
 | test/language/rest-parameters | 9 | 2 | 0 | 0 | 0 | 81.8% |
 | test/language/source-text | 0 | 1 | 0 | 0 | 0 | 0.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 6555 | 2242 | 0 | 68 | 472 | 73.9% |
+| test/language/statements | 6640 | 2157 | 0 | 68 | 472 | 74.9% |
 | test/language/types | 88 | 16 | 0 | 0 | 9 | 84.6% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -106,7 +106,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24263 (53.2% de los corridos)** |
   - ej: `test/language/asi/S7.9_A10_T1.js`
 - **1178x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/comments/S7.4_A1_T1.js`
-- **717x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+- **716x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - ej: `test/language/computed-property-names/class/static/generator-prototype.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
   - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
@@ -147,43 +147,43 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24263 (53.2% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
+  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - ej: `test/language/eval-code/indirect/var-env-func-non-strict.js`
 - **130x** `Uncaught TypeError: Object.defineProperty called on non-object`
   - ej: `test/language/eval-code/indirect/var-env-func-init-global-update-configurable.js`
-- **116x** `Uncaught { message: Expected SameValue(«"xClsN"», «"xClsN"») to be false }`
-  - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-init-fn-name-class.js`
 - **113x** `Uncaught { message: isConstructor invoked with a non-function value }`
   - ej: `test/built-ins/Array/fromAsync/not-a-constructor.js`
 - **113x** `Uncaught { message: Built-in objects must be extensible. Expected SameValue(«false», «true») to be true }`
   - ej: `test/built-ins/Set/prototype/difference/builtins.js`
 - **111x** `Uncaught TypeError: Array.prototype.reduce called on a non-array`
   - ej: `test/built-ins/Array/prototype/reduce/15.4.4.21-1-10.js`
+- **109x** `Uncaught TypeError: Array.prototype.reduceRight called on a non-array`
+  - ej: `test/built-ins/Array/prototype/reduceRight/15.4.4.22-1-10.js`
 
 ## Top features presentes en FAILs
 
 - 3138x Temporal
 - 1800x TypedArray
-- 1662x class
-- 1555x async-iteration
-- 1343x generators
+- 1610x class
+- 1507x async-iteration
+- 1297x generators
 - 1225x class-fields-public
-- 1112x destructuring-binding
 - 1022x Symbol.iterator
+- 1000x destructuring-binding
 - 893x BigInt
 - 854x Symbol
 - 604x dynamic-import
-- 509x class-static-methods-private
 - 501x class-fields-private
 - 489x Symbol.asyncIterator
-- 475x class-methods-private
+- 485x class-static-methods-private
 - 459x resizable-arraybuffer
-- 459x default-parameters
 - 459x SharedArrayBuffer
 - 453x arrow-function
+- 451x class-methods-private
+- 413x default-parameters
 - 386x iterator-helpers
 - 382x Atomics
 - 364x Proxy

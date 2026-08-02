@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 20374 (44.6% de los corridos)** | FAIL: 24657 | CRASH: 0 | TIMEOUT: 608 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 20374 (44.6% de los corridos)** | FAIL: 24658 | CRASH: 0 | TIMEOUT: 607 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -42,7 +42,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 20374 (44.6% de los corridos)** |
 | test/built-ins/Promise | 158 | 568 | 0 | 0 | 3 | 21.8% |
 | test/built-ins/Proxy | 77 | 223 | 0 | 0 | 11 | 25.7% |
 | test/built-ins/Reflect | 69 | 84 | 0 | 0 | 0 | 45.1% |
-| test/built-ins/RegExp | 469 | 1019 | 0 | 390 | 1 | 25.0% |
+| test/built-ins/RegExp | 469 | 1020 | 0 | 389 | 1 | 25.0% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 177 | 204 | 0 | 1 | 1 | 46.3% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -102,66 +102,66 @@ Total: 47381 tests | corridos: 45639 | **PASS: 20374 (44.6% de los corridos)** |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **8332x** `Uncaught [object]`
-  - ej: `test/language/arguments-object/10.5-1-s.js`
 - **3943x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/arguments-object/10.6-11-b-1.js`
 - **1355x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/expressions/async-arrow-function/dflt-params-ref-self.js`
 - **1108x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
+- **714x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+  - ej: `test/language/arguments-object/10.6-13-c-1-s.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
   - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
   - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
 - **518x** `SyntaxError: UnexpectedToken`
   - ej: `test/language/comments/hashbang/line-terminator-line-separator.js`
+- **474x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
+  - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
+- **428x** `Uncaught { message: name should be an own property }`
+  - ej: `test/language/expressions/arrow-function/name.js`
+- **408x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
+  - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **397x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
 - **372x** `SyntaxError: InvalidUnicodeEscape`
   - ej: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
+- **336x** `Uncaught { message: length should be an own property }`
+  - ej: `test/language/expressions/arrow-function/length-dflt.js`
 - **333x** `Uncaught ReferenceError: Iterator is not defined`
   - ej: `test/built-ins/Iterator/length.js`
 - **322x** `Uncaught ReferenceError: $N is not defined`
   - ej: `test/language/eval-code/indirect/realm.js`
 - **302x** `SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
-- **273x** `async incomplete: Uncaught [object]`
-  - ej: `test/language/expressions/async-arrow-function/dflt-params-trailing-comma.js`
 - **260x** `Uncaught ReferenceError: SharedArrayBuffer is not defined`
   - ej: `test/language/expressions/class/subclass-builtins/subclass-SharedArrayBuffer.js`
+- **207x** `async incomplete: Uncaught { message: asyncTest called without async flag }`
+  - ej: `test/language/expressions/async-function/named-strict-error-reassign-fn-name-in-body-in-arrow.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - ej: `test/language/asi/do-while-same-line.js`
 - **191x** `Uncaught RangeError: Invalid length: must be a non-negative safe integer`
   - ej: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
+- **176x** `Uncaught { message: Expected a TestNError but got a TypeError }`
+  - ej: `test/language/expressions/assignment/dstr/array-elem-trlg-iter-rest-rtrn-close-err.js`
 - **172x** `async incomplete: SyntaxError: InvalidUnicodeEscape`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier.js`
+- **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
+  - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
+- **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
+  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
+- **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
+  - ej: `test/language/eval-code/indirect/var-env-func-non-strict.js`
 - **130x** `Uncaught TypeError: Object.defineProperty called on non-object`
   - ej: `test/language/eval-code/indirect/var-env-func-init-global-update-configurable.js`
-- **111x** `Uncaught TypeError: Array.prototype.reduce called on a non-array`
-  - ej: `test/built-ins/Array/prototype/reduce/15.4.4.21-1-10.js`
-- **109x** `Uncaught TypeError: Array.prototype.reduceRight called on a non-array`
-  - ej: `test/built-ins/Array/prototype/reduceRight/15.4.4.22-1-10.js`
-- **93x** `Uncaught ReferenceError: WeakMap is not defined`
-  - ej: `test/language/expressions/class/subclass-builtins/subclass-WeakMap.js`
-- **93x** `Uncaught ReferenceError: Atomics is not defined`
-  - ej: `test/built-ins/Atomics/Symbol.toStringTag.js`
-- **92x** `Uncaught TypeError: expression is not a function`
-  - ej: `test/built-ins/Function/prototype/Symbol.hasInstance/this-val-bound-target.js`
-- **88x** `Uncaught TypeError: Array.prototype.filter called on a non-array`
-  - ej: `test/built-ins/Array/prototype/filter/15.4.4.20-1-10.js`
-- **86x** `Uncaught TypeError: Array.prototype.some called on a non-array`
-  - ej: `test/built-ins/Array/prototype/some/15.4.4.17-1-4.js`
-- **86x** `Uncaught ReferenceError: DisposableStack is not defined`
-  - ej: `test/built-ins/DisposableStack/instance-extensible.js`
-- **85x** `Uncaught TypeError: Array.prototype.every called on a non-array`
-  - ej: `test/built-ins/Array/prototype/every/15.4.4.16-1-10.js`
-- **85x** `Uncaught TypeError: Array.prototype.indexOf called on a non-array`
-  - ej: `test/built-ins/Array/prototype/indexOf/15.4.4.14-1-10.js`
-- **83x** `Uncaught TypeError: Array.prototype.map called on a non-array`
-  - ej: `test/language/statements/class/subclass/builtin-objects/Array/contructor-calls-super-multiple-arguments.js`
+- **113x** `Uncaught { message: isConstructor invoked with a non-function value }`
+  - ej: `test/built-ins/Array/fromAsync/not-a-constructor.js`
+- **113x** `Uncaught { message: Built-in objects must be extensible. Expected SameValue(«false», «true») to be true }`
+  - ej: `test/built-ins/Set/prototype/difference/builtins.js`
+- **112x** `Uncaught { message: Expected SameValue(«""», «"arrow"») to be true }`
+  - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-init-fn-name-arrow.js`
 
 ## Top features presentes en FAILs
 

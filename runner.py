@@ -70,7 +70,7 @@ def run_one(job):
         tf.write(composed)
         tmp = tf.name
     try:
-        proc = subprocess.run([zrun, tmp], capture_output=True, text=True, timeout=timeout_s)
+        proc = subprocess.run([zrun, tmp], capture_output=True, text=True, timeout=timeout_s, errors="replace")
         exit_code = proc.returncode
         out, err = proc.stdout, proc.stderr
     except subprocess.TimeoutExpired:

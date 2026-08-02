@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 23366 (51.2% de los corridos)** | FAIL: 21634 | CRASH: 0 | TIMEOUT: 639 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 23600 (51.7% de los corridos)** | FAIL: 21400 | CRASH: 0 | TIMEOUT: 639 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -9,8 +9,8 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23366 (51.2% de los corridos)** |
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 0 | 25 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Array | 844 | 2176 | 0 | 25 | 36 | 27.7% |
-| test/built-ins/ArrayBuffer | 22 | 199 | 0 | 0 | 0 | 10.0% |
+| test/built-ins/Array | 870 | 2149 | 0 | 26 | 36 | 28.6% |
+| test/built-ins/ArrayBuffer | 23 | 198 | 0 | 0 | 0 | 10.4% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AsyncFromSyncIteratorPrototype | 4 | 21 | 0 | 13 | 0 | 10.5% |
@@ -19,40 +19,40 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23366 (51.2% de los corridos)** |
 | test/built-ins/AsyncGeneratorPrototype | 1 | 46 | 0 | 1 | 0 | 2.1% |
 | test/built-ins/AsyncIteratorPrototype | 0 | 13 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Atomics | 0 | 387 | 0 | 0 | 2 | 0.0% |
-| test/built-ins/BigInt | 38 | 39 | 0 | 0 | 0 | 49.4% |
+| test/built-ins/BigInt | 40 | 37 | 0 | 0 | 0 | 51.9% |
 | test/built-ins/Boolean | 38 | 13 | 0 | 0 | 0 | 74.5% |
-| test/built-ins/DataView | 250 | 311 | 0 | 0 | 0 | 44.6% |
-| test/built-ins/Date | 409 | 185 | 0 | 0 | 0 | 68.9% |
+| test/built-ins/DataView | 269 | 292 | 0 | 0 | 0 | 48.0% |
+| test/built-ins/Date | 427 | 167 | 0 | 0 | 0 | 71.9% |
 | test/built-ins/DisposableStack | 0 | 93 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Error | 21 | 72 | 0 | 0 | 0 | 22.6% |
 | test/built-ins/FinalizationRegistry | 0 | 47 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Function | 158 | 263 | 0 | 0 | 88 | 37.5% |
+| test/built-ins/Function | 162 | 259 | 0 | 0 | 88 | 38.5% |
 | test/built-ins/GeneratorFunction | 7 | 16 | 0 | 0 | 0 | 30.4% |
 | test/built-ins/GeneratorPrototype | 14 | 46 | 0 | 1 | 0 | 23.0% |
 | test/built-ins/Infinity | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/Iterator | 7 | 507 | 0 | 0 | 0 | 1.4% |
-| test/built-ins/JSON | 75 | 90 | 0 | 0 | 0 | 45.5% |
-| test/built-ins/Map | 122 | 76 | 0 | 5 | 1 | 60.1% |
+| test/built-ins/JSON | 77 | 88 | 0 | 0 | 0 | 46.7% |
+| test/built-ins/Map | 127 | 71 | 0 | 5 | 1 | 62.6% |
 | test/built-ins/MapIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
-| test/built-ins/Math | 106 | 221 | 0 | 0 | 0 | 32.4% |
+| test/built-ins/Math | 118 | 209 | 0 | 0 | 0 | 36.1% |
 | test/built-ins/NaN | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/NativeErrors | 30 | 64 | 0 | 0 | 0 | 31.9% |
-| test/built-ins/Number | 186 | 154 | 0 | 0 | 0 | 54.7% |
-| test/built-ins/Object | 1982 | 1402 | 0 | 16 | 11 | 58.3% |
-| test/built-ins/Promise | 185 | 541 | 0 | 0 | 3 | 25.5% |
+| test/built-ins/Number | 194 | 146 | 0 | 0 | 0 | 57.1% |
+| test/built-ins/Object | 2006 | 1378 | 0 | 16 | 11 | 59.0% |
+| test/built-ins/Promise | 193 | 533 | 0 | 0 | 3 | 26.6% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
-| test/built-ins/Reflect | 90 | 63 | 0 | 0 | 0 | 58.8% |
-| test/built-ins/RegExp | 580 | 905 | 0 | 393 | 1 | 30.9% |
+| test/built-ins/Reflect | 100 | 53 | 0 | 0 | 0 | 65.4% |
+| test/built-ins/RegExp | 582 | 903 | 0 | 393 | 1 | 31.0% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Set | 198 | 183 | 0 | 1 | 1 | 51.8% |
+| test/built-ins/Set | 202 | 179 | 0 | 1 | 1 | 52.9% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/ShadowRealm | 0 | 64 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SharedArrayBuffer | 0 | 104 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/String | 610 | 610 | 0 | 0 | 3 | 50.0% |
+| test/built-ins/String | 635 | 585 | 0 | 0 | 3 | 52.0% |
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 0 | 22 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Symbol | 42 | 54 | 0 | 0 | 2 | 43.8% |
-| test/built-ins/Temporal | 1417 | 3186 | 0 | 0 | 0 | 30.8% |
+| test/built-ins/Symbol | 44 | 52 | 0 | 0 | 2 | 45.8% |
+| test/built-ins/Temporal | 1473 | 3130 | 0 | 0 | 0 | 32.0% |
 | test/built-ins/ThrowTypeError | 0 | 14 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/TypedArray | 395 | 1043 | 0 | 0 | 8 | 27.5% |
 | test/built-ins/TypedArrayConstructors | 264 | 458 | 0 | 0 | 16 | 36.6% |
@@ -60,11 +60,11 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23366 (51.2% de los corridos)** |
 | test/built-ins/WeakMap | 0 | 141 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakRef | 0 | 29 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakSet | 0 | 85 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/decodeURI | 40 | 5 | 0 | 10 | 0 | 72.7% |
-| test/built-ins/decodeURIComponent | 41 | 5 | 0 | 10 | 0 | 73.2% |
-| test/built-ins/encodeURI | 18 | 12 | 0 | 1 | 0 | 58.1% |
-| test/built-ins/encodeURIComponent | 18 | 12 | 0 | 1 | 0 | 58.1% |
-| test/built-ins/eval | 7 | 3 | 0 | 0 | 0 | 70.0% |
+| test/built-ins/decodeURI | 41 | 4 | 0 | 10 | 0 | 74.5% |
+| test/built-ins/decodeURIComponent | 43 | 4 | 0 | 9 | 0 | 76.8% |
+| test/built-ins/encodeURI | 19 | 11 | 0 | 1 | 0 | 61.3% |
+| test/built-ins/encodeURIComponent | 19 | 11 | 0 | 1 | 0 | 61.3% |
+| test/built-ins/eval | 8 | 2 | 0 | 0 | 0 | 80.0% |
 | test/built-ins/global | 25 | 4 | 0 | 0 | 0 | 86.2% |
 | test/built-ins/isFinite | 4 | 11 | 0 | 0 | 0 | 26.7% |
 | test/built-ins/isNaN | 4 | 11 | 0 | 0 | 0 | 26.7% |
@@ -134,8 +134,6 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23366 (51.2% de los corridos)** |
   - ej: `test/language/expressions/async-generator/named-yield-star-getiter-async-not-callable-boolean-throw.js`
 - **207x** `async incomplete: Uncaught { message: asyncTest called without async flag }`
   - ej: `test/language/expressions/async-function/named-strict-error-reassign-fn-name-in-body-in-arrow.js`
-- **204x** `Uncaught { message: length descriptor value should be N; length value should be N }`
-  - ej: `test/built-ins/Array/prototype/at/length.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - ej: `test/language/asi/do-while-same-line.js`
 - **191x** `Uncaught RangeError: Invalid length: must be a non-negative safe integer`
@@ -149,7 +147,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23366 (51.2% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
+  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
@@ -162,10 +160,12 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23366 (51.2% de los corridos)** |
   - ej: `test/built-ins/Set/prototype/difference/builtins.js`
 - **112x** `Uncaught { message: Expected SameValue(«""», «"arrow"») to be true }`
   - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-init-fn-name-arrow.js`
+- **112x** `Uncaught { message: Expected SameValue(«""», «"cls"») to be true }`
+  - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-init-fn-name-class.js`
 
 ## Top features presentes en FAILs
 
-- 3194x Temporal
+- 3138x Temporal
 - 1856x class
 - 1800x TypedArray
 - 1747x async-iteration
@@ -173,8 +173,8 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23366 (51.2% de los corridos)** |
 - 1560x destructuring-binding
 - 1225x class-fields-public
 - 1022x Symbol.iterator
-- 898x BigInt
-- 856x Symbol
+- 893x BigInt
+- 854x Symbol
 - 643x default-parameters
 - 605x class-static-methods-private
 - 604x dynamic-import
@@ -188,5 +188,5 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23366 (51.2% de los corridos)** |
 - 382x Atomics
 - 364x Proxy
 - 356x explicit-resource-management
-- 343x Reflect
-- 289x Reflect.construct
+- 333x Reflect
+- 288x Reflect.construct

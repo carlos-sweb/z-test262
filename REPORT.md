@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 23600 (51.7% de los corridos)** | FAIL: 21400 | CRASH: 0 | TIMEOUT: 639 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24263 (53.2% de los corridos)** | FAIL: 20740 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -9,7 +9,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23600 (51.7% de los corridos)** |
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 0 | 25 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Array | 870 | 2149 | 0 | 26 | 36 | 28.6% |
+| test/built-ins/Array | 871 | 2149 | 0 | 25 | 36 | 28.6% |
 | test/built-ins/ArrayBuffer | 23 | 198 | 0 | 0 | 0 | 10.4% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
@@ -60,8 +60,8 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23600 (51.7% de los corridos)** |
 | test/built-ins/WeakMap | 0 | 141 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakRef | 0 | 29 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakSet | 0 | 85 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/decodeURI | 41 | 4 | 0 | 10 | 0 | 74.5% |
-| test/built-ins/decodeURIComponent | 43 | 4 | 0 | 9 | 0 | 76.8% |
+| test/built-ins/decodeURI | 43 | 4 | 0 | 8 | 0 | 78.2% |
+| test/built-ins/decodeURIComponent | 42 | 4 | 0 | 10 | 0 | 75.0% |
 | test/built-ins/encodeURI | 19 | 11 | 0 | 1 | 0 | 61.3% |
 | test/built-ins/encodeURIComponent | 19 | 11 | 0 | 1 | 0 | 61.3% |
 | test/built-ins/eval | 8 | 2 | 0 | 0 | 0 | 80.0% |
@@ -69,7 +69,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23600 (51.7% de los corridos)** |
 | test/built-ins/isFinite | 4 | 11 | 0 | 0 | 0 | 26.7% |
 | test/built-ins/isNaN | 4 | 11 | 0 | 0 | 0 | 26.7% |
 | test/built-ins/parseFloat | 42 | 11 | 0 | 1 | 0 | 77.8% |
-| test/built-ins/parseInt | 38 | 16 | 0 | 1 | 0 | 69.1% |
+| test/built-ins/parseInt | 39 | 16 | 0 | 0 | 0 | 70.9% |
 | test/built-ins/undefined | 2 | 3 | 0 | 0 | 3 | 40.0% |
 | test/language/arguments-object | 189 | 15 | 0 | 2 | 57 | 91.7% |
 | test/language/asi | 98 | 4 | 0 | 0 | 0 | 96.1% |
@@ -80,7 +80,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23600 (51.7% de los corridos)** |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 95 | 32 | 0 | 0 | 220 | 74.8% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 6568 | 3860 | 0 | 86 | 588 | 62.5% |
+| test/language/expressions | 6894 | 3534 | 0 | 86 | 588 | 65.6% |
 | test/language/function-code | 99 | 9 | 0 | 0 | 109 | 91.7% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
@@ -96,7 +96,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23600 (51.7% de los corridos)** |
 | test/language/rest-parameters | 9 | 2 | 0 | 0 | 0 | 81.8% |
 | test/language/source-text | 0 | 1 | 0 | 0 | 0 | 0.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 6221 | 2576 | 0 | 68 | 472 | 70.2% |
+| test/language/statements | 6555 | 2242 | 0 | 68 | 472 | 73.9% |
 | test/language/types | 88 | 16 | 0 | 0 | 9 | 84.6% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -109,7 +109,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23600 (51.7% de los corridos)** |
 - **717x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - ej: `test/language/computed-property-names/class/static/generator-prototype.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
-  - ej: `test/built-ins/Temporal/Duration/compare/calendar-temporal-object.js`
+  - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
   - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
 - **518x** `SyntaxError: UnexpectedToken`
@@ -147,41 +147,41 @@ Total: 47381 tests | corridos: 45639 | **PASS: 23600 (51.7% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
+  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - ej: `test/language/eval-code/indirect/var-env-func-non-strict.js`
 - **130x** `Uncaught TypeError: Object.defineProperty called on non-object`
   - ej: `test/language/eval-code/indirect/var-env-func-init-global-update-configurable.js`
+- **116x** `Uncaught { message: Expected SameValue(«"xClsN"», «"xClsN"») to be false }`
+  - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-init-fn-name-class.js`
 - **113x** `Uncaught { message: isConstructor invoked with a non-function value }`
   - ej: `test/built-ins/Array/fromAsync/not-a-constructor.js`
 - **113x** `Uncaught { message: Built-in objects must be extensible. Expected SameValue(«false», «true») to be true }`
   - ej: `test/built-ins/Set/prototype/difference/builtins.js`
-- **112x** `Uncaught { message: Expected SameValue(«""», «"arrow"») to be true }`
-  - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-init-fn-name-arrow.js`
-- **112x** `Uncaught { message: Expected SameValue(«""», «"cls"») to be true }`
-  - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-init-fn-name-class.js`
+- **111x** `Uncaught TypeError: Array.prototype.reduce called on a non-array`
+  - ej: `test/built-ins/Array/prototype/reduce/15.4.4.21-1-10.js`
 
 ## Top features presentes en FAILs
 
 - 3138x Temporal
-- 1856x class
 - 1800x TypedArray
-- 1747x async-iteration
-- 1640x generators
-- 1560x destructuring-binding
+- 1662x class
+- 1555x async-iteration
+- 1343x generators
 - 1225x class-fields-public
+- 1112x destructuring-binding
 - 1022x Symbol.iterator
 - 893x BigInt
 - 854x Symbol
-- 643x default-parameters
-- 605x class-static-methods-private
 - 604x dynamic-import
-- 571x class-methods-private
+- 509x class-static-methods-private
 - 501x class-fields-private
 - 489x Symbol.asyncIterator
+- 475x class-methods-private
 - 459x resizable-arraybuffer
+- 459x default-parameters
 - 459x SharedArrayBuffer
 - 453x arrow-function
 - 386x iterator-helpers

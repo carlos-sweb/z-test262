@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24601 (53.9% de los corridos)** | FAIL: 20402 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24602 (53.9% de los corridos)** | FAIL: 20401 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -39,7 +39,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24601 (53.9% de los corridos)** |
 | test/built-ins/NativeErrors | 36 | 58 | 0 | 0 | 0 | 38.3% |
 | test/built-ins/Number | 201 | 139 | 0 | 0 | 0 | 59.1% |
 | test/built-ins/Object | 2036 | 1348 | 0 | 16 | 11 | 59.9% |
-| test/built-ins/Promise | 193 | 533 | 0 | 0 | 3 | 26.6% |
+| test/built-ins/Promise | 194 | 532 | 0 | 0 | 3 | 26.7% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
 | test/built-ins/Reflect | 102 | 51 | 0 | 0 | 0 | 66.7% |
 | test/built-ins/RegExp | 588 | 900 | 0 | 390 | 1 | 31.3% |
@@ -147,7 +147,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24601 (53.9% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
+  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`

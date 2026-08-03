@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24605 (53.9% de los corridos)** | FAIL: 20398 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24604 (53.9% de los corridos)** | FAIL: 20398 | CRASH: 0 | TIMEOUT: 637 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -9,7 +9,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24605 (53.9% de los corridos)** |
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 0 | 25 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Array | 881 | 2141 | 0 | 23 | 36 | 28.9% |
+| test/built-ins/Array | 880 | 2141 | 0 | 24 | 36 | 28.9% |
 | test/built-ins/ArrayBuffer | 23 | 198 | 0 | 0 | 0 | 10.4% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |

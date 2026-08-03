@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24593 (53.9% de los corridos)** | FAIL: 20410 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24595 (53.9% de los corridos)** | FAIL: 20409 | CRASH: 0 | TIMEOUT: 635 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -41,8 +41,8 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24593 (53.9% de los corridos)** |
 | test/built-ins/Object | 2036 | 1348 | 0 | 16 | 11 | 59.9% |
 | test/built-ins/Promise | 193 | 533 | 0 | 0 | 3 | 26.6% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
-| test/built-ins/Reflect | 100 | 53 | 0 | 0 | 0 | 65.4% |
-| test/built-ins/RegExp | 588 | 900 | 0 | 390 | 1 | 31.3% |
+| test/built-ins/Reflect | 102 | 51 | 0 | 0 | 0 | 66.7% |
+| test/built-ins/RegExp | 588 | 901 | 0 | 389 | 1 | 31.3% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 202 | 179 | 0 | 1 | 1 | 52.9% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -109,14 +109,14 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24593 (53.9% de los corridos)** |
 - **713x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - ej: `test/language/computed-property-names/class/static/generator-prototype.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
-  - ej: `test/built-ins/Temporal/Duration/compare/calendar-temporal-object.js`
+  - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
   - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
 - **518x** `SyntaxError: UnexpectedToken`
   - ej: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **471x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
-- **408x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
+- **406x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **398x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
@@ -147,7 +147,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24593 (53.9% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
+  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
@@ -174,7 +174,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24593 (53.9% de los corridos)** |
 - 1022x Symbol.iterator
 - 1000x destructuring-binding
 - 893x BigInt
-- 850x Symbol
+- 848x Symbol
 - 604x dynamic-import
 - 501x class-fields-private
 - 489x Symbol.asyncIterator
@@ -188,5 +188,5 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24593 (53.9% de los corridos)** |
 - 382x Atomics
 - 364x Proxy
 - 350x explicit-resource-management
-- 333x Reflect
+- 331x Reflect
 - 287x Reflect.construct

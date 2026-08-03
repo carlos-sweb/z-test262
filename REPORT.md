@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24602 (53.9% de los corridos)** | FAIL: 20401 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24605 (53.9% de los corridos)** | FAIL: 20398 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -19,7 +19,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24602 (53.9% de los corridos)** |
 | test/built-ins/AsyncGeneratorPrototype | 2 | 45 | 0 | 1 | 0 | 4.2% |
 | test/built-ins/AsyncIteratorPrototype | 0 | 13 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Atomics | 0 | 387 | 0 | 0 | 2 | 0.0% |
-| test/built-ins/BigInt | 40 | 37 | 0 | 0 | 0 | 51.9% |
+| test/built-ins/BigInt | 41 | 36 | 0 | 0 | 0 | 53.2% |
 | test/built-ins/Boolean | 43 | 8 | 0 | 0 | 0 | 84.3% |
 | test/built-ins/DataView | 269 | 292 | 0 | 0 | 0 | 48.0% |
 | test/built-ins/Date | 442 | 152 | 0 | 0 | 0 | 74.4% |
@@ -38,7 +38,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24602 (53.9% de los corridos)** |
 | test/built-ins/NaN | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/NativeErrors | 36 | 58 | 0 | 0 | 0 | 38.3% |
 | test/built-ins/Number | 201 | 139 | 0 | 0 | 0 | 59.1% |
-| test/built-ins/Object | 2036 | 1348 | 0 | 16 | 11 | 59.9% |
+| test/built-ins/Object | 2037 | 1347 | 0 | 16 | 11 | 59.9% |
 | test/built-ins/Promise | 194 | 532 | 0 | 0 | 3 | 26.7% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
 | test/built-ins/Reflect | 102 | 51 | 0 | 0 | 0 | 66.7% |
@@ -51,7 +51,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24602 (53.9% de los corridos)** |
 | test/built-ins/String | 655 | 565 | 0 | 0 | 3 | 53.7% |
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 0 | 22 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Symbol | 54 | 42 | 0 | 0 | 2 | 56.2% |
+| test/built-ins/Symbol | 55 | 41 | 0 | 0 | 2 | 57.3% |
 | test/built-ins/Temporal | 1473 | 3130 | 0 | 0 | 0 | 32.0% |
 | test/built-ins/ThrowTypeError | 0 | 14 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/TypedArray | 395 | 1043 | 0 | 0 | 8 | 27.5% |
@@ -173,8 +173,8 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24602 (53.9% de los corridos)** |
 - 1225x class-fields-public
 - 1022x Symbol.iterator
 - 1000x destructuring-binding
-- 893x BigInt
-- 848x Symbol
+- 891x BigInt
+- 847x Symbol
 - 604x dynamic-import
 - 501x class-fields-private
 - 489x Symbol.asyncIterator

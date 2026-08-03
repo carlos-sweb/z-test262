@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24595 (53.9% de los corridos)** | FAIL: 20409 | CRASH: 0 | TIMEOUT: 635 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24598 (53.9% de los corridos)** | FAIL: 20405 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -32,7 +32,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24595 (53.9% de los corridos)** |
 | test/built-ins/Infinity | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/Iterator | 7 | 507 | 0 | 0 | 0 | 1.4% |
 | test/built-ins/JSON | 77 | 88 | 0 | 0 | 0 | 46.7% |
-| test/built-ins/Map | 127 | 71 | 0 | 5 | 1 | 62.6% |
+| test/built-ins/Map | 128 | 70 | 0 | 5 | 1 | 63.1% |
 | test/built-ins/MapIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/Math | 130 | 197 | 0 | 0 | 0 | 39.8% |
 | test/built-ins/NaN | 2 | 2 | 0 | 0 | 2 | 50.0% |
@@ -42,9 +42,9 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24595 (53.9% de los corridos)** |
 | test/built-ins/Promise | 193 | 533 | 0 | 0 | 3 | 26.6% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
 | test/built-ins/Reflect | 102 | 51 | 0 | 0 | 0 | 66.7% |
-| test/built-ins/RegExp | 588 | 901 | 0 | 389 | 1 | 31.3% |
+| test/built-ins/RegExp | 588 | 900 | 0 | 390 | 1 | 31.3% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Set | 202 | 179 | 0 | 1 | 1 | 52.9% |
+| test/built-ins/Set | 204 | 177 | 0 | 1 | 1 | 53.4% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/ShadowRealm | 0 | 64 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SharedArrayBuffer | 0 | 104 | 0 | 0 | 0 | 0.0% |
@@ -147,7 +147,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24595 (53.9% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
+  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`

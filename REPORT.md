@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24798 (54.3% de los corridos)** | FAIL: 20204 | CRASH: 0 | TIMEOUT: 637 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24808 (54.4% de los corridos)** | FAIL: 20195 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -9,7 +9,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24798 (54.3% de los corridos)** |
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 0 | 25 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Array | 881 | 2140 | 0 | 24 | 36 | 28.9% |
+| test/built-ins/Array | 882 | 2140 | 0 | 23 | 36 | 29.0% |
 | test/built-ins/ArrayBuffer | 23 | 198 | 0 | 0 | 0 | 10.4% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
@@ -38,7 +38,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24798 (54.3% de los corridos)** |
 | test/built-ins/NaN | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/NativeErrors | 36 | 58 | 0 | 0 | 0 | 38.3% |
 | test/built-ins/Number | 201 | 139 | 0 | 0 | 0 | 59.1% |
-| test/built-ins/Object | 2048 | 1336 | 0 | 16 | 11 | 60.2% |
+| test/built-ins/Object | 2053 | 1331 | 0 | 16 | 11 | 60.4% |
 | test/built-ins/Promise | 194 | 532 | 0 | 0 | 3 | 26.7% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
 | test/built-ins/Reflect | 102 | 51 | 0 | 0 | 0 | 66.7% |
@@ -88,13 +88,13 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24798 (54.3% de los corridos)** |
 | test/language/identifiers | 256 | 12 | 0 | 0 | 0 | 95.5% |
 | test/language/import | 13 | 115 | 0 | 0 | 0 | 10.2% |
 | test/language/keywords | 25 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/line-terminators | 36 | 5 | 0 | 0 | 0 | 87.8% |
+| test/language/line-terminators | 39 | 2 | 0 | 0 | 0 | 95.1% |
 | test/language/literals | 497 | 19 | 0 | 4 | 14 | 95.6% |
 | test/language/module-code | 217 | 382 | 0 | 0 | 0 | 36.2% |
 | test/language/punctuators | 10 | 1 | 0 | 0 | 0 | 90.9% |
 | test/language/reserved-words | 27 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/rest-parameters | 9 | 2 | 0 | 0 | 0 | 81.8% |
-| test/language/source-text | 0 | 1 | 0 | 0 | 0 | 0.0% |
+| test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
 | test/language/statements | 6645 | 2152 | 0 | 68 | 472 | 75.0% |
 | test/language/types | 88 | 16 | 0 | 0 | 9 | 84.6% |
@@ -116,14 +116,14 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24798 (54.3% de los corridos)** |
   - ej: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **470x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
-- **406x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
-  - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
+- **405x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
+  - ej: `test/language/expressions/arrow-function/dstr/dflt-ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **372x** `SyntaxError: InvalidUnicodeEscape`
   - ej: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
 - **350x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
 - **333x** `Uncaught ReferenceError: Iterator is not defined`
-  - ej: `test/built-ins/Iterator/length.js`
+  - ej: `test/built-ins/Iterator/prototype/Symbol.toStringTag/prop-desc.js`
 - **322x** `Uncaught ReferenceError: $N is not defined`
   - ej: `test/language/eval-code/indirect/realm.js`
 - **302x** `SyntaxError: UnexpectedCharacter`

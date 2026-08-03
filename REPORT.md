@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24819 (54.4% de los corridos)** | FAIL: 20184 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24839 (54.4% de los corridos)** | FAIL: 20164 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -75,12 +75,12 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24819 (54.4% de los corridos)** |
 | test/language/asi | 98 | 4 | 0 | 0 | 0 | 96.1% |
 | test/language/block-scope | 145 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/comments | 44 | 8 | 0 | 0 | 0 | 84.6% |
-| test/language/computed-property-names | 39 | 9 | 0 | 0 | 0 | 81.2% |
+| test/language/computed-property-names | 42 | 6 | 0 | 0 | 0 | 87.5% |
 | test/language/destructuring | 17 | 1 | 0 | 0 | 1 | 94.4% |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 95 | 32 | 0 | 0 | 220 | 74.8% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 6995 | 3433 | 0 | 86 | 588 | 66.5% |
+| test/language/expressions | 7012 | 3416 | 0 | 86 | 588 | 66.7% |
 | test/language/function-code | 99 | 9 | 0 | 0 | 109 | 91.7% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
@@ -102,7 +102,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24819 (54.4% de los corridos)** |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **2223x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+- **2228x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/asi/S7.9_A10_T1.js`
 - **1161x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/comments/S7.4_A1_T1.js`
@@ -147,7 +147,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24819 (54.4% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
+  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
@@ -167,7 +167,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24819 (54.4% de los corridos)** |
 
 - 3138x Temporal
 - 1800x TypedArray
-- 1607x class
+- 1605x class
 - 1496x async-iteration
 - 1293x generators
 - 1225x class-fields-public
@@ -182,7 +182,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24819 (54.4% de los corridos)** |
 - 459x resizable-arraybuffer
 - 459x SharedArrayBuffer
 - 451x class-methods-private
-- 429x arrow-function
+- 427x arrow-function
 - 413x default-parameters
 - 386x iterator-helpers
 - 382x Atomics

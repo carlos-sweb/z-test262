@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24531 (53.8% de los corridos)** | FAIL: 20472 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24534 (53.8% de los corridos)** | FAIL: 20469 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -42,7 +42,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24531 (53.8% de los corridos)** |
 | test/built-ins/Promise | 193 | 533 | 0 | 0 | 3 | 26.6% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
 | test/built-ins/Reflect | 100 | 53 | 0 | 0 | 0 | 65.4% |
-| test/built-ins/RegExp | 582 | 906 | 0 | 390 | 1 | 31.0% |
+| test/built-ins/RegExp | 585 | 903 | 0 | 390 | 1 | 31.2% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 202 | 179 | 0 | 1 | 1 | 52.9% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |

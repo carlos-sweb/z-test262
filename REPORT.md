@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24808 (54.4% de los corridos)** | FAIL: 20195 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24819 (54.4% de los corridos)** | FAIL: 20184 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -75,12 +75,12 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24808 (54.4% de los corridos)** |
 | test/language/asi | 98 | 4 | 0 | 0 | 0 | 96.1% |
 | test/language/block-scope | 145 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/comments | 44 | 8 | 0 | 0 | 0 | 84.6% |
-| test/language/computed-property-names | 35 | 13 | 0 | 0 | 0 | 72.9% |
+| test/language/computed-property-names | 39 | 9 | 0 | 0 | 0 | 81.2% |
 | test/language/destructuring | 17 | 1 | 0 | 0 | 1 | 94.4% |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 95 | 32 | 0 | 0 | 220 | 74.8% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 6994 | 3434 | 0 | 86 | 588 | 66.5% |
+| test/language/expressions | 6995 | 3433 | 0 | 86 | 588 | 66.5% |
 | test/language/function-code | 99 | 9 | 0 | 0 | 109 | 91.7% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
@@ -96,7 +96,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24808 (54.4% de los corridos)** |
 | test/language/rest-parameters | 9 | 2 | 0 | 0 | 0 | 81.8% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 6645 | 2152 | 0 | 68 | 472 | 75.0% |
+| test/language/statements | 6651 | 2146 | 0 | 68 | 472 | 75.0% |
 | test/language/types | 88 | 16 | 0 | 0 | 9 | 84.6% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -106,8 +106,8 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24808 (54.4% de los corridos)** |
   - ej: `test/language/asi/S7.9_A10_T1.js`
 - **1161x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/comments/S7.4_A1_T1.js`
-- **713x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/computed-property-names/class/static/generator-prototype.js`
+- **702x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+  - ej: `test/language/eval-code/indirect/non-definable-global-function.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
   - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
@@ -117,13 +117,13 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24808 (54.4% de los corridos)** |
 - **470x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
 - **405x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
-  - ej: `test/language/expressions/arrow-function/dstr/dflt-ary-ptrn-elem-id-iter-val-array-prototype.js`
+  - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **372x** `SyntaxError: InvalidUnicodeEscape`
   - ej: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
 - **350x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
 - **333x** `Uncaught ReferenceError: Iterator is not defined`
-  - ej: `test/built-ins/Iterator/prototype/Symbol.toStringTag/prop-desc.js`
+  - ej: `test/built-ins/Iterator/length.js`
 - **322x** `Uncaught ReferenceError: $N is not defined`
   - ej: `test/language/eval-code/indirect/realm.js`
 - **302x** `SyntaxError: UnexpectedCharacter`
@@ -147,7 +147,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24808 (54.4% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
+  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
@@ -167,9 +167,9 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24808 (54.4% de los corridos)** |
 
 - 3138x Temporal
 - 1800x TypedArray
-- 1610x class
+- 1607x class
 - 1496x async-iteration
-- 1296x generators
+- 1293x generators
 - 1225x class-fields-public
 - 1022x Symbol.iterator
 - 1000x destructuring-binding

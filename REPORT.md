@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24557 (53.8% de los corridos)** | FAIL: 20445 | CRASH: 0 | TIMEOUT: 637 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24592 (53.9% de los corridos)** | FAIL: 20412 | CRASH: 0 | TIMEOUT: 635 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -9,7 +9,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24557 (53.8% de los corridos)** |
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 0 | 25 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Array | 878 | 2143 | 0 | 24 | 36 | 28.8% |
+| test/built-ins/Array | 881 | 2141 | 0 | 23 | 36 | 28.9% |
 | test/built-ins/ArrayBuffer | 23 | 198 | 0 | 0 | 0 | 10.4% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
@@ -26,7 +26,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24557 (53.8% de los corridos)** |
 | test/built-ins/DisposableStack | 0 | 93 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Error | 23 | 70 | 0 | 0 | 0 | 24.7% |
 | test/built-ins/FinalizationRegistry | 0 | 47 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Function | 169 | 252 | 0 | 0 | 88 | 40.1% |
+| test/built-ins/Function | 172 | 249 | 0 | 0 | 88 | 40.9% |
 | test/built-ins/GeneratorFunction | 7 | 16 | 0 | 0 | 0 | 30.4% |
 | test/built-ins/GeneratorPrototype | 14 | 46 | 0 | 1 | 0 | 23.0% |
 | test/built-ins/Infinity | 2 | 2 | 0 | 0 | 2 | 50.0% |
@@ -38,17 +38,17 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24557 (53.8% de los corridos)** |
 | test/built-ins/NaN | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/NativeErrors | 36 | 58 | 0 | 0 | 0 | 38.3% |
 | test/built-ins/Number | 201 | 139 | 0 | 0 | 0 | 59.1% |
-| test/built-ins/Object | 2032 | 1352 | 0 | 16 | 11 | 59.8% |
+| test/built-ins/Object | 2036 | 1348 | 0 | 16 | 11 | 59.9% |
 | test/built-ins/Promise | 193 | 533 | 0 | 0 | 3 | 26.6% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
 | test/built-ins/Reflect | 100 | 53 | 0 | 0 | 0 | 65.4% |
-| test/built-ins/RegExp | 585 | 903 | 0 | 390 | 1 | 31.2% |
+| test/built-ins/RegExp | 588 | 901 | 0 | 389 | 1 | 31.3% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 202 | 179 | 0 | 1 | 1 | 52.9% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/ShadowRealm | 0 | 64 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SharedArrayBuffer | 0 | 104 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/String | 641 | 579 | 0 | 0 | 3 | 52.5% |
+| test/built-ins/String | 655 | 565 | 0 | 0 | 3 | 53.7% |
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 0 | 22 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Symbol | 54 | 42 | 0 | 0 | 2 | 56.2% |
@@ -60,15 +60,15 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24557 (53.8% de los corridos)** |
 | test/built-ins/WeakMap | 0 | 141 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakRef | 0 | 29 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/WeakSet | 0 | 85 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/decodeURI | 43 | 4 | 0 | 8 | 0 | 78.2% |
-| test/built-ins/decodeURIComponent | 44 | 4 | 0 | 8 | 0 | 78.6% |
-| test/built-ins/encodeURI | 19 | 11 | 0 | 1 | 0 | 61.3% |
-| test/built-ins/encodeURIComponent | 19 | 11 | 0 | 1 | 0 | 61.3% |
-| test/built-ins/eval | 8 | 2 | 0 | 0 | 0 | 80.0% |
+| test/built-ins/decodeURI | 44 | 3 | 0 | 8 | 0 | 80.0% |
+| test/built-ins/decodeURIComponent | 45 | 3 | 0 | 8 | 0 | 80.4% |
+| test/built-ins/encodeURI | 20 | 10 | 0 | 1 | 0 | 64.5% |
+| test/built-ins/encodeURIComponent | 20 | 10 | 0 | 1 | 0 | 64.5% |
+| test/built-ins/eval | 9 | 1 | 0 | 0 | 0 | 90.0% |
 | test/built-ins/global | 25 | 4 | 0 | 0 | 0 | 86.2% |
-| test/built-ins/isFinite | 4 | 11 | 0 | 0 | 0 | 26.7% |
-| test/built-ins/isNaN | 4 | 11 | 0 | 0 | 0 | 26.7% |
-| test/built-ins/parseFloat | 43 | 11 | 0 | 0 | 0 | 79.6% |
+| test/built-ins/isFinite | 5 | 10 | 0 | 0 | 0 | 33.3% |
+| test/built-ins/isNaN | 5 | 10 | 0 | 0 | 0 | 33.3% |
+| test/built-ins/parseFloat | 44 | 10 | 0 | 0 | 0 | 81.5% |
 | test/built-ins/parseInt | 39 | 16 | 0 | 0 | 0 | 70.9% |
 | test/built-ins/undefined | 2 | 3 | 0 | 0 | 3 | 40.0% |
 | test/language/arguments-object | 189 | 15 | 0 | 2 | 57 | 91.7% |
@@ -118,7 +118,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24557 (53.8% de los corridos)** |
   - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
 - **408x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
-- **397x** `Uncaught TypeError: Cannot convert undefined or null to object`
+- **398x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
 - **372x** `SyntaxError: InvalidUnicodeEscape`
   - ej: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
@@ -147,7 +147,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24557 (53.8% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
+  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
@@ -189,4 +189,4 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24557 (53.8% de los corridos)** |
 - 364x Proxy
 - 350x explicit-resource-management
 - 333x Reflect
-- 288x Reflect.construct
+- 287x Reflect.construct

@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24839 (54.4% de los corridos)** | FAIL: 20164 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24841 (54.4% de los corridos)** | FAIL: 20162 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -93,7 +93,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24839 (54.4% de los corridos)** |
 | test/language/module-code | 217 | 382 | 0 | 0 | 0 | 36.2% |
 | test/language/punctuators | 10 | 1 | 0 | 0 | 0 | 90.9% |
 | test/language/reserved-words | 27 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/rest-parameters | 9 | 2 | 0 | 0 | 0 | 81.8% |
+| test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
 | test/language/statements | 6651 | 2146 | 0 | 68 | 472 | 75.0% |
@@ -112,7 +112,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24839 (54.4% de los corridos)** |
   - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
   - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
-- **518x** `SyntaxError: UnexpectedToken`
+- **516x** `SyntaxError: UnexpectedToken`
   - ej: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **470x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
@@ -147,7 +147,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24839 (54.4% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
+  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`

@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24598 (53.9% de los corridos)** | FAIL: 20405 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24601 (53.9% de los corridos)** | FAIL: 20402 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -13,10 +13,10 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24598 (53.9% de los corridos)** |
 | test/built-ins/ArrayBuffer | 23 | 198 | 0 | 0 | 0 | 10.4% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/AsyncFromSyncIteratorPrototype | 5 | 12 | 0 | 21 | 0 | 13.2% |
+| test/built-ins/AsyncFromSyncIteratorPrototype | 6 | 11 | 0 | 21 | 0 | 15.8% |
 | test/built-ins/AsyncFunction | 9 | 9 | 0 | 0 | 0 | 50.0% |
 | test/built-ins/AsyncGeneratorFunction | 7 | 16 | 0 | 0 | 0 | 30.4% |
-| test/built-ins/AsyncGeneratorPrototype | 1 | 46 | 0 | 1 | 0 | 2.1% |
+| test/built-ins/AsyncGeneratorPrototype | 2 | 45 | 0 | 1 | 0 | 4.2% |
 | test/built-ins/AsyncIteratorPrototype | 0 | 13 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Atomics | 0 | 387 | 0 | 0 | 2 | 0.0% |
 | test/built-ins/BigInt | 40 | 37 | 0 | 0 | 0 | 51.9% |
@@ -28,7 +28,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24598 (53.9% de los corridos)** |
 | test/built-ins/FinalizationRegistry | 0 | 47 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Function | 172 | 249 | 0 | 0 | 88 | 40.9% |
 | test/built-ins/GeneratorFunction | 7 | 16 | 0 | 0 | 0 | 30.4% |
-| test/built-ins/GeneratorPrototype | 14 | 46 | 0 | 1 | 0 | 23.0% |
+| test/built-ins/GeneratorPrototype | 15 | 45 | 0 | 1 | 0 | 24.6% |
 | test/built-ins/Infinity | 2 | 2 | 0 | 0 | 2 | 50.0% |
 | test/built-ins/Iterator | 7 | 507 | 0 | 0 | 0 | 1.4% |
 | test/built-ins/JSON | 77 | 88 | 0 | 0 | 0 | 46.7% |
@@ -147,7 +147,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24598 (53.9% de los corridos)** |
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
+  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
 - **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
   - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
@@ -168,8 +168,8 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24598 (53.9% de los corridos)** |
 - 3138x Temporal
 - 1800x TypedArray
 - 1610x class
-- 1498x async-iteration
-- 1297x generators
+- 1496x async-iteration
+- 1296x generators
 - 1225x class-fields-public
 - 1022x Symbol.iterator
 - 1000x destructuring-binding

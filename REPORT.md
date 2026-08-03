@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24534 (53.8% de los corridos)** | FAIL: 20469 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24537 (53.8% de los corridos)** | FAIL: 20467 | CRASH: 0 | TIMEOUT: 635 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -26,7 +26,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24534 (53.8% de los corridos)** |
 | test/built-ins/DisposableStack | 0 | 93 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Error | 23 | 70 | 0 | 0 | 0 | 24.7% |
 | test/built-ins/FinalizationRegistry | 0 | 47 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Function | 166 | 255 | 0 | 0 | 88 | 39.4% |
+| test/built-ins/Function | 169 | 252 | 0 | 0 | 88 | 40.1% |
 | test/built-ins/GeneratorFunction | 7 | 16 | 0 | 0 | 0 | 30.4% |
 | test/built-ins/GeneratorPrototype | 14 | 46 | 0 | 1 | 0 | 23.0% |
 | test/built-ins/Infinity | 2 | 2 | 0 | 0 | 2 | 50.0% |
@@ -42,7 +42,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24534 (53.8% de los corridos)** |
 | test/built-ins/Promise | 193 | 533 | 0 | 0 | 3 | 26.6% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
 | test/built-ins/Reflect | 100 | 53 | 0 | 0 | 0 | 65.4% |
-| test/built-ins/RegExp | 585 | 903 | 0 | 390 | 1 | 31.2% |
+| test/built-ins/RegExp | 585 | 904 | 0 | 389 | 1 | 31.2% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 202 | 179 | 0 | 1 | 1 | 52.9% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -114,7 +114,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24534 (53.8% de los corridos)** |
   - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
 - **518x** `SyntaxError: UnexpectedToken`
   - ej: `test/language/comments/hashbang/line-terminator-line-separator.js`
-- **472x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
+- **471x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
 - **408x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
@@ -133,7 +133,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24534 (53.8% de los corridos)** |
 - **230x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/expressions/async-generator/expression-yield-star-before-newline.js`
 - **228x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: TypeError Expected SameValue(«[object Functio`
-  - ej: `test/language/expressions/async-generator/named-yield-star-getiter-async-not-callable-boolean-throw.js`
+  - ej: `test/language/expressions/async-generator/named-yield-star-getiter-async-returns-number-throw.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - ej: `test/language/asi/do-while-same-line.js`
 - **191x** `Uncaught RangeError: Invalid length: must be a non-negative safe integer`

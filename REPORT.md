@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24841 (54.4% de los corridos)** | FAIL: 20162 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 25180 (55.2% de los corridos)** | FAIL: 19796 | CRASH: 0 | TIMEOUT: 663 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -9,7 +9,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24841 (54.4% de los corridos)** |
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 0 | 25 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Array | 882 | 2140 | 0 | 23 | 36 | 29.0% |
+| test/built-ins/Array | 881 | 2140 | 0 | 24 | 36 | 28.9% |
 | test/built-ins/ArrayBuffer | 23 | 198 | 0 | 0 | 0 | 10.4% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
@@ -80,12 +80,12 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24841 (54.4% de los corridos)** |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 95 | 32 | 0 | 0 | 220 | 74.8% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7012 | 3416 | 0 | 86 | 588 | 66.7% |
+| test/language/expressions | 7178 | 3237 | 0 | 99 | 588 | 68.3% |
 | test/language/function-code | 99 | 9 | 0 | 0 | 109 | 91.7% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 19 | 18 | 0 | 0 | 5 | 51.4% |
 | test/language/identifier-resolution | 6 | 3 | 0 | 0 | 5 | 66.7% |
-| test/language/identifiers | 256 | 12 | 0 | 0 | 0 | 95.5% |
+| test/language/identifiers | 264 | 4 | 0 | 0 | 0 | 98.5% |
 | test/language/import | 13 | 115 | 0 | 0 | 0 | 10.2% |
 | test/language/keywords | 25 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/line-terminators | 39 | 2 | 0 | 0 | 0 | 95.1% |
@@ -96,7 +96,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24841 (54.4% de los corridos)** |
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 6651 | 2146 | 0 | 68 | 472 | 75.0% |
+| test/language/statements | 6817 | 1967 | 0 | 81 | 472 | 76.9% |
 | test/language/types | 88 | 16 | 0 | 0 | 9 | 84.6% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -117,20 +117,16 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24841 (54.4% de los corridos)** |
 - **470x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
 - **405x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
-  - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
-- **372x** `SyntaxError: InvalidUnicodeEscape`
-  - ej: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
+  - ej: `test/language/expressions/arrow-function/dstr/dflt-ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **350x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - ej: `test/language/eval-code/indirect/non-definable-function-with-function.js`
 - **333x** `Uncaught ReferenceError: Iterator is not defined`
   - ej: `test/built-ins/Iterator/length.js`
 - **322x** `Uncaught ReferenceError: $N is not defined`
   - ej: `test/language/eval-code/indirect/realm.js`
-- **302x** `SyntaxError: UnexpectedCharacter`
-  - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
 - **260x** `Uncaught ReferenceError: SharedArrayBuffer is not defined`
   - ej: `test/language/expressions/class/subclass-builtins/subclass-SharedArrayBuffer.js`
-- **230x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+- **254x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/expressions/async-generator/expression-yield-star-before-newline.js`
 - **228x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: TypeError Expected SameValue(«[object Functio`
   - ej: `test/language/expressions/async-generator/named-yield-star-getiter-async-not-callable-boolean-throw.js`
@@ -142,51 +138,55 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24841 (54.4% de los corridos)** |
   - ej: `test/language/expressions/async-function/named-strict-error-reassign-fn-name-in-body-in-arrow.js`
 - **176x** `Uncaught { message: Expected a TestNError but got a TypeError }`
   - ej: `test/language/expressions/assignment/dstr/array-elem-trlg-iter-rest-rtrn-close-err.js`
-- **172x** `async incomplete: SyntaxError: InvalidUnicodeEscape`
-  - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier.js`
+- **176x** `async incomplete: Uncaught { message: m descriptor should be configurable }`
+  - ej: `test/language/expressions/class/elements/after-same-line-static-async-gen-computed-names.js`
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
-- **156x** `async incomplete: SyntaxError: UnexpectedCharacter`
-  - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-static-async-generator-method-privatename-identifier-alt.js`
+  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
+- **154x** `Uncaught { message: Expected SameValue(«[object Function]», «N») to be true }`
+  - ej: `test/language/expressions/class/elements/after-same-line-method-rs-static-privatename-identifier-initializer-alt.js`
+- **144x** `Uncaught { message: m descriptor should be configurable }`
+  - ej: `test/language/expressions/class/elements/after-same-line-static-gen-computed-names.js`
 - **131x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - ej: `test/language/eval-code/indirect/var-env-func-non-strict.js`
 - **130x** `Uncaught TypeError: Object.defineProperty called on non-object`
   - ej: `test/language/eval-code/indirect/var-env-func-init-global-update-configurable.js`
+- **116x** `Uncaught RangeError: Maximum call stack size exceeded`
+  - ej: `test/language/expressions/tco-pos.js`
 - **113x** `Uncaught { message: Built-in objects must be extensible. Expected SameValue(«false», «true») to be true }`
   - ej: `test/built-ins/Set/prototype/difference/builtins.js`
 - **111x** `Uncaught TypeError: Array.prototype.reduce called on a non-array`
   - ej: `test/built-ins/Array/prototype/reduce/15.4.4.21-1-10.js`
 - **109x** `Uncaught TypeError: Array.prototype.reduceRight called on a non-array`
   - ej: `test/built-ins/Array/prototype/reduceRight/15.4.4.22-1-10.js`
-- **102x** `Uncaught { message: Expected a RangeError but got a TypeError }`
-  - ej: `test/built-ins/Array/prototype/every/15.4.4.16-7-c-i-30.js`
+- **104x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
+  - ej: `test/language/expressions/array/spread-obj-mult-spread-getter.js`
 
 ## Top features presentes en FAILs
 
 - 3138x Temporal
 - 1800x TypedArray
-- 1605x class
-- 1496x async-iteration
-- 1293x generators
-- 1225x class-fields-public
+- 1470x async-iteration
+- 1245x class
+- 1215x generators
 - 1022x Symbol.iterator
 - 1000x destructuring-binding
 - 891x BigInt
+- 879x class-fields-public
 - 847x Symbol
 - 604x dynamic-import
-- 501x class-fields-private
 - 489x Symbol.asyncIterator
-- 485x class-static-methods-private
 - 459x resizable-arraybuffer
 - 459x SharedArrayBuffer
-- 451x class-methods-private
+- 449x class-methods-private
+- 441x class-fields-private
 - 427x arrow-function
 - 413x default-parameters
 - 386x iterator-helpers
 - 382x Atomics
 - 364x Proxy
+- 353x class-static-methods-private
 - 350x explicit-resource-management
 - 331x Reflect
 - 281x Symbol.species

@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 24592 (53.9% de los corridos)** | FAIL: 20412 | CRASH: 0 | TIMEOUT: 635 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 24593 (53.9% de los corridos)** | FAIL: 20410 | CRASH: 0 | TIMEOUT: 636 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -22,7 +22,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24592 (53.9% de los corridos)** |
 | test/built-ins/BigInt | 40 | 37 | 0 | 0 | 0 | 51.9% |
 | test/built-ins/Boolean | 43 | 8 | 0 | 0 | 0 | 84.3% |
 | test/built-ins/DataView | 269 | 292 | 0 | 0 | 0 | 48.0% |
-| test/built-ins/Date | 441 | 153 | 0 | 0 | 0 | 74.2% |
+| test/built-ins/Date | 442 | 152 | 0 | 0 | 0 | 74.4% |
 | test/built-ins/DisposableStack | 0 | 93 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Error | 23 | 70 | 0 | 0 | 0 | 24.7% |
 | test/built-ins/FinalizationRegistry | 0 | 47 | 0 | 0 | 0 | 0.0% |
@@ -42,7 +42,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24592 (53.9% de los corridos)** |
 | test/built-ins/Promise | 193 | 533 | 0 | 0 | 3 | 26.6% |
 | test/built-ins/Proxy | 81 | 219 | 0 | 0 | 11 | 27.0% |
 | test/built-ins/Reflect | 100 | 53 | 0 | 0 | 0 | 65.4% |
-| test/built-ins/RegExp | 588 | 901 | 0 | 389 | 1 | 31.3% |
+| test/built-ins/RegExp | 588 | 900 | 0 | 390 | 1 | 31.3% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 202 | 179 | 0 | 1 | 1 | 52.9% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -109,7 +109,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 24592 (53.9% de los corridos)** |
 - **713x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - ej: `test/language/computed-property-names/class/static/generator-prototype.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
-  - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
+  - ej: `test/built-ins/Temporal/Duration/compare/calendar-temporal-object.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
   - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
 - **518x** `SyntaxError: UnexpectedToken`

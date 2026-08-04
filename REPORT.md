@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 25668 (56.2% de los corridos)** | FAIL: 19301 | CRASH: 0 | TIMEOUT: 670 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 25687 (56.3% de los corridos)** | FAIL: 19282 | CRASH: 0 | TIMEOUT: 670 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -34,7 +34,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25668 (56.2% de los corridos)** |
 | test/built-ins/JSON | 78 | 87 | 0 | 0 | 0 | 47.3% |
 | test/built-ins/Map | 128 | 70 | 0 | 5 | 1 | 63.1% |
 | test/built-ins/MapIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
-| test/built-ins/Math | 306 | 21 | 0 | 0 | 0 | 93.6% |
+| test/built-ins/Math | 325 | 2 | 0 | 0 | 0 | 99.4% |
 | test/built-ins/NaN | 3 | 1 | 0 | 0 | 2 | 75.0% |
 | test/built-ins/NativeErrors | 36 | 58 | 0 | 0 | 0 | 38.3% |
 | test/built-ins/Number | 206 | 134 | 0 | 0 | 0 | 60.6% |
@@ -102,7 +102,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25668 (56.2% de los corridos)** |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **2252x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+- **2248x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/asi/S7.9_A10_T1.js`
 - **1125x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
@@ -116,16 +116,16 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25668 (56.2% de los corridos)** |
   - ej: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **474x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
-- **405x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
+- **404x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **333x** `Uncaught ReferenceError: Iterator is not defined`
   - ej: `test/built-ins/Iterator/length.js`
 - **323x** `Uncaught ReferenceError: $N is not defined`
   - ej: `test/language/eval-code/indirect/realm.js`
-- **281x** `Uncaught TypeError: Cannot convert undefined or null to object`
-  - ej: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **278x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/expressions/async-generator/expression-yield-star-before-newline.js`
+- **277x** `Uncaught TypeError: Cannot convert undefined or null to object`
+  - ej: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **260x** `Uncaught ReferenceError: SharedArrayBuffer is not defined`
   - ej: `test/language/expressions/class/subclass-builtins/subclass-SharedArrayBuffer.js`
 - **228x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: TypeError Expected SameValue(«[object Functio`
@@ -157,7 +157,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25668 (56.2% de los corridos)** |
 - **111x** `Uncaught TypeError: Array.prototype.reduce called on a non-array`
   - ej: `test/built-ins/Array/prototype/reduce/15.4.4.21-1-10.js`
 - **109x** `Uncaught TypeError: Array.prototype.reduceRight called on a non-array`
-  - ej: `test/built-ins/Array/prototype/reduceRight/15.4.4.22-1-10.js`
+  - ej: `test/built-ins/Array/prototype/reduceRight/15.4.4.22-2-12.js`
 - **102x** `Uncaught { message: Expected a RangeError but got a TypeError }`
   - ej: `test/built-ins/Array/prototype/indexOf/15.4.4.14-5-29.js`
 - **96x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: reject reason Expected SameValue(«TestNError:`

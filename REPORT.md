@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 25937 (56.8% de los corridos)** | FAIL: 19037 | CRASH: 0 | TIMEOUT: 665 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 26438 (57.9% de los corridos)** | FAIL: 18536 | CRASH: 0 | TIMEOUT: 665 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -19,7 +19,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25937 (56.8% de los corridos)** |
 | test/built-ins/AsyncGeneratorPrototype | 2 | 45 | 0 | 1 | 0 | 4.2% |
 | test/built-ins/AsyncIteratorPrototype | 0 | 13 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Atomics | 0 | 387 | 0 | 0 | 2 | 0.0% |
-| test/built-ins/BigInt | 44 | 33 | 0 | 0 | 0 | 57.1% |
+| test/built-ins/BigInt | 45 | 32 | 0 | 0 | 0 | 58.4% |
 | test/built-ins/Boolean | 46 | 5 | 0 | 0 | 0 | 90.2% |
 | test/built-ins/DataView | 270 | 291 | 0 | 0 | 0 | 48.1% |
 | test/built-ins/Date | 459 | 135 | 0 | 0 | 0 | 77.3% |
@@ -38,7 +38,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25937 (56.8% de los corridos)** |
 | test/built-ins/NaN | 3 | 1 | 0 | 0 | 2 | 75.0% |
 | test/built-ins/NativeErrors | 42 | 52 | 0 | 0 | 0 | 44.7% |
 | test/built-ins/Number | 252 | 88 | 0 | 0 | 0 | 74.1% |
-| test/built-ins/Object | 2125 | 1259 | 0 | 16 | 11 | 62.5% |
+| test/built-ins/Object | 2126 | 1258 | 0 | 16 | 11 | 62.5% |
 | test/built-ins/Promise | 199 | 527 | 0 | 0 | 3 | 27.4% |
 | test/built-ins/Proxy | 82 | 218 | 0 | 0 | 11 | 27.3% |
 | test/built-ins/Reflect | 103 | 50 | 0 | 0 | 0 | 67.3% |
@@ -72,7 +72,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25937 (56.8% de los corridos)** |
 | test/built-ins/parseInt | 41 | 14 | 0 | 0 | 0 | 74.5% |
 | test/built-ins/undefined | 3 | 2 | 0 | 0 | 3 | 60.0% |
 | test/language/arguments-object | 189 | 15 | 0 | 2 | 57 | 91.7% |
-| test/language/asi | 98 | 4 | 0 | 0 | 0 | 96.1% |
+| test/language/asi | 101 | 1 | 0 | 0 | 0 | 99.0% |
 | test/language/block-scope | 145 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/comments | 46 | 6 | 0 | 0 | 0 | 88.5% |
 | test/language/computed-property-names | 42 | 6 | 0 | 0 | 0 | 87.5% |
@@ -80,7 +80,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25937 (56.8% de los corridos)** |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 96 | 31 | 0 | 0 | 220 | 75.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7335 | 3076 | 0 | 103 | 588 | 69.8% |
+| test/language/expressions | 7831 | 2580 | 0 | 103 | 588 | 74.5% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 20 | 17 | 0 | 0 | 5 | 54.1% |
@@ -102,8 +102,8 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25937 (56.8% de los corridos)** |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **2153x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
-  - ej: `test/language/asi/S7.9_A10_T1.js`
+- **1687x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+  - ej: `test/language/computed-property-names/to-name-side-effects/numbers-object.js`
 - **1116x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **688x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
@@ -111,7 +111,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25937 (56.8% de los corridos)** |
 - **640x** `Uncaught TypeError: expression is not a constructor`
   - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
-  - ej: `test/language/expressions/async-function/named-returns-async-function-returns-newtarget.js`
+  - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
 - **516x** `SyntaxError: UnexpectedToken`
   - ej: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **470x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
@@ -137,11 +137,11 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25937 (56.8% de los corridos)** |
 - **188x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: Expected SameValue(«N», «N») to be true`
   - ej: `test/language/expressions/async-function/named-strict-error-reassign-fn-name-in-body-in-arrow.js`
 - **182x** `Uncaught { message: Expected SameValue(«[object Function]», «N») to be true }`
-  - ej: `test/language/expressions/class/elements/after-same-line-static-method-rs-static-privatename-identifier-initializer-alt.js`
+  - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
+  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
 - **150x** `Uncaught { message: Expected a TestNError but got a TypeError }`
   - ej: `test/language/expressions/assignment/dstr/array-elem-trlg-iter-rest-rtrn-close-err.js`
 - **132x** `Uncaught RangeError: Maximum call stack size exceeded`
@@ -172,8 +172,8 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25937 (56.8% de los corridos)** |
 - 1045x class
 - 1022x Symbol.iterator
 - 1000x destructuring-binding
-- 885x BigInt
-- 832x Symbol
+- 836x BigInt
+- 818x Symbol
 - 679x class-fields-public
 - 604x dynamic-import
 - 489x Symbol.asyncIterator
@@ -182,7 +182,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25937 (56.8% de los corridos)** |
 - 433x class-methods-private
 - 424x arrow-function
 - 413x default-parameters
-- 409x class-fields-private
+- 397x class-fields-private
 - 386x iterator-helpers
 - 382x Atomics
 - 364x Proxy

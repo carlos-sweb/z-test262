@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 26438 (57.9% de los corridos)** | FAIL: 18536 | CRASH: 0 | TIMEOUT: 665 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 26537 (58.1% de los corridos)** | FAIL: 18437 | CRASH: 0 | TIMEOUT: 665 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -38,10 +38,10 @@ Total: 47381 tests | corridos: 45639 | **PASS: 26438 (57.9% de los corridos)** |
 | test/built-ins/NaN | 3 | 1 | 0 | 0 | 2 | 75.0% |
 | test/built-ins/NativeErrors | 42 | 52 | 0 | 0 | 0 | 44.7% |
 | test/built-ins/Number | 252 | 88 | 0 | 0 | 0 | 74.1% |
-| test/built-ins/Object | 2126 | 1258 | 0 | 16 | 11 | 62.5% |
+| test/built-ins/Object | 2154 | 1230 | 0 | 16 | 11 | 63.4% |
 | test/built-ins/Promise | 199 | 527 | 0 | 0 | 3 | 27.4% |
 | test/built-ins/Proxy | 82 | 218 | 0 | 0 | 11 | 27.3% |
-| test/built-ins/Reflect | 103 | 50 | 0 | 0 | 0 | 67.3% |
+| test/built-ins/Reflect | 109 | 44 | 0 | 0 | 0 | 71.2% |
 | test/built-ins/RegExp | 590 | 899 | 0 | 389 | 1 | 31.4% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 205 | 176 | 0 | 1 | 1 | 53.7% |
@@ -75,12 +75,12 @@ Total: 47381 tests | corridos: 45639 | **PASS: 26438 (57.9% de los corridos)** |
 | test/language/asi | 101 | 1 | 0 | 0 | 0 | 99.0% |
 | test/language/block-scope | 145 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/comments | 46 | 6 | 0 | 0 | 0 | 88.5% |
-| test/language/computed-property-names | 42 | 6 | 0 | 0 | 0 | 87.5% |
+| test/language/computed-property-names | 46 | 2 | 0 | 0 | 0 | 95.8% |
 | test/language/destructuring | 17 | 1 | 0 | 0 | 1 | 94.4% |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 96 | 31 | 0 | 0 | 220 | 75.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7831 | 2580 | 0 | 103 | 588 | 74.5% |
+| test/language/expressions | 7871 | 2540 | 0 | 103 | 588 | 74.9% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 20 | 17 | 0 | 0 | 5 | 54.1% |
@@ -96,18 +96,18 @@ Total: 47381 tests | corridos: 45639 | **PASS: 26438 (57.9% de los corridos)** |
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 6914 | 1866 | 0 | 85 | 472 | 78.0% |
+| test/language/statements | 6935 | 1845 | 0 | 85 | 472 | 78.2% |
 | test/language/types | 101 | 3 | 0 | 0 | 9 | 97.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **1687x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
-  - ej: `test/language/computed-property-names/to-name-side-effects/numbers-object.js`
+- **1523x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+  - ej: `test/language/arguments-object/10.6-14-c-4-s.js`
 - **1116x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **688x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/eval-code/indirect/non-definable-global-function.js`
+  - ej: `test/language/arguments-object/10.6-13-c-1-s.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
   - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
@@ -159,7 +159,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 26438 (57.9% de los corridos)** |
 - **109x** `Uncaught TypeError: Array.prototype.reduceRight called on a non-array`
   - ej: `test/built-ins/Array/prototype/reduceRight/15.4.4.22-1-10.js`
 - **102x** `Uncaught { message: Expected a RangeError but got a TypeError }`
-  - ej: `test/built-ins/Array/prototype/indexOf/15.4.4.14-5-29.js`
+  - ej: `test/built-ins/Array/prototype/every/15.4.4.16-7-c-i-30.js`
 - **96x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: reject reason Expected SameValue(«TestNError:`
   - ej: `test/language/expressions/async-generator/named-yield-star-getiter-async-get-abrupt.js`
 
@@ -169,12 +169,12 @@ Total: 47381 tests | corridos: 45639 | **PASS: 26438 (57.9% de los corridos)** |
 - 1800x TypedArray
 - 1420x async-iteration
 - 1165x generators
-- 1045x class
+- 1026x class
 - 1022x Symbol.iterator
 - 1000x destructuring-binding
 - 836x BigInt
-- 818x Symbol
-- 679x class-fields-public
+- 810x Symbol
+- 653x class-fields-public
 - 604x dynamic-import
 - 489x Symbol.asyncIterator
 - 459x resizable-arraybuffer
@@ -187,6 +187,6 @@ Total: 47381 tests | corridos: 45639 | **PASS: 26438 (57.9% de los corridos)** |
 - 382x Atomics
 - 364x Proxy
 - 350x explicit-resource-management
-- 330x Reflect
+- 324x Reflect
 - 297x class-static-methods-private
 - 281x Symbol.species

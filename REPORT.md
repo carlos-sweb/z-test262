@@ -1,6 +1,6 @@
 # Test262 — reporte de divergencias del motor z-*
 
-Total: 47381 tests | corridos: 45639 | **PASS: 25885 (56.7% de los corridos)** | FAIL: 19089 | CRASH: 0 | TIMEOUT: 665 | SKIP (by design): 1742
+Total: 47381 tests | corridos: 45639 | **PASS: 25937 (56.8% de los corridos)** | FAIL: 19037 | CRASH: 0 | TIMEOUT: 665 | SKIP (by design): 1742
 
 
 ## Pass-rate por área
@@ -22,9 +22,9 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25885 (56.7% de los corridos)** |
 | test/built-ins/BigInt | 44 | 33 | 0 | 0 | 0 | 57.1% |
 | test/built-ins/Boolean | 46 | 5 | 0 | 0 | 0 | 90.2% |
 | test/built-ins/DataView | 270 | 291 | 0 | 0 | 0 | 48.1% |
-| test/built-ins/Date | 445 | 149 | 0 | 0 | 0 | 74.9% |
+| test/built-ins/Date | 459 | 135 | 0 | 0 | 0 | 77.3% |
 | test/built-ins/DisposableStack | 0 | 93 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Error | 25 | 68 | 0 | 0 | 0 | 26.9% |
+| test/built-ins/Error | 26 | 67 | 0 | 0 | 0 | 28.0% |
 | test/built-ins/FinalizationRegistry | 0 | 47 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Function | 184 | 237 | 0 | 0 | 88 | 43.7% |
 | test/built-ins/GeneratorFunction | 7 | 16 | 0 | 0 | 0 | 30.4% |
@@ -37,7 +37,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25885 (56.7% de los corridos)** |
 | test/built-ins/Math | 326 | 1 | 0 | 0 | 0 | 99.7% |
 | test/built-ins/NaN | 3 | 1 | 0 | 0 | 2 | 75.0% |
 | test/built-ins/NativeErrors | 42 | 52 | 0 | 0 | 0 | 44.7% |
-| test/built-ins/Number | 251 | 89 | 0 | 0 | 0 | 73.8% |
+| test/built-ins/Number | 252 | 88 | 0 | 0 | 0 | 74.1% |
 | test/built-ins/Object | 2125 | 1259 | 0 | 16 | 11 | 62.5% |
 | test/built-ins/Promise | 199 | 527 | 0 | 0 | 3 | 27.4% |
 | test/built-ins/Proxy | 82 | 218 | 0 | 0 | 11 | 27.3% |
@@ -48,7 +48,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25885 (56.7% de los corridos)** |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/ShadowRealm | 0 | 64 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SharedArrayBuffer | 0 | 104 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/String | 857 | 363 | 0 | 0 | 3 | 70.2% |
+| test/built-ins/String | 887 | 333 | 0 | 0 | 3 | 72.7% |
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 0 | 22 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Symbol | 58 | 38 | 0 | 0 | 2 | 60.4% |
@@ -80,7 +80,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25885 (56.7% de los corridos)** |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 96 | 31 | 0 | 0 | 220 | 75.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7329 | 3082 | 0 | 103 | 588 | 69.7% |
+| test/language/expressions | 7335 | 3076 | 0 | 103 | 588 | 69.8% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 20 | 17 | 0 | 0 | 5 | 54.1% |
@@ -102,21 +102,21 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25885 (56.7% de los corridos)** |
 
 ## Top causas de FAIL (mensaje normalizado)
 
-- **2172x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+- **2153x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/asi/S7.9_A10_T1.js`
-- **1125x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+- **1116x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
-- **691x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+- **688x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - ej: `test/language/eval-code/indirect/non-definable-global-function.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
   - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
-  - ej: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
+  - ej: `test/language/expressions/async-function/named-returns-async-function-returns-newtarget.js`
 - **516x** `SyntaxError: UnexpectedToken`
   - ej: `test/language/comments/hashbang/line-terminator-line-separator.js`
-- **476x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
+- **470x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
-- **404x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
+- **403x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **333x** `Uncaught ReferenceError: Iterator is not defined`
   - ej: `test/built-ins/Iterator/length.js`
@@ -124,7 +124,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25885 (56.7% de los corridos)** |
   - ej: `test/language/eval-code/indirect/realm.js`
 - **278x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - ej: `test/language/expressions/async-generator/expression-yield-star-before-newline.js`
-- **277x** `Uncaught TypeError: Cannot convert undefined or null to object`
+- **275x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - ej: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **260x** `Uncaught ReferenceError: SharedArrayBuffer is not defined`
   - ej: `test/language/expressions/class/subclass-builtins/subclass-SharedArrayBuffer.js`
@@ -137,7 +137,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25885 (56.7% de los corridos)** |
 - **188x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: Expected SameValue(«N», «N») to be true`
   - ej: `test/language/expressions/async-function/named-strict-error-reassign-fn-name-in-body-in-arrow.js`
 - **182x** `Uncaught { message: Expected SameValue(«[object Function]», «N») to be true }`
-  - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
+  - ej: `test/language/expressions/class/elements/after-same-line-static-method-rs-static-privatename-identifier-initializer-alt.js`
 - **172x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
@@ -146,7 +146,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25885 (56.7% de los corridos)** |
   - ej: `test/language/expressions/assignment/dstr/array-elem-trlg-iter-rest-rtrn-close-err.js`
 - **132x** `Uncaught RangeError: Maximum call stack size exceeded`
   - ej: `test/language/expressions/tco-pos.js`
-- **130x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
+- **128x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - ej: `test/language/eval-code/indirect/var-env-func-non-strict.js`
 - **122x** `Uncaught TypeError: Object.defineProperty called on non-object`
   - ej: `test/built-ins/Array/prototype/methods-called-as-functions.js`
@@ -159,7 +159,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25885 (56.7% de los corridos)** |
 - **109x** `Uncaught TypeError: Array.prototype.reduceRight called on a non-array`
   - ej: `test/built-ins/Array/prototype/reduceRight/15.4.4.22-1-10.js`
 - **102x** `Uncaught { message: Expected a RangeError but got a TypeError }`
-  - ej: `test/built-ins/Array/prototype/every/15.4.4.16-7-c-i-30.js`
+  - ej: `test/built-ins/Array/prototype/indexOf/15.4.4.14-5-29.js`
 - **96x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: reject reason Expected SameValue(«TestNError:`
   - ej: `test/language/expressions/async-generator/named-yield-star-getiter-async-get-abrupt.js`
 
@@ -173,7 +173,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 25885 (56.7% de los corridos)** |
 - 1022x Symbol.iterator
 - 1000x destructuring-binding
 - 885x BigInt
-- 849x Symbol
+- 832x Symbol
 - 679x class-fields-public
 - 604x dynamic-import
 - 489x Symbol.asyncIterator

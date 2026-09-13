@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 28858 (63.2% of those ran)** | FAIL: 16578 | CRASH: 0 | TIMEOUT: 203 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 29043 (63.6% of those ran)** | FAIL: 16580 | CRASH: 0 | TIMEOUT: 16 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -42,7 +42,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28858 (63.2% of those ran)** | FAIL: 1
 | test/built-ins/Promise | 201 | 525 | 0 | 0 | 3 | 27.7% |
 | test/built-ins/Proxy | 82 | 218 | 0 | 0 | 11 | 27.3% |
 | test/built-ins/Reflect | 109 | 44 | 0 | 0 | 0 | 71.2% |
-| test/built-ins/RegExp | 1038 | 652 | 0 | 188 | 1 | 55.3% |
+| test/built-ins/RegExp | 1223 | 652 | 0 | 3 | 1 | 65.1% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 205 | 177 | 0 | 0 | 1 | 53.7% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -80,7 +80,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28858 (63.2% of those ran)** | FAIL: 1
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 96 | 31 | 0 | 0 | 220 | 75.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7895 | 2617 | 0 | 2 | 588 | 75.1% |
+| test/language/expressions | 7895 | 2619 | 0 | 0 | 588 | 75.1% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 21 | 16 | 0 | 0 | 5 | 56.8% |
@@ -111,7 +111,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28858 (63.2% of those ran)** | FAIL: 1
 - **607x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - e.g.: `test/language/comments/hashbang/use-strict.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
-  - e.g.: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
+  - e.g.: `test/language/expressions/async-function/named-returns-async-function-returns-newtarget.js`
 - **516x** `SyntaxError: UnexpectedToken`
   - e.g.: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **486x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
@@ -119,7 +119,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28858 (63.2% of those ran)** | FAIL: 1
 - **408x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - e.g.: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **333x** `Uncaught ReferenceError: Iterator is not defined`
-  - e.g.: `test/built-ins/Iterator/concat/single-argument.js`
+  - e.g.: `test/built-ins/Iterator/length.js`
 - **324x** `Uncaught ReferenceError: $N is not defined`
   - e.g.: `test/language/eval-code/indirect/realm.js`
 - **279x** `Uncaught TypeError: Cannot convert undefined or null to object`
@@ -138,7 +138,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28858 (63.2% of those ran)** | FAIL: 1
   - e.g.: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
 - **160x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - e.g.: `test/language/global-code/script-decl-func-err-non-extensible.js`
-- **150x** `SyntaxError: OutOfMemory`
+- **151x** `SyntaxError: OutOfMemory`
   - e.g.: `test/language/arguments-object/10.6-6-2.js`
 - **134x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - e.g.: `test/language/eval-code/indirect/var-env-func-non-strict.js`
@@ -151,8 +151,8 @@ Total: 47381 tests | ran: 45639 | **PASS: 28858 (63.2% of those ran)** | FAIL: 1
 - **119x** `Uncaught TypeError: resize is not a function`
   - e.g.: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
 - **119x** `Uncaught TypeError: Property description must be an object`
-  - e.g.: `test/built-ins/Object/create/15.2.3.5-4-166.js`
-- **115x** `async incomplete: SyntaxError: OutOfMemory`
+  - e.g.: `test/built-ins/Object/create/15.2.3.5-4-10.js`
+- **116x** `async incomplete: SyntaxError: OutOfMemory`
   - e.g.: `test/language/expressions/async-generator/dstr/ary-init-iter-close.js`
 - **110x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
   - e.g.: `test/language/expressions/array/spread-obj-mult-spread-getter.js`
@@ -166,17 +166,17 @@ Total: 47381 tests | ran: 45639 | **PASS: 28858 (63.2% of those ran)** | FAIL: 1
 ## Top features present in FAILs
 
 - 3041x Temporal
-- 1501x async-iteration
+- 1502x async-iteration
 - 1495x TypedArray
-- 1223x generators
-- 1175x Symbol.iterator
+- 1224x generators
+- 1177x Symbol.iterator
 - 1084x class
-- 1068x destructuring-binding
+- 1069x destructuring-binding
 - 698x BigInt
 - 687x class-fields-public
 - 673x Symbol
 - 604x dynamic-import
-- 500x Symbol.asyncIterator
+- 501x Symbol.asyncIterator
 - 451x resizable-arraybuffer
 - 449x class-methods-private
 - 436x default-parameters

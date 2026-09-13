@@ -42,12 +42,12 @@ for r in rows:
         examples.setdefault(k, r["path"])
 
 out = []
-out.append("# Test262 — reporte de divergencias del motor z-*\n")
-out.append(f"Total: {total} tests | corridos: {ran} | **PASS: {passed} ({100.0*passed/ran:.1f}% de los corridos)** | "
+out.append("# Test262 — z-* engine divergence report\n")
+out.append(f"Total: {total} tests | ran: {ran} | **PASS: {passed} ({100.0*passed/ran:.1f}% of those ran)** | "
            f"FAIL: {by_result['FAIL']} | CRASH: {by_result['CRASH']} | TIMEOUT: {by_result['TIMEOUT']} | SKIP (by design): {by_result['SKIP']}\n")
 
-out.append("\n## Pass-rate por área\n")
-out.append("| área | pass | fail | crash | timeout | skip | % pass |")
+out.append("\n## Pass rate by area\n")
+out.append("| area | pass | fail | crash | timeout | skip | % pass |")
 out.append("|---|---|---|---|---|---|---|")
 for area in sorted(areas):
     c = areas[area]
@@ -55,17 +55,17 @@ for area in sorted(areas):
     pct = 100.0 * c["PASS"] / a_ran if a_ran else 0
     out.append(f"| {area} | {c['PASS']} | {c['FAIL']} | {c['CRASH']} | {c['TIMEOUT']} | {c['SKIP']} | {pct:.1f}% |")
 
-out.append("\n## Top causas de FAIL (mensaje normalizado)\n")
+out.append("\n## Top FAIL causes (normalized message)\n")
 for reason, n in fail_reasons.most_common(30):
-    out.append(f"- **{n}x** `{reason or '(sin mensaje)'}`\n  - ej: `{examples.get(reason, '')}`")
+    out.append(f"- **{n}x** `{reason or '(no message)'}`\n  - e.g.: `{examples.get(reason, '')}`")
 
-out.append("\n## Top features presentes en FAILs\n")
+out.append("\n## Top features present in FAILs\n")
 for feat, n in fail_features.most_common(25):
     out.append(f"- {n}x {feat}")
 
 if crash_reasons:
-    out.append("\n## CRASHES (los más graves)\n")
+    out.append("\n## CRASHES (the most severe)\n")
     for reason, n in crash_reasons.most_common(20):
-        out.append(f"- **{n}x** `{reason}`\n  - ej: `{examples.get(reason, '')}`")
+        out.append(f"- **{n}x** `{reason}`\n  - e.g.: `{examples.get(reason, '')}`")
 
 print("\n".join(out))

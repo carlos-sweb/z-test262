@@ -1,11 +1,11 @@
-# Test262 — reporte de divergencias del motor z-*
+# Test262 — z-* engine divergence report
 
-Total: 47381 tests | corridos: 45639 | **PASS: 28686 (62.9% de los corridos)** | FAIL: 16690 | CRASH: 255 | TIMEOUT: 8 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 28686 (62.9% of those ran)** | FAIL: 16690 | CRASH: 255 | TIMEOUT: 8 | SKIP (by design): 1742
 
 
-## Pass-rate por área
+## Pass rate by area
 
-| área | pass | fail | crash | timeout | skip | % pass |
+| area | pass | fail | crash | timeout | skip | % pass |
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 0 | 25 | 0 | 0 | 0 | 0.0% |
@@ -100,70 +100,70 @@ Total: 47381 tests | corridos: 45639 | **PASS: 28686 (62.9% de los corridos)** |
 | test/language/types | 101 | 3 | 0 | 0 | 9 | 97.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
-## Top causas de FAIL (mensaje normalizado)
+## Top FAIL causes (normalized message)
 
 - **1105x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
-  - ej: `test/language/arguments-object/10.6-13-c-3-s.js`
+  - e.g.: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **707x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/arguments-object/10.6-13-c-1-s.js`
+  - e.g.: `test/language/arguments-object/10.6-13-c-1-s.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
-  - ej: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
+  - e.g.: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
 - **593x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
-  - ej: `test/language/comments/hashbang/use-strict.js`
+  - e.g.: `test/language/comments/hashbang/use-strict.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
-  - ej: `test/language/expressions/async-function/named-returns-async-function-returns-newtarget.js`
+  - e.g.: `test/language/expressions/async-function/named-returns-async-function-returns-newtarget.js`
 - **516x** `SyntaxError: UnexpectedToken`
-  - ej: `test/language/comments/hashbang/line-terminator-line-separator.js`
+  - e.g.: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **485x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
+  - e.g.: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
 - **410x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
-  - ej: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
+  - e.g.: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **333x** `Uncaught ReferenceError: Iterator is not defined`
-  - ej: `test/built-ins/Iterator/length.js`
+  - e.g.: `test/built-ins/Iterator/length.js`
 - **323x** `Uncaught ReferenceError: $N is not defined`
-  - ej: `test/language/eval-code/indirect/realm.js`
+  - e.g.: `test/language/eval-code/indirect/realm.js`
 - **278x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
-  - ej: `test/language/expressions/async-generator/expression-yield-star-before-newline.js`
+  - e.g.: `test/language/expressions/async-generator/expression-yield-star-before-newline.js`
 - **275x** `Uncaught TypeError: Cannot convert undefined or null to object`
-  - ej: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
+  - e.g.: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **260x** `Uncaught ReferenceError: SharedArrayBuffer is not defined`
-  - ej: `test/language/expressions/class/subclass-builtins/subclass-SharedArrayBuffer.js`
+  - e.g.: `test/language/expressions/class/subclass-builtins/subclass-SharedArrayBuffer.js`
 - **228x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: TypeError Expected SameValue(«[object Functio`
-  - ej: `test/language/expressions/async-generator/named-yield-star-getiter-async-not-callable-boolean-throw.js`
+  - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-not-callable-boolean-throw.js`
 - **196x** `SyntaxError: MissingSemicolon`
-  - ej: `test/language/asi/do-while-same-line.js`
+  - e.g.: `test/language/asi/do-while-same-line.js`
 - **188x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: Expected SameValue(«N», «N») to be true`
-  - ej: `test/language/expressions/async-function/named-strict-error-reassign-fn-name-in-body-in-arrow.js`
+  - e.g.: `test/language/expressions/async-function/named-strict-error-reassign-fn-name-in-body-in-arrow.js`
 - **182x** `Uncaught { message: Expected SameValue(«[object Function]», «N») to be true }`
-  - ej: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
+  - e.g.: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
 - **175x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
-  - ej: `test/language/global-code/script-decl-func-err-non-extensible.js`
+  - e.g.: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - ej: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
+  - e.g.: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
 - **132x** `Uncaught RangeError: Maximum call stack size exceeded`
-  - ej: `test/language/expressions/tco-pos.js`
+  - e.g.: `test/language/expressions/tco-pos.js`
 - **128x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
-  - ej: `test/language/eval-code/indirect/var-env-func-non-strict.js`
+  - e.g.: `test/language/eval-code/indirect/var-env-func-non-strict.js`
 - **128x** `Uncaught { message: Expected a TestNError but got a TypeError }`
-  - ej: `test/language/expressions/assignment/dstr/array-elem-trlg-iter-rest-rtrn-close-err.js`
+  - e.g.: `test/language/expressions/assignment/dstr/array-elem-trlg-iter-rest-rtrn-close-err.js`
 - **123x** `Uncaught TypeError: Object.defineProperty called on non-object`
-  - ej: `test/built-ins/Array/prototype/methods-called-as-functions.js`
+  - e.g.: `test/built-ins/Array/prototype/methods-called-as-functions.js`
 - **119x** `Uncaught TypeError: Property description must be an object`
-  - ej: `test/built-ins/Object/create/15.2.3.5-4-10.js`
+  - e.g.: `test/built-ins/Object/create/15.2.3.5-4-10.js`
 - **118x** `Uncaught TypeError: resize is not a function`
-  - ej: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
+  - e.g.: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
 - **108x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
-  - ej: `test/language/expressions/array/spread-obj-mult-spread-getter.js`
+  - e.g.: `test/language/expressions/array/spread-obj-mult-spread-getter.js`
 - **96x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: reject reason Expected SameValue(«TestNError:`
-  - ej: `test/language/expressions/async-generator/named-yield-star-getiter-async-get-abrupt.js`
+  - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-get-abrupt.js`
 - **95x** `Uncaught ReferenceError: Atomics is not defined`
-  - ej: `test/built-ins/Atomics/Symbol.toStringTag.js`
+  - e.g.: `test/built-ins/Atomics/Symbol.toStringTag.js`
 - **93x** `Uncaught ReferenceError: WeakMap is not defined`
-  - ej: `test/language/expressions/class/subclass-builtins/subclass-WeakMap.js`
+  - e.g.: `test/language/expressions/class/subclass-builtins/subclass-WeakMap.js`
 - **92x** `Uncaught TypeError: expression is not a function`
-  - ej: `test/built-ins/Function/prototype/Symbol.hasInstance/this-val-bound-target.js`
+  - e.g.: `test/built-ins/Function/prototype/Symbol.hasInstance/this-val-bound-target.js`
 
-## Top features presentes en FAILs
+## Top features present in FAILs
 
 - 3041x Temporal
 - 1697x TypedArray
@@ -191,7 +191,7 @@ Total: 47381 tests | corridos: 45639 | **PASS: 28686 (62.9% de los corridos)** |
 - 297x class-static-methods-private
 - 271x Symbol.species
 
-## CRASHES (los más graves)
+## CRASHES (the most severe)
 
 - **255x** `exit -N: `
-  - ej: `test/language/arguments-object/10.6-6-2.js`
+  - e.g.: `test/language/arguments-object/10.6-6-2.js`

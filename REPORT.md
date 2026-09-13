@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 28686 (62.9% of those ran)** | FAIL: 16690 | CRASH: 255 | TIMEOUT: 8 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 28719 (62.9% of those ran)** | FAIL: 16659 | CRASH: 255 | TIMEOUT: 6 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -42,7 +42,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28686 (62.9% of those ran)** | FAIL: 1
 | test/built-ins/Promise | 201 | 525 | 0 | 0 | 3 | 27.7% |
 | test/built-ins/Proxy | 82 | 218 | 0 | 0 | 11 | 27.3% |
 | test/built-ins/Reflect | 109 | 44 | 0 | 0 | 0 | 71.2% |
-| test/built-ins/RegExp | 1224 | 653 | 0 | 1 | 1 | 65.2% |
+| test/built-ins/RegExp | 1225 | 653 | 0 | 0 | 1 | 65.2% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 205 | 176 | 1 | 0 | 1 | 53.7% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -62,7 +62,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28686 (62.9% of those ran)** | FAIL: 1
 | test/built-ins/WeakSet | 0 | 85 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/decodeURI | 54 | 0 | 0 | 1 | 0 | 98.2% |
 | test/built-ins/decodeURIComponent | 55 | 0 | 0 | 1 | 0 | 98.2% |
-| test/built-ins/encodeURI | 23 | 7 | 0 | 1 | 0 | 74.2% |
+| test/built-ins/encodeURI | 24 | 7 | 0 | 0 | 0 | 77.4% |
 | test/built-ins/encodeURIComponent | 23 | 7 | 0 | 1 | 0 | 74.2% |
 | test/built-ins/eval | 10 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/global | 27 | 2 | 0 | 0 | 0 | 93.1% |
@@ -80,10 +80,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 28686 (62.9% of those ran)** | FAIL: 1
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 96 | 31 | 0 | 0 | 220 | 75.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7874 | 2537 | 103 | 0 | 588 | 74.9% |
+| test/language/expressions | 7894 | 2517 | 103 | 0 | 588 | 75.1% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
-| test/language/global-code | 20 | 17 | 0 | 0 | 5 | 54.1% |
+| test/language/global-code | 21 | 16 | 0 | 0 | 5 | 56.8% |
 | test/language/identifier-resolution | 8 | 1 | 0 | 0 | 5 | 88.9% |
 | test/language/identifiers | 264 | 4 | 0 | 0 | 0 | 98.5% |
 | test/language/import | 13 | 115 | 0 | 0 | 0 | 10.2% |
@@ -96,7 +96,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28686 (62.9% of those ran)** | FAIL: 1
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 6936 | 1844 | 85 | 0 | 472 | 78.2% |
+| test/language/statements | 6946 | 1834 | 85 | 0 | 472 | 78.4% |
 | test/language/types | 101 | 3 | 0 | 0 | 9 | 97.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -104,7 +104,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28686 (62.9% of those ran)** | FAIL: 1
 
 - **1105x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/language/arguments-object/10.6-13-c-3-s.js`
-- **707x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+- **687x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/arguments-object/10.6-13-c-1-s.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
   - e.g.: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
@@ -132,8 +132,8 @@ Total: 47381 tests | ran: 45639 | **PASS: 28686 (62.9% of those ran)** | FAIL: 1
   - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-not-callable-boolean-throw.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - e.g.: `test/language/asi/do-while-same-line.js`
-- **188x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: Expected SameValue(«N», «N») to be true`
-  - e.g.: `test/language/expressions/async-function/named-strict-error-reassign-fn-name-in-body-in-arrow.js`
+- **182x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: Expected SameValue(«N», «N») to be true`
+  - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-null-sync-get-abrupt.js`
 - **182x** `Uncaught { message: Expected SameValue(«[object Function]», «N») to be true }`
   - e.g.: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
 - **175x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
@@ -167,11 +167,11 @@ Total: 47381 tests | ran: 45639 | **PASS: 28686 (62.9% of those ran)** | FAIL: 1
 
 - 3041x Temporal
 - 1697x TypedArray
-- 1419x async-iteration
-- 1164x generators
+- 1416x async-iteration
+- 1160x generators
 - 1026x class
 - 1022x Symbol.iterator
-- 1000x destructuring-binding
+- 990x destructuring-binding
 - 761x BigInt
 - 744x Symbol
 - 653x class-fields-public

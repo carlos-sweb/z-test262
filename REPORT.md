@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 29043 (63.6% of those ran)** | FAIL: 16580 | CRASH: 0 | TIMEOUT: 16 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 29001 (63.5% of those ran)** | FAIL: 16572 | CRASH: 0 | TIMEOUT: 66 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -29,20 +29,20 @@ Total: 47381 tests | ran: 45639 | **PASS: 29043 (63.6% of those ran)** | FAIL: 1
 | test/built-ins/Function | 202 | 219 | 0 | 0 | 88 | 48.0% |
 | test/built-ins/GeneratorFunction | 8 | 15 | 0 | 0 | 0 | 34.8% |
 | test/built-ins/GeneratorPrototype | 15 | 45 | 0 | 1 | 0 | 24.6% |
-| test/built-ins/Infinity | 3 | 1 | 0 | 0 | 2 | 75.0% |
+| test/built-ins/Infinity | 4 | 0 | 0 | 0 | 2 | 100.0% |
 | test/built-ins/Iterator | 7 | 507 | 0 | 0 | 0 | 1.4% |
 | test/built-ins/JSON | 82 | 83 | 0 | 0 | 0 | 49.7% |
 | test/built-ins/Map | 129 | 74 | 0 | 0 | 1 | 63.5% |
 | test/built-ins/MapIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/Math | 326 | 1 | 0 | 0 | 0 | 99.7% |
-| test/built-ins/NaN | 3 | 1 | 0 | 0 | 2 | 75.0% |
+| test/built-ins/NaN | 4 | 0 | 0 | 0 | 2 | 100.0% |
 | test/built-ins/NativeErrors | 44 | 50 | 0 | 0 | 0 | 46.8% |
 | test/built-ins/Number | 262 | 78 | 0 | 0 | 0 | 77.1% |
 | test/built-ins/Object | 2274 | 1126 | 0 | 0 | 11 | 66.9% |
 | test/built-ins/Promise | 201 | 525 | 0 | 0 | 3 | 27.7% |
 | test/built-ins/Proxy | 82 | 218 | 0 | 0 | 11 | 27.3% |
 | test/built-ins/Reflect | 109 | 44 | 0 | 0 | 0 | 71.2% |
-| test/built-ins/RegExp | 1223 | 652 | 0 | 3 | 1 | 65.1% |
+| test/built-ins/RegExp | 1173 | 652 | 0 | 53 | 1 | 62.5% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 205 | 177 | 0 | 0 | 1 | 53.7% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -65,12 +65,12 @@ Total: 47381 tests | ran: 45639 | **PASS: 29043 (63.6% of those ran)** | FAIL: 1
 | test/built-ins/encodeURI | 25 | 5 | 0 | 1 | 0 | 80.6% |
 | test/built-ins/encodeURIComponent | 25 | 5 | 0 | 1 | 0 | 80.6% |
 | test/built-ins/eval | 10 | 0 | 0 | 0 | 0 | 100.0% |
-| test/built-ins/global | 27 | 2 | 0 | 0 | 0 | 93.1% |
+| test/built-ins/global | 29 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/isFinite | 15 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/isNaN | 15 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/parseFloat | 50 | 4 | 0 | 0 | 0 | 92.6% |
 | test/built-ins/parseInt | 49 | 6 | 0 | 0 | 0 | 89.1% |
-| test/built-ins/undefined | 3 | 2 | 0 | 0 | 3 | 60.0% |
+| test/built-ins/undefined | 5 | 0 | 0 | 0 | 3 | 100.0% |
 | test/language/arguments-object | 189 | 17 | 0 | 0 | 57 | 91.7% |
 | test/language/asi | 101 | 1 | 0 | 0 | 0 | 99.0% |
 | test/language/block-scope | 145 | 0 | 0 | 0 | 0 | 100.0% |
@@ -80,7 +80,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 29043 (63.6% of those ran)** | FAIL: 1
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 96 | 31 | 0 | 0 | 220 | 75.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7895 | 2619 | 0 | 0 | 588 | 75.1% |
+| test/language/expressions | 7897 | 2617 | 0 | 0 | 588 | 75.1% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 21 | 16 | 0 | 0 | 5 | 56.8% |
@@ -104,14 +104,14 @@ Total: 47381 tests | ran: 45639 | **PASS: 29043 (63.6% of those ran)** | FAIL: 1
 
 - **1125x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/language/arguments-object/10.6-13-c-3-s.js`
-- **691x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+- **686x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/eval-code/indirect/non-definable-global-function.js`
 - **640x** `Uncaught TypeError: expression is not a constructor`
-  - e.g.: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
+  - e.g.: `test/built-ins/Temporal/Duration/compare/calendar-temporal-object.js`
 - **607x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - e.g.: `test/language/comments/hashbang/use-strict.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
-  - e.g.: `test/language/expressions/async-function/named-returns-async-function-returns-newtarget.js`
+  - e.g.: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
 - **516x** `SyntaxError: UnexpectedToken`
   - e.g.: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **486x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`

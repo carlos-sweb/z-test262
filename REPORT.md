@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 28954 (63.4% of those ran)** | FAIL: 16506 | CRASH: 0 | TIMEOUT: 179 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 29346 (64.3% of those ran)** | FAIL: 16277 | CRASH: 0 | TIMEOUT: 16 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -13,7 +13,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28954 (63.4% of those ran)** | FAIL: 1
 | test/built-ins/ArrayBuffer | 34 | 187 | 0 | 0 | 0 | 15.4% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/AsyncFromSyncIteratorPrototype | 6 | 27 | 0 | 5 | 0 | 15.8% |
+| test/built-ins/AsyncFromSyncIteratorPrototype | 6 | 32 | 0 | 0 | 0 | 15.8% |
 | test/built-ins/AsyncFunction | 9 | 9 | 0 | 0 | 0 | 50.0% |
 | test/built-ins/AsyncGeneratorFunction | 8 | 15 | 0 | 0 | 0 | 34.8% |
 | test/built-ins/AsyncGeneratorPrototype | 2 | 45 | 0 | 1 | 0 | 4.2% |
@@ -32,7 +32,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28954 (63.4% of those ran)** | FAIL: 1
 | test/built-ins/Infinity | 4 | 0 | 0 | 0 | 2 | 100.0% |
 | test/built-ins/Iterator | 7 | 507 | 0 | 0 | 0 | 1.4% |
 | test/built-ins/JSON | 82 | 83 | 0 | 0 | 0 | 49.7% |
-| test/built-ins/Map | 129 | 71 | 0 | 3 | 1 | 63.5% |
+| test/built-ins/Map | 129 | 74 | 0 | 0 | 1 | 63.5% |
 | test/built-ins/MapIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/Math | 326 | 1 | 0 | 0 | 0 | 99.7% |
 | test/built-ins/NaN | 4 | 0 | 0 | 0 | 2 | 100.0% |
@@ -42,7 +42,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28954 (63.4% of those ran)** | FAIL: 1
 | test/built-ins/Promise | 201 | 525 | 0 | 0 | 3 | 27.7% |
 | test/built-ins/Proxy | 82 | 218 | 0 | 0 | 11 | 27.3% |
 | test/built-ins/Reflect | 109 | 44 | 0 | 0 | 0 | 71.2% |
-| test/built-ins/RegExp | 1115 | 646 | 0 | 117 | 1 | 59.4% |
+| test/built-ins/RegExp | 1229 | 646 | 0 | 3 | 1 | 65.4% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 205 | 177 | 0 | 0 | 1 | 53.7% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -52,7 +52,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28954 (63.4% of those ran)** | FAIL: 1
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 0 | 22 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Symbol | 63 | 33 | 0 | 0 | 2 | 65.6% |
-| test/built-ins/Temporal | 1570 | 3033 | 0 | 0 | 0 | 34.1% |
+| test/built-ins/Temporal | 1848 | 2755 | 0 | 0 | 0 | 40.1% |
 | test/built-ins/ThrowTypeError | 0 | 14 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/TypedArray | 476 | 962 | 0 | 0 | 8 | 33.1% |
 | test/built-ins/TypedArrayConstructors | 336 | 386 | 0 | 0 | 16 | 46.5% |
@@ -80,7 +80,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 28954 (63.4% of those ran)** | FAIL: 1
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 96 | 31 | 0 | 0 | 220 | 75.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7897 | 2609 | 0 | 8 | 588 | 75.1% |
+| test/language/expressions | 7897 | 2617 | 0 | 0 | 588 | 75.1% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 21 | 16 | 0 | 0 | 5 | 56.8% |
@@ -96,19 +96,17 @@ Total: 47381 tests | ran: 45639 | **PASS: 28954 (63.4% of those ran)** | FAIL: 1
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 6947 | 1885 | 0 | 33 | 472 | 78.4% |
+| test/language/statements | 6947 | 1918 | 0 | 0 | 472 | 78.4% |
 | test/language/types | 101 | 3 | 0 | 0 | 9 | 97.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
 ## Top FAIL causes (normalized message)
 
-- **1125x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+- **809x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **686x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/eval-code/indirect/non-definable-global-function.js`
-- **640x** `Uncaught TypeError: expression is not a constructor`
-  - e.g.: `test/built-ins/Temporal/Duration/compare/blank-duration.js`
-- **597x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
+- **605x** `z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - e.g.: `test/language/comments/hashbang/use-strict.js`
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
   - e.g.: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
@@ -116,13 +114,13 @@ Total: 47381 tests | ran: 45639 | **PASS: 28954 (63.4% of those ran)** | FAIL: 1
   - e.g.: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **486x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
-- **410x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
+- **411x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - e.g.: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **333x** `Uncaught ReferenceError: Iterator is not defined`
   - e.g.: `test/built-ins/Iterator/length.js`
 - **324x** `Uncaught ReferenceError: $N is not defined`
   - e.g.: `test/language/eval-code/indirect/realm.js`
-- **279x** `Uncaught TypeError: Cannot convert undefined or null to object`
+- **294x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - e.g.: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **278x** `async incomplete: z-run: NotImplemented: the script uses a feature this engine doesn't support yet`
   - e.g.: `test/language/expressions/async-generator/expression-yield-star-before-newline.js`
@@ -135,57 +133,59 @@ Total: 47381 tests | ran: 45639 | **PASS: 28954 (63.4% of those ran)** | FAIL: 1
 - **182x** `Uncaught { message: Expected SameValue(«[object Function]», «N») to be true }`
   - e.g.: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - e.g.: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
+  - e.g.: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
 - **160x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - e.g.: `test/language/global-code/script-decl-func-err-non-extensible.js`
-- **134x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
+- **160x** `Uncaught RangeError: Invalid time zone`
+  - e.g.: `test/built-ins/Temporal/Duration/prototype/round/relativeto-days-24-hours-relative-to-zoned-date-time.js`
+- **157x** `Uncaught TypeError: Object.defineProperty called on non-object`
+  - e.g.: `test/built-ins/Array/prototype/methods-called-as-functions.js`
+- **151x** `SyntaxError: OutOfMemory`
+  - e.g.: `test/language/arguments-object/10.6-6-2.js`
+- **143x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - e.g.: `test/language/eval-code/indirect/var-env-func-non-strict.js`
 - **132x** `Uncaught RangeError: Maximum call stack size exceeded`
   - e.g.: `test/language/expressions/tco-pos.js`
 - **131x** `Uncaught { message: Expected a TestNError but got a TypeError }`
   - e.g.: `test/language/expressions/assignment/dstr/array-elem-trlg-iter-rest-rtrn-close-err.js`
-- **125x** `SyntaxError: OutOfMemory`
-  - e.g.: `test/language/arguments-object/10.6-6-2.js`
-- **123x** `Uncaught TypeError: Object.defineProperty called on non-object`
-  - e.g.: `test/built-ins/Array/prototype/methods-called-as-functions.js`
 - **119x** `Uncaught TypeError: resize is not a function`
   - e.g.: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
 - **119x** `Uncaught TypeError: Property description must be an object`
   - e.g.: `test/built-ins/Object/create/15.2.3.5-4-10.js`
-- **110x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
+- **116x** `async incomplete: SyntaxError: OutOfMemory`
+  - e.g.: `test/language/expressions/async-generator/dstr/ary-init-iter-close.js`
+- **113x** `Uncaught { message: Expected a RangeError but got a TypeError }`
+  - e.g.: `test/built-ins/Array/prototype/splice/create-non-array-invalid-len.js`
+- **111x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
   - e.g.: `test/language/expressions/array/spread-obj-mult-spread-getter.js`
 - **96x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: reject reason Expected SameValue(«TestNError:`
   - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-get-abrupt.js`
-- **93x** `async incomplete: SyntaxError: OutOfMemory`
-  - e.g.: `test/language/expressions/async-generator/dstr/dflt-ary-init-iter-close.js`
-- **93x** `Uncaught ReferenceError: WeakMap is not defined`
-  - e.g.: `test/language/expressions/class/subclass-builtins/subclass-WeakMap.js`
-- **93x** `Uncaught TypeError: expression is not a function`
-  - e.g.: `test/built-ins/Function/prototype/Symbol.hasInstance/this-val-bound-target.js`
+- **94x** `Uncaught { message: isConstructor invoked with a non-function value }`
+  - e.g.: `test/built-ins/Array/fromAsync/not-a-constructor.js`
 
 ## Top features present in FAILs
 
-- 3041x Temporal
+- 2763x Temporal
+- 1502x async-iteration
 - 1495x TypedArray
-- 1479x async-iteration
-- 1209x generators
-- 1133x Symbol.iterator
-- 1076x class
-- 1047x destructuring-binding
-- 698x BigInt
+- 1224x generators
+- 1177x Symbol.iterator
+- 1084x class
+- 1069x destructuring-binding
 - 687x class-fields-public
-- 673x Symbol
+- 674x BigInt
+- 618x Symbol
 - 604x dynamic-import
-- 498x Symbol.asyncIterator
+- 501x Symbol.asyncIterator
 - 451x resizable-arraybuffer
-- 445x class-methods-private
-- 431x default-parameters
-- 410x arrow-function
+- 449x class-methods-private
+- 436x default-parameters
+- 398x arrow-function
 - 397x class-fields-private
 - 386x iterator-helpers
 - 361x Proxy
 - 350x explicit-resource-management
-- 342x class-static-methods-private
+- 347x class-static-methods-private
 - 324x Reflect
 - 271x Symbol.species
 - 258x top-level-await

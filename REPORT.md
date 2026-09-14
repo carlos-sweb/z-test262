@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 29332 (64.3% of those ran)** | FAIL: 16277 | CRASH: 0 | TIMEOUT: 30 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 29572 (64.8% of those ran)** | FAIL: 16051 | CRASH: 0 | TIMEOUT: 16 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -42,7 +42,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 29332 (64.3% of those ran)** | FAIL: 1
 | test/built-ins/Promise | 201 | 525 | 0 | 0 | 3 | 27.7% |
 | test/built-ins/Proxy | 82 | 218 | 0 | 0 | 11 | 27.3% |
 | test/built-ins/Reflect | 109 | 44 | 0 | 0 | 0 | 71.2% |
-| test/built-ins/RegExp | 1215 | 646 | 0 | 17 | 1 | 64.7% |
+| test/built-ins/RegExp | 1229 | 646 | 0 | 3 | 1 | 65.4% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 205 | 177 | 0 | 0 | 1 | 53.7% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -52,7 +52,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 29332 (64.3% of those ran)** | FAIL: 1
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 0 | 22 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Symbol | 63 | 33 | 0 | 0 | 2 | 65.6% |
-| test/built-ins/Temporal | 1848 | 2755 | 0 | 0 | 0 | 40.1% |
+| test/built-ins/Temporal | 2074 | 2529 | 0 | 0 | 0 | 45.1% |
 | test/built-ins/ThrowTypeError | 0 | 14 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/TypedArray | 476 | 962 | 0 | 0 | 8 | 33.1% |
 | test/built-ins/TypedArrayConstructors | 336 | 386 | 0 | 0 | 16 | 46.5% |
@@ -114,7 +114,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 29332 (64.3% of those ran)** | FAIL: 1
   - e.g.: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **486x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
-- **411x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
+- **412x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - e.g.: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **333x** `Uncaught ReferenceError: Iterator is not defined`
   - e.g.: `test/built-ins/Iterator/length.js`
@@ -132,12 +132,12 @@ Total: 47381 tests | ran: 45639 | **PASS: 29332 (64.3% of those ran)** | FAIL: 1
   - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-null-sync-get-abrupt.js`
 - **182x** `Uncaught { message: Expected SameValue(«[object Function]», «N») to be true }`
   - e.g.: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
+- **171x** `Uncaught RangeError: Invalid time zone`
+  - e.g.: `test/built-ins/Temporal/Duration/prototype/round/relativeto-days-24-hours-relative-to-zoned-date-time.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - e.g.: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
+  - e.g.: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
 - **160x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - e.g.: `test/language/global-code/script-decl-func-err-non-extensible.js`
-- **160x** `Uncaught RangeError: Invalid time zone`
-  - e.g.: `test/built-ins/Temporal/Duration/prototype/round/relativeto-days-24-hours-relative-to-zoned-date-time.js`
 - **157x** `Uncaught TypeError: Object.defineProperty called on non-object`
   - e.g.: `test/built-ins/Array/prototype/methods-called-as-functions.js`
 - **151x** `SyntaxError: OutOfMemory`
@@ -148,24 +148,24 @@ Total: 47381 tests | ran: 45639 | **PASS: 29332 (64.3% of those ran)** | FAIL: 1
   - e.g.: `test/language/expressions/tco-pos.js`
 - **131x** `Uncaught { message: Expected a TestNError but got a TypeError }`
   - e.g.: `test/language/expressions/assignment/dstr/array-elem-trlg-iter-rest-rtrn-close-err.js`
+- **128x** `Uncaught RangeError: Invalid Temporal string`
+  - e.g.: `test/built-ins/Temporal/Duration/prototype/round/relativeto-date-limits.js`
+- **127x** `Uncaught { message: Expected a RangeError but got a TypeError }`
+  - e.g.: `test/built-ins/Array/prototype/splice/create-non-array-invalid-len.js`
+- **120x** `Uncaught TypeError: month is required`
+  - e.g.: `test/built-ins/Temporal/PlainDate/compare/argument-propertybag-calendar-case-insensitive.js`
 - **119x** `Uncaught TypeError: resize is not a function`
   - e.g.: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
 - **119x** `Uncaught TypeError: Property description must be an object`
   - e.g.: `test/built-ins/Object/create/15.2.3.5-4-10.js`
 - **116x** `async incomplete: SyntaxError: OutOfMemory`
   - e.g.: `test/language/expressions/async-generator/dstr/ary-init-iter-close.js`
-- **113x** `Uncaught { message: Expected a RangeError but got a TypeError }`
-  - e.g.: `test/built-ins/Array/prototype/splice/create-non-array-invalid-len.js`
 - **111x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
   - e.g.: `test/language/expressions/array/spread-obj-mult-spread-getter.js`
-- **96x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: reject reason Expected SameValue(«TestNError:`
-  - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-get-abrupt.js`
-- **94x** `Uncaught { message: isConstructor invoked with a non-function value }`
-  - e.g.: `test/built-ins/Array/fromAsync/not-a-constructor.js`
 
 ## Top features present in FAILs
 
-- 2763x Temporal
+- 2537x Temporal
 - 1502x async-iteration
 - 1495x TypedArray
 - 1224x generators
@@ -173,16 +173,16 @@ Total: 47381 tests | ran: 45639 | **PASS: 29332 (64.3% of those ran)** | FAIL: 1
 - 1084x class
 - 1069x destructuring-binding
 - 687x class-fields-public
-- 674x BigInt
-- 618x Symbol
+- 655x BigInt
 - 604x dynamic-import
+- 599x Symbol
 - 501x Symbol.asyncIterator
 - 451x resizable-arraybuffer
 - 449x class-methods-private
 - 436x default-parameters
-- 398x arrow-function
 - 397x class-fields-private
 - 386x iterator-helpers
+- 383x arrow-function
 - 361x Proxy
 - 350x explicit-resource-management
 - 347x class-static-methods-private

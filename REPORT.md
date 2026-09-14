@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 29346 (64.3% of those ran)** | FAIL: 16277 | CRASH: 0 | TIMEOUT: 16 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 29332 (64.3% of those ran)** | FAIL: 16277 | CRASH: 0 | TIMEOUT: 30 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -42,7 +42,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 29346 (64.3% of those ran)** | FAIL: 1
 | test/built-ins/Promise | 201 | 525 | 0 | 0 | 3 | 27.7% |
 | test/built-ins/Proxy | 82 | 218 | 0 | 0 | 11 | 27.3% |
 | test/built-ins/Reflect | 109 | 44 | 0 | 0 | 0 | 71.2% |
-| test/built-ins/RegExp | 1229 | 646 | 0 | 3 | 1 | 65.4% |
+| test/built-ins/RegExp | 1215 | 646 | 0 | 17 | 1 | 64.7% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 205 | 177 | 0 | 0 | 1 | 53.7% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
@@ -133,7 +133,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 29346 (64.3% of those ran)** | FAIL: 1
 - **182x** `Uncaught { message: Expected SameValue(«[object Function]», «N») to be true }`
   - e.g.: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - e.g.: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
+  - e.g.: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
 - **160x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - e.g.: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **160x** `Uncaught RangeError: Invalid time zone`

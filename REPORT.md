@@ -135,7 +135,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 29572 (64.8% of those ran)** | FAIL: 1
 - **171x** `Uncaught RangeError: Invalid time zone`
   - e.g.: `test/built-ins/Temporal/Duration/prototype/round/relativeto-days-24-hours-relative-to-zoned-date-time.js`
 - **166x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
-  - e.g.: `test/language/expressions/arrow-function/lexical-super-call-from-within-constructor.js`
+  - e.g.: `test/language/expressions/arrow-function/dflt-params-ref-self.js`
 - **160x** `Uncaught { message: Expected a TypeError but got a ReferenceError }`
   - e.g.: `test/language/global-code/script-decl-func-err-non-extensible.js`
 - **157x** `Uncaught TypeError: Object.defineProperty called on non-object`

@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 29572 (64.8% of those ran)** | FAIL: 16051 | CRASH: 0 | TIMEOUT: 16 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 29615 (64.9% of those ran)** | FAIL: 15999 | CRASH: 0 | TIMEOUT: 25 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -42,13 +42,13 @@ Total: 47381 tests | ran: 45639 | **PASS: 29572 (64.8% of those ran)** | FAIL: 1
 | test/built-ins/Promise | 201 | 525 | 0 | 0 | 3 | 27.7% |
 | test/built-ins/Proxy | 82 | 218 | 0 | 0 | 11 | 27.3% |
 | test/built-ins/Reflect | 109 | 44 | 0 | 0 | 0 | 71.2% |
-| test/built-ins/RegExp | 1229 | 646 | 0 | 3 | 1 | 65.4% |
+| test/built-ins/RegExp | 1268 | 598 | 0 | 12 | 1 | 67.5% |
 | test/built-ins/RegExpStringIteratorPrototype | 0 | 17 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Set | 205 | 177 | 0 | 0 | 1 | 53.7% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/ShadowRealm | 0 | 64 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SharedArrayBuffer | 30 | 74 | 0 | 0 | 0 | 28.8% |
-| test/built-ins/String | 956 | 264 | 0 | 0 | 3 | 78.4% |
+| test/built-ins/String | 957 | 263 | 0 | 0 | 3 | 78.4% |
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 0 | 22 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Symbol | 63 | 33 | 0 | 0 | 2 | 65.6% |
@@ -89,7 +89,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 29572 (64.8% of those ran)** | FAIL: 1
 | test/language/import | 13 | 115 | 0 | 0 | 0 | 10.2% |
 | test/language/keywords | 25 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/line-terminators | 39 | 2 | 0 | 0 | 0 | 95.1% |
-| test/language/literals | 508 | 8 | 0 | 4 | 14 | 97.7% |
+| test/language/literals | 511 | 5 | 0 | 4 | 14 | 98.3% |
 | test/language/module-code | 216 | 383 | 0 | 0 | 0 | 36.1% |
 | test/language/punctuators | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/reserved-words | 27 | 0 | 0 | 0 | 0 | 100.0% |
@@ -102,7 +102,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 29572 (64.8% of those ran)** | FAIL: 1
 
 ## Top FAIL causes (normalized message)
 
-- **809x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+- **810x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **686x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/eval-code/indirect/non-definable-global-function.js`
@@ -159,7 +159,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 29572 (64.8% of those ran)** | FAIL: 1
 - **119x** `Uncaught TypeError: Property description must be an object`
   - e.g.: `test/built-ins/Object/create/15.2.3.5-4-10.js`
 - **116x** `async incomplete: SyntaxError: OutOfMemory`
-  - e.g.: `test/language/expressions/async-generator/dstr/ary-init-iter-close.js`
+  - e.g.: `test/language/expressions/async-generator/dstr/dflt-ary-init-iter-close.js`
 - **111x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
   - e.g.: `test/language/expressions/array/spread-obj-mult-spread-getter.js`
 

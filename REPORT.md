@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 34888 (76.4% of those ran)** | FAIL: 10742 | CRASH: 0 | TIMEOUT: 9 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 34935 (76.5% of those ran)** | FAIL: 10695 | CRASH: 0 | TIMEOUT: 9 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -22,9 +22,9 @@ Total: 47381 tests | ran: 45639 | **PASS: 34888 (76.4% of those ran)** | FAIL: 1
 | test/built-ins/BigInt | 70 | 7 | 0 | 0 | 0 | 90.9% |
 | test/built-ins/Boolean | 47 | 4 | 0 | 0 | 0 | 92.2% |
 | test/built-ins/DataView | 400 | 161 | 0 | 0 | 0 | 71.3% |
-| test/built-ins/Date | 539 | 55 | 0 | 0 | 0 | 90.7% |
+| test/built-ins/Date | 569 | 25 | 0 | 0 | 0 | 95.8% |
 | test/built-ins/DisposableStack | 0 | 93 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Error | 29 | 64 | 0 | 0 | 0 | 31.2% |
+| test/built-ins/Error | 33 | 60 | 0 | 0 | 0 | 35.5% |
 | test/built-ins/FinalizationRegistry | 44 | 3 | 0 | 0 | 0 | 93.6% |
 | test/built-ins/Function | 218 | 203 | 0 | 0 | 88 | 51.8% |
 | test/built-ins/GeneratorFunction | 8 | 15 | 0 | 0 | 0 | 34.8% |
@@ -38,10 +38,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 34888 (76.4% of those ran)** | FAIL: 1
 | test/built-ins/NaN | 4 | 0 | 0 | 0 | 2 | 100.0% |
 | test/built-ins/NativeErrors | 68 | 26 | 0 | 0 | 0 | 72.3% |
 | test/built-ins/Number | 276 | 64 | 0 | 0 | 0 | 81.2% |
-| test/built-ins/Object | 2972 | 428 | 0 | 0 | 11 | 87.4% |
+| test/built-ins/Object | 2973 | 427 | 0 | 0 | 11 | 87.4% |
 | test/built-ins/Promise | 261 | 465 | 0 | 0 | 3 | 36.0% |
-| test/built-ins/Proxy | 137 | 163 | 0 | 0 | 11 | 45.7% |
-| test/built-ins/Reflect | 113 | 40 | 0 | 0 | 0 | 73.9% |
+| test/built-ins/Proxy | 139 | 161 | 0 | 0 | 11 | 46.3% |
+| test/built-ins/Reflect | 123 | 30 | 0 | 0 | 0 | 80.4% |
 | test/built-ins/RegExp | 1766 | 112 | 0 | 0 | 1 | 94.0% |
 | test/built-ins/RegExpStringIteratorPrototype | 16 | 1 | 0 | 0 | 0 | 94.1% |
 | test/built-ins/Set | 220 | 162 | 0 | 0 | 1 | 57.6% |
@@ -110,7 +110,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 34888 (76.4% of those ran)** | FAIL: 1
   - e.g.: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **478x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
-- **405x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
+- **406x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - e.g.: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
 - **388x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/language/arguments-object/10.6-13-c-3-s.js`
@@ -120,7 +120,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 34888 (76.4% of those ran)** | FAIL: 1
   - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-not-callable-boolean-throw.js`
 - **219x** `async incomplete: `
   - e.g.: `test/language/expressions/async-generator/expression-yield-star-before-newline.js`
-- **210x** `Uncaught TypeError: Cannot convert undefined or null to object`
+- **208x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - e.g.: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - e.g.: `test/language/asi/do-while-same-line.js`
@@ -182,10 +182,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 34888 (76.4% of those ran)** | FAIL: 1
 - 350x explicit-resource-management
 - 347x class-static-methods-private
 - 334x Symbol
-- 292x Proxy
-- 268x Reflect
+- 289x Proxy
 - 258x top-level-await
-- 229x arrow-function
+- 256x Reflect
+- 228x arrow-function
 - 216x SharedArrayBuffer
 - 213x Symbol.species
 - 180x Atomics

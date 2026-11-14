@@ -23,10 +23,10 @@ The suite is cloned separately (`git clone --depth 1 https://github.com/tc39/tes
 Use the capped ReleaseFast recipe below for measurements comparable to the
 historical baseline; a default Debug binary or an uncapped sweep changes results.
 
-## Current measurement: z-interpreter v0.3.5 / Zig 0.17.0
+## Current measurement: z-interpreter v0.3.7 / Zig 0.17.0
 
-The **2026-11-14** ReleaseFast sweep uses **z-interpreter v0.3.5**
-(commit `bf45b000b29746bbc03ef6eed38072df6fb71d24`), **z-run v0.3.5** (commit `2699c237bbc6e11a729b7654a9f4e8304a8491e5`), and package cascade: **z-array v0.2.1**, **z-value v0.1.2**, **z-json v0.1.2**, **z-yaml v0.2.1**, **z-toml v0.2.1**, **z-object v0.2.0**, **z-temporal v0.2.9**, and **z-regex v0.9.1**.
+The **2026-11-14** ReleaseFast sweep uses **z-interpreter v0.3.7**
+(commit `5eaa152eb3f6f74e1eb69c0d88b55d6e3ef1001f`), **z-run v0.3.7** (commit `f83849d23e30c9dba1f373ce3bf86faed9f34dc1`), and package cascade: **z-array v0.2.1**, **z-value v0.1.2**, **z-json v0.1.2**, **z-yaml v0.2.1**, **z-toml v0.2.1**, **z-object v0.2.0**, **z-temporal v0.2.9**, and **z-regex v0.9.1**.
 Test262 checkout: `9e61c12835c5e4a3bdba93850427e6742c4f64c4`.
 Scope: `test/language test/built-ins`, 8 workers, 5-second timeout and a
 2 GiB per-process address-space cap. The runner is unchanged and has no
@@ -34,16 +34,16 @@ separately selectable UTF-16/WTF-8 modes.
 
 | Result | Count |
 |---|---:|
-| PASS | 35,548 |
-| FAIL | 10,082 |
+| PASS | 36,012 |
+| FAIL | 9,618 |
 | CRASH | 0 |
 | TIMEOUT | 9 |
 | SKIP | 1,742 |
 | Total | 47,381 |
 | Executed | 45,639 |
 
-Pass rate: **77.9% of executed tests** (35,548 / 45,639; up from 76.7%). The previous committed REPORT.md
-had **35,010 PASS** (+538 net PASS; +564 FAIL→PASS). Key consolidation milestones across this progression:
+Pass rate: **78.9% of executed tests** (36,012 / 45,639; up from 77.9%). The previous committed REPORT.md
+had **35,548 PASS** (+464 net PASS vs v0.3.5). Key consolidation milestones across this progression:
 - **Bytecode VM**: JSValue 16B execution loop (fib 1.02s vs tree-walker 6.3s).
 - **Temporal 99.48%**: 4,587 PASS / 24 FAIL (zero regressions).
 - **Object & Array conformance**: E3/E4 conformance consolidated with zero generic array regressions.
@@ -52,16 +52,17 @@ had **35,010 PASS** (+538 net PASS; +564 FAIL→PASS). Key consolidation milesto
 - **Small battles batch 2**: `Date.prototype.set*` order & undefined handling (+30), `Error.prototype` own `name`/`message`/`constructor` properties (+4), `Reflect.setPrototypeOf` (+11) (+47 PASS vs v0.3.2).
 - **Small battles batch 3**: String small battles — `String.prototype.isWellFormed` (+8), `toWellFormed` (+8), `indexOf`/`lastIndexOf` position & searchValue coercion (+24), RegExp validation & position in `startsWith`/`endsWith`/`includes` (+25), and `normalize` (+10) (+75 PASS vs v0.3.3). 1 structural residual documented in `z-interpreter/docs/reports/STRING_RESIDUAL.md`.
 - **TypedArray intrinsic hierarchy + methods**: `%TypedArray%` intrinsic constructor, prototype & constructor inheritance chain, `from`/`of`, `@@species`, `@@toStringTag`, `thisArg`, `fromIndex`, `set` array-like, `toLocaleString`, `fill` coercion order, `sort` `-0`, `toReversed`/`toSorted`/`with`, and constructor overloads (+564 PASS; 26 deferred to Groups 4/5, documented in `z-interpreter/docs/reports/TYPEDARRAY_RESIDUAL.md`).
+- **for-of IteratorClose fix (+21 PASS general engine) + TypedArray Groups 3+4 (+443 desde v0.3.5)**: Integer-Indexed Exotic Object 10.4.5 complete, `TypedArraySpeciesCreate`/`GetPrototypeFromConstructor`/subclassing (plus `ArrayBuffer`/`DataView`/`SharedArrayBuffer` subclassing), and ES2015 7.4.11 `IteratorClose` on `return`/`break` in `for-of` loops.
 - **0 CRASH**: All prior crashes eliminated; TIMEOUT reduced from 108 to 9.
 
 Compared with the October v0.2.0 sweep, zero real PASS regressions reproduced.
 The lookbehind test `test/built-ins/RegExp/named-groups/lookbehind.js` remains a known gap: z-regex v0.9.1 does not support backward lookbehind with captures under `u` (`/(?<=(?<a>\w){3})f/u`).
 
-Input: `/tmp/sweep-bf45b00.jsonl`.
+Input: `/tmp/sweep-5eaa152.jsonl`.
 Regenerate the committed report with:
 
 ```sh
-python3 report.py /tmp/sweep-bf45b00.jsonl > REPORT.md
+python3 report.py /tmp/sweep-5eaa152.jsonl > REPORT.md
 ```
 
 ## Historical measurement: z-interpreter v0.1.0 / Zig 0.17.0

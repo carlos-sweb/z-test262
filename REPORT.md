@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 34935 (76.5% of those ran)** | FAIL: 10695 | CRASH: 0 | TIMEOUT: 9 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 35010 (76.7% of those ran)** | FAIL: 10620 | CRASH: 0 | TIMEOUT: 9 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -48,7 +48,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 34935 (76.5% of those ran)** | FAIL: 1
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/ShadowRealm | 0 | 64 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SharedArrayBuffer | 57 | 47 | 0 | 0 | 0 | 54.8% |
-| test/built-ins/String | 1112 | 108 | 0 | 0 | 3 | 91.1% |
+| test/built-ins/String | 1187 | 33 | 0 | 0 | 3 | 97.3% |
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 0 | 22 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Symbol | 71 | 25 | 0 | 0 | 2 | 74.0% |
@@ -104,15 +104,15 @@ Total: 47381 tests | ran: 45639 | **PASS: 34935 (76.5% of those ran)** | FAIL: 1
 
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
   - e.g.: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
-- **545x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+- **539x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/arguments-object/10.6-13-c-1-s.js`
 - **516x** `SyntaxError: UnexpectedToken`
   - e.g.: `test/language/comments/hashbang/line-terminator-line-separator.js`
-- **478x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
+- **472x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
-- **406x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
+- **405x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - e.g.: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
-- **388x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+- **386x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **335x** `Uncaught ReferenceError: $N is not defined`
   - e.g.: `test/language/eval-code/indirect/realm.js`
@@ -120,7 +120,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 34935 (76.5% of those ran)** | FAIL: 1
   - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-not-callable-boolean-throw.js`
 - **219x** `async incomplete: `
   - e.g.: `test/language/expressions/async-generator/expression-yield-star-before-newline.js`
-- **208x** `Uncaught TypeError: Cannot convert undefined or null to object`
+- **202x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - e.g.: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - e.g.: `test/language/asi/do-while-same-line.js`
@@ -140,10 +140,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 34935 (76.5% of those ran)** | FAIL: 1
   - e.g.: `test/language/expressions/async-generator/named-yield-star-sync-return.js`
 - **116x** `Uncaught TypeError: Setting a function's prototype to a non-object is not supported yet`
   - e.g.: `test/language/expressions/async-generator/default-proto.js`
-- **106x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
-  - e.g.: `test/language/eval-code/indirect/var-env-func-non-strict.js`
 - **105x** `Uncaught TypeError: Cannot set property constructor of a typed array: named properties are not supported yet (`
   - e.g.: `test/built-ins/TypedArray/prototype/filter/callbackfn-called-before-ctor.js`
+- **102x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
+  - e.g.: `test/language/eval-code/indirect/var-env-func-non-strict.js`
 - **97x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
   - e.g.: `test/language/expressions/array/spread-obj-mult-spread-getter.js`
 - **96x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: reject reason Expected SameValue(«TestNError:`
@@ -173,7 +173,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 34935 (76.5% of those ran)** | FAIL: 1
 - 1069x destructuring-binding
 - 683x class-fields-public
 - 604x dynamic-import
-- 519x BigInt
+- 518x BigInt
 - 501x Symbol.asyncIterator
 - 449x class-methods-private
 - 436x default-parameters
@@ -181,11 +181,11 @@ Total: 47381 tests | ran: 45639 | **PASS: 34935 (76.5% of those ran)** | FAIL: 1
 - 397x class-fields-private
 - 350x explicit-resource-management
 - 347x class-static-methods-private
-- 334x Symbol
+- 330x Symbol
 - 289x Proxy
 - 258x top-level-await
 - 256x Reflect
-- 228x arrow-function
+- 227x arrow-function
 - 216x SharedArrayBuffer
 - 213x Symbol.species
 - 180x Atomics

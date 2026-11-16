@@ -23,21 +23,21 @@ The suite is cloned separately (`git clone --depth 1 https://github.com/tc39/tes
 Use the capped ReleaseFast recipe below for measurements comparable to the
 historical baseline; a default Debug binary or an uncapped sweep changes results.
 
-## Current measurement: z-interpreter v0.3.7 / Zig 0.17.0
+## Current measurement: z-interpreter v0.3.10 / Zig 0.17.0
 
-The **2026-11-14** ReleaseFast sweep uses **z-interpreter v0.3.7**
-(commit `5eaa152eb3f6f74e1eb69c0d88b55d6e3ef1001f`), **z-run v0.3.7** (commit `f83849d23e30c9dba1f373ce3bf86faed9f34dc1`), and package cascade: **z-array v0.2.1**, **z-value v0.1.2**, **z-json v0.1.2**, **z-yaml v0.2.1**, **z-toml v0.2.1**, **z-object v0.2.0**, **z-temporal v0.2.9**, and **z-regex v0.9.1**.
+The **2026-11-15** ReleaseFast sweep uses **z-interpreter v0.3.10**
+(commit `4b9d0f75f3092b3e0e4a7047ade64b8371b1c206`), **z-run** (commit `bb95d96187d6e52718345a80bf4d3160253d248a`), and package cascade: **z-array v0.2.1**, **z-value v0.1.2**, **z-json v0.1.2**, **z-yaml v0.2.1**, **z-toml v0.2.1**, **z-object v0.2.0**, **z-temporal v0.2.9**, and **z-regex v0.9.1**.
 Test262 checkout: `9e61c12835c5e4a3bdba93850427e6742c4f64c4`.
-Scope: `test/language test/built-ins`, 8 workers, 5-second timeout and a
+Scope: `test/language test/built-ins`, 4 workers, 5-second timeout and a
 2 GiB per-process address-space cap. The runner is unchanged and has no
 separately selectable UTF-16/WTF-8 modes.
 
 | Result | Count |
 |---|---:|
 | PASS | 36,012 |
-| FAIL | 9,618 |
+| FAIL | 9,617 |
 | CRASH | 0 |
-| TIMEOUT | 9 |
+| TIMEOUT | 10 |
 | SKIP | 1,742 |
 | Total | 47,381 |
 | Executed | 45,639 |
@@ -53,16 +53,17 @@ had **35,548 PASS** (+464 net PASS vs v0.3.5). Key consolidation milestones acro
 - **Small battles batch 3**: String small battles — `String.prototype.isWellFormed` (+8), `toWellFormed` (+8), `indexOf`/`lastIndexOf` position & searchValue coercion (+24), RegExp validation & position in `startsWith`/`endsWith`/`includes` (+25), and `normalize` (+10) (+75 PASS vs v0.3.3). 1 structural residual documented in `z-interpreter/docs/reports/STRING_RESIDUAL.md`.
 - **TypedArray intrinsic hierarchy + methods**: `%TypedArray%` intrinsic constructor, prototype & constructor inheritance chain, `from`/`of`, `@@species`, `@@toStringTag`, `thisArg`, `fromIndex`, `set` array-like, `toLocaleString`, `fill` coercion order, `sort` `-0`, `toReversed`/`toSorted`/`with`, and constructor overloads (+564 PASS; 26 deferred to Groups 4/5, documented in `z-interpreter/docs/reports/TYPEDARRAY_RESIDUAL.md`).
 - **for-of IteratorClose fix (+21 PASS general engine) + TypedArray Groups 3+4 (+443 desde v0.3.5)**: Integer-Indexed Exotic Object 10.4.5 complete, `TypedArraySpeciesCreate`/`GetPrototypeFromConstructor`/subclassing (plus `ArrayBuffer`/`DataView`/`SharedArrayBuffer` subclassing), and ES2015 7.4.11 `IteratorClose` on `return`/`break` in `for-of` loops.
-- **0 CRASH**: All prior crashes eliminated; TIMEOUT reduced from 108 to 9.
+- **Bytecode VM gaps — bitwise operators, typeof/void, ++/-- superinstructions (+12 opcodes, 3 turns, 0 regressions).** Closure captures deferred to ScopeAnalyzer redesign (`BYTECODE_VM_RESIDUAL.md`).
+- **0 CRASH**: All prior crashes eliminated; TIMEOUT reduced from 108 to 10.
 
 Compared with the October v0.2.0 sweep, zero real PASS regressions reproduced.
 The lookbehind test `test/built-ins/RegExp/named-groups/lookbehind.js` remains a known gap: z-regex v0.9.1 does not support backward lookbehind with captures under `u` (`/(?<=(?<a>\w){3})f/u`).
 
-Input: `/tmp/sweep-5eaa152.jsonl`.
+Input: `/tmp/sweep-4b9d0f7.jsonl`.
 Regenerate the committed report with:
 
 ```sh
-python3 report.py /tmp/sweep-5eaa152.jsonl > REPORT.md
+python3 report.py /tmp/sweep-4b9d0f7.jsonl > REPORT.md
 ```
 
 ## Historical measurement: z-interpreter v0.1.0 / Zig 0.17.0

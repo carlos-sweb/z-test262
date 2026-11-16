@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9618 | CRASH: 0 | TIMEOUT: 9 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9617 | CRASH: 0 | TIMEOUT: 10 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -9,7 +9,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 22 | 3 | 0 | 0 | 0 | 88.0% |
-| test/built-ins/Array | 2111 | 934 | 0 | 0 | 36 | 69.3% |
+| test/built-ins/Array | 2111 | 933 | 0 | 1 | 36 | 69.3% |
 | test/built-ins/ArrayBuffer | 91 | 130 | 0 | 0 | 0 | 41.2% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
@@ -132,7 +132,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
   - e.g.: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **132x** `Uncaught RangeError: Maximum call stack size exceeded`
   - e.g.: `test/language/expressions/tco-pos.js`
-- **119x** `Out of memory: OutOfMemory`
+- **118x** `Out of memory: OutOfMemory`
   - e.g.: `test/language/expressions/arrow-function/dstr/ary-init-iter-close.js`
 - **118x** `async incomplete: Out of memory: OutOfMemory`
   - e.g.: `test/language/expressions/async-generator/named-yield-star-sync-return.js`

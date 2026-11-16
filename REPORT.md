@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9617 | CRASH: 0 | TIMEOUT: 10 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9616 | CRASH: 0 | TIMEOUT: 11 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -80,7 +80,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 96 | 31 | 0 | 0 | 220 | 75.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7922 | 2591 | 0 | 1 | 588 | 75.3% |
+| test/language/expressions | 7922 | 2590 | 0 | 2 | 588 | 75.3% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 21 | 16 | 0 | 0 | 5 | 56.8% |
@@ -132,10 +132,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
   - e.g.: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **132x** `Uncaught RangeError: Maximum call stack size exceeded`
   - e.g.: `test/language/expressions/tco-pos.js`
-- **118x** `Out of memory: OutOfMemory`
-  - e.g.: `test/language/expressions/arrow-function/dstr/ary-init-iter-close.js`
 - **118x** `async incomplete: Out of memory: OutOfMemory`
   - e.g.: `test/language/expressions/async-generator/named-yield-star-sync-return.js`
+- **117x** `Out of memory: OutOfMemory`
+  - e.g.: `test/language/expressions/arrow-function/dstr/ary-init-iter-close.js`
 - **111x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **102x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
@@ -166,9 +166,9 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
 ## Top features present in FAILs
 
 - 1494x async-iteration
-- 1218x generators
-- 1135x Symbol.iterator
-- 1069x destructuring-binding
+- 1217x generators
+- 1134x Symbol.iterator
+- 1068x destructuring-binding
 - 1066x class
 - 680x class-fields-public
 - 613x TypedArray

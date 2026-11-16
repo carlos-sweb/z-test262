@@ -45,7 +45,7 @@ separately selectable UTF-16/WTF-8 modes.
 Pass rate: **78.9% of executed tests** (36,012 / 45,639; up from 77.9%). The previous committed REPORT.md
 had **35,548 PASS** (+464 net PASS vs v0.3.5). Key consolidation milestones across this progression:
 - **Bytecode VM**: JSValue 16B execution loop (fib 1.02s vs tree-walker 6.3s).
-- **Temporal 99.48%**: 4,587 PASS / 24 FAIL (zero regressions).
+- **Temporal 99.5%**: 4,579 PASS / 24 FAIL (zero regressions; counted by exact `test/built-ins/Temporal/` prefix in `report.py`, whereas `check.sh` uses `'Temporal' in path` substring which includes 8 `Date.prototype.toTemporalInstant` tests for 4,587/24).
 - **Object & Array conformance**: E3/E4 conformance consolidated with zero generic array regressions.
 - **18 E3/E4 gaps resolved**: TypedArray exotic numeric index traps, Object.assign string coercion, Object.defineProperty bag synchronization, Object.getOwnPropertySymbols Proxy invariants, Promise newTarget, and Proxy.setPrototypeOf.
 - **Small battles batch 1**: NativeErrors prototype inheritance & properties (`EvalError`, `RangeError`, `ReferenceError`, `SyntaxError`, `TypeError`, `URIError`), `Number.isSafeInteger`, generic `Date.prototype.toJSON` per spec, and `BigInt.asIntN`/`asUintN` `ToIndex` (+60 net PASS).

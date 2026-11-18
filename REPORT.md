@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 36271 (79.5% of those ran)** | FAIL: 9319 | CRASH: 26 | TIMEOUT: 23 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 36297 (79.5% of those ran)** | FAIL: 9321 | CRASH: 0 | TIMEOUT: 21 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -13,7 +13,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36271 (79.5% of those ran)** | FAIL: 9
 | test/built-ins/ArrayBuffer | 96 | 125 | 0 | 0 | 0 | 43.4% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/AsyncFromSyncIteratorPrototype | 8 | 27 | 0 | 3 | 0 | 21.1% |
+| test/built-ins/AsyncFromSyncIteratorPrototype | 8 | 28 | 0 | 2 | 0 | 21.1% |
 | test/built-ins/AsyncFunction | 9 | 9 | 0 | 0 | 0 | 50.0% |
 | test/built-ins/AsyncGeneratorFunction | 8 | 15 | 0 | 0 | 0 | 34.8% |
 | test/built-ins/AsyncGeneratorPrototype | 2 | 45 | 0 | 1 | 0 | 4.2% |
@@ -21,7 +21,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36271 (79.5% of those ran)** | FAIL: 9
 | test/built-ins/Atomics | 210 | 177 | 0 | 0 | 2 | 54.3% |
 | test/built-ins/BigInt | 70 | 7 | 0 | 0 | 0 | 90.9% |
 | test/built-ins/Boolean | 47 | 4 | 0 | 0 | 0 | 92.2% |
-| test/built-ins/DataView | 440 | 117 | 4 | 0 | 0 | 78.4% |
+| test/built-ins/DataView | 448 | 113 | 0 | 0 | 0 | 79.9% |
 | test/built-ins/Date | 569 | 25 | 0 | 0 | 0 | 95.8% |
 | test/built-ins/DisposableStack | 0 | 93 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Error | 52 | 41 | 0 | 0 | 0 | 55.9% |
@@ -39,7 +39,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36271 (79.5% of those ran)** | FAIL: 9
 | test/built-ins/NativeErrors | 76 | 18 | 0 | 0 | 0 | 80.9% |
 | test/built-ins/Number | 276 | 64 | 0 | 0 | 0 | 81.2% |
 | test/built-ins/Object | 3009 | 391 | 0 | 0 | 11 | 88.5% |
-| test/built-ins/Promise | 261 | 464 | 0 | 1 | 3 | 36.0% |
+| test/built-ins/Promise | 261 | 463 | 0 | 2 | 3 | 36.0% |
 | test/built-ins/Proxy | 148 | 152 | 0 | 0 | 11 | 49.3% |
 | test/built-ins/Reflect | 123 | 30 | 0 | 0 | 0 | 80.4% |
 | test/built-ins/RegExp | 1766 | 112 | 0 | 0 | 1 | 94.0% |
@@ -54,8 +54,8 @@ Total: 47381 tests | ran: 45639 | **PASS: 36271 (79.5% of those ran)** | FAIL: 9
 | test/built-ins/Symbol | 71 | 25 | 0 | 0 | 2 | 74.0% |
 | test/built-ins/Temporal | 4579 | 24 | 0 | 0 | 0 | 99.5% |
 | test/built-ins/ThrowTypeError | 0 | 14 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/TypedArray | 1196 | 228 | 14 | 0 | 8 | 83.2% |
-| test/built-ins/TypedArrayConstructors | 650 | 64 | 8 | 0 | 16 | 90.0% |
+| test/built-ins/TypedArray | 1209 | 229 | 0 | 0 | 8 | 84.1% |
+| test/built-ins/TypedArrayConstructors | 655 | 67 | 0 | 0 | 16 | 90.7% |
 | test/built-ins/Uint8Array | 8 | 62 | 0 | 0 | 0 | 11.4% |
 | test/built-ins/WeakMap | 111 | 29 | 0 | 1 | 0 | 78.7% |
 | test/built-ins/WeakRef | 27 | 2 | 0 | 0 | 0 | 93.1% |
@@ -80,7 +80,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36271 (79.5% of those ran)** | FAIL: 9
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 96 | 31 | 0 | 0 | 220 | 75.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7922 | 2587 | 0 | 5 | 588 | 75.3% |
+| test/language/expressions | 7922 | 2586 | 0 | 6 | 588 | 75.3% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 24 | 13 | 0 | 0 | 5 | 64.9% |
@@ -96,7 +96,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36271 (79.5% of those ran)** | FAIL: 9
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 7042 | 1817 | 0 | 6 | 472 | 79.4% |
+| test/language/statements | 7042 | 1820 | 0 | 3 | 472 | 79.4% |
 | test/language/types | 101 | 3 | 0 | 0 | 9 | 97.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -136,10 +136,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 36271 (79.5% of those ran)** | FAIL: 9
   - e.g.: `test/language/expressions/tco-pos.js`
 - **114x** `async incomplete: Out of memory: OutOfMemory`
   - e.g.: `test/language/expressions/async-generator/dstr/ary-init-iter-close.js`
+- **111x** `Out of memory: OutOfMemory`
+  - e.g.: `test/language/expressions/arrow-function/dstr/ary-init-iter-close.js`
 - **110x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - e.g.: `test/language/eval-code/indirect/var-env-func-non-strict.js`
-- **109x** `Out of memory: OutOfMemory`
-  - e.g.: `test/language/expressions/arrow-function/dstr/dflt-ary-init-iter-close.js`
 - **97x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
   - e.g.: `test/language/expressions/array/spread-obj-mult-spread-getter.js`
 - **96x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: reject reason Expected SameValue(«TestNError:`
@@ -165,15 +165,15 @@ Total: 47381 tests | ran: 45639 | **PASS: 36271 (79.5% of those ran)** | FAIL: 9
 
 ## Top features present in FAILs
 
-- 1491x async-iteration
-- 1208x generators
-- 1124x Symbol.iterator
+- 1492x async-iteration
+- 1210x generators
+- 1125x Symbol.iterator
 - 1065x class
-- 1059x destructuring-binding
+- 1061x destructuring-binding
 - 680x class-fields-public
 - 604x dynamic-import
 - 500x Symbol.asyncIterator
-- 449x TypedArray
+- 453x TypedArray
 - 439x class-methods-private
 - 436x default-parameters
 - 402x resizable-arraybuffer
@@ -182,16 +182,11 @@ Total: 47381 tests | ran: 45639 | **PASS: 36271 (79.5% of those ran)** | FAIL: 9
 - 347x class-static-methods-private
 - 274x Proxy
 - 258x top-level-await
-- 229x Symbol
-- 194x arrow-function
+- 228x Symbol
+- 193x arrow-function
+- 188x BigInt
 - 188x Reflect
 - 185x SharedArrayBuffer
-- 184x BigInt
 - 177x Atomics
 - 175x cross-realm
 - 158x async-functions
-
-## CRASHES (the most severe)
-
-- **26x** `exit -N: `
-  - e.g.: `test/built-ins/DataView/prototype/getInt8/detached-buffer.js`

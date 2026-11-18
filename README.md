@@ -23,9 +23,9 @@ The suite is cloned separately (`git clone --depth 1 https://github.com/tc39/tes
 Use the capped ReleaseFast recipe below for measurements comparable to the
 historical baseline; a default Debug binary or an uncapped sweep changes results.
 
-## Current measurement: z-interpreter v0.3.18 / Zig 0.17.0
+## Current measurement: z-interpreter v0.3.19 / Zig 0.17.0
 
-The **2026-11-18** ReleaseFast sweep uses **z-interpreter v0.3.18** (`993e4c0`), **z-run** (`599c7d0`), and package cascade: **z-array v0.2.1**, **z-object v0.2.1**, **z-buffer v0.1.2**, **z-value v0.1.5**, **z-json v0.1.5**, **z-yaml v0.2.4**, **z-toml v0.2.4**, **z-temporal v0.2.9**, and **z-regex v0.9.1**.
+The **2026-11-18** ReleaseFast sweep uses **z-interpreter v0.3.19** (`e501a82`), **z-run** (`8a9445c`), and package cascade: **z-array v0.2.1**, **z-object v0.2.1**, **z-buffer v0.1.2**, **z-value v0.1.5**, **z-json v0.1.5**, **z-yaml v0.2.4**, **z-toml v0.2.4**, **z-temporal v0.2.9**, and **z-regex v0.9.1**.
 Test262 checkout: `9e61c12835c5e4a3bdba93850427e6742c4f64c4`.
 Scope: `test/language test/built-ins`, 4 workers, 5-second timeout and a
 2 GiB per-process address-space cap. The runner is unchanged and has no
@@ -33,15 +33,15 @@ separately selectable UTF-16/WTF-8 modes.
 
 | Result | Count |
 |---|---:|
-| PASS | 36,922 |
-| FAIL | 8,688 |
-| CRASH | 2 |
-| TIMEOUT | 27 |
+| PASS | 36,924 |
+| FAIL | 8,691 |
+| CRASH | 0 |
+| TIMEOUT | 24 |
 | SKIP | 1,742 |
 | Total | 47,381 |
 | Executed | 45,639 |
 
-Pass rate: **80.9% of executed tests** (36,922 / 45,639; up +625 PASS from 36,297 in v0.3.15). Key consolidation milestones across this progression:
+Pass rate: **80.9% of executed tests** (36,924 / 45,639; up +627 PASS from 36,297 in v0.3.15, 0 CRASH). Key consolidation milestones across this progression:
 - **Bytecode VM**: JSValue 16B execution loop (fib 1.02s vs tree-walker 6.3s).
 - **Temporal 99.5%**: 4,579 PASS / 24 FAIL (zero regressions; counted by exact `test/built-ins/Temporal/` prefix in `report.py`, whereas `check.sh` uses `'Temporal' in path` substring which includes 8 `Date.prototype.toTemporalInstant` tests for 4,587/24).
 - **Object & Array conformance**: E3/E4 conformance consolidated with zero generic array regressions.
@@ -60,11 +60,11 @@ Pass rate: **80.9% of executed tests** (36,922 / 45,639; up +625 PASS from 36,29
 Compared with the October v0.2.0 sweep, zero real PASS regressions reproduced.
 The lookbehind test `test/built-ins/RegExp/named-groups/lookbehind.js` remains a known gap: z-regex v0.9.1 does not support backward lookbehind with captures under `u` (`/(?<=(?<a>\w){3})f/u`).
 
-Input: `/tmp/sweep-993e4c0.jsonl`.
+Input: `/tmp/sweep-e501a82.jsonl`.
 Regenerate the committed report with:
 
 ```sh
-python3 report.py /tmp/sweep-993e4c0.jsonl > REPORT.md
+python3 report.py /tmp/sweep-e501a82.jsonl > REPORT.md
 ```
 
 ## Historical measurement: z-interpreter v0.1.0 / Zig 0.17.0

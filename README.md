@@ -23,10 +23,9 @@ The suite is cloned separately (`git clone --depth 1 https://github.com/tc39/tes
 Use the capped ReleaseFast recipe below for measurements comparable to the
 historical baseline; a default Debug binary or an uncapped sweep changes results.
 
-## Current measurement: z-interpreter v0.3.12 / Zig 0.17.0
+## Current measurement: z-interpreter v0.3.14 / Zig 0.17.0
 
-The **2026-11-18** ReleaseFast sweep uses **z-interpreter v0.3.12**
-(commit `9a4929193ec4c785afeb47a2b7a9e8aa9a84d03f`), **z-run** (commit `975a5fb5838c0858a73846d05181053efa058ce3`), and package cascade: **z-array v0.2.1**, **z-object v0.2.1**, **z-value v0.1.3**, **z-json v0.1.3**, **z-yaml v0.2.2**, **z-toml v0.2.2**, **z-temporal v0.2.9**, and **z-regex v0.9.1**.
+The **2026-11-18** ReleaseFast sweep uses **z-interpreter v0.3.14**, **z-run** (`a650d83`), and package cascade: **z-array v0.2.1**, **z-object v0.2.1**, **z-buffer v0.1.1**, **z-value v0.1.4**, **z-json v0.1.4**, **z-yaml v0.2.3**, **z-toml v0.2.3**, **z-temporal v0.2.9**, and **z-regex v0.9.1**.
 Test262 checkout: `9e61c12835c5e4a3bdba93850427e6742c4f64c4`.
 Scope: `test/language test/built-ins`, 4 workers, 5-second timeout and a
 2 GiB per-process address-space cap. The runner is unchanged and has no
@@ -34,16 +33,15 @@ separately selectable UTF-16/WTF-8 modes.
 
 | Result | Count |
 |---|---:|
-| PASS | 36,087 |
-| FAIL | 9,534 |
-| CRASH | 0 |
-| TIMEOUT | 18 |
+| PASS | 36,271 |
+| FAIL | 9,319 |
+| CRASH | 26 |
+| TIMEOUT | 23 |
 | SKIP | 1,742 |
 | Total | 47,381 |
 | Executed | 45,639 |
 
-Pass rate: **79.1% of executed tests** (36,087 / 45,639; up from 78.9%). The previous committed REPORT.md
-had **35,548 PASS** (+464 net PASS vs v0.3.5). Key consolidation milestones across this progression:
+Pass rate: **79.5% of executed tests** (36,271 / 45,639; up from 79.1% / 36,087 PASS in v0.3.12). Key consolidation milestones across this progression:
 - **Bytecode VM**: JSValue 16B execution loop (fib 1.02s vs tree-walker 6.3s).
 - **Temporal 99.5%**: 4,579 PASS / 24 FAIL (zero regressions; counted by exact `test/built-ins/Temporal/` prefix in `report.py`, whereas `check.sh` uses `'Temporal' in path` substring which includes 8 `Date.prototype.toTemporalInstant` tests for 4,587/24).
 - **Object & Array conformance**: E3/E4 conformance consolidated with zero generic array regressions.
@@ -56,16 +54,16 @@ had **35,548 PASS** (+464 net PASS vs v0.3.5). Key consolidation milestones acro
 - **Bytecode VM gaps — bitwise operators, typeof/void, ++/-- superinstructions (+12 opcodes, 3 turns, 0 regressions).** Closure captures deferred to ScopeAnalyzer redesign (`BYTECODE_VM_RESIDUAL.md`).
 - **Bytecode VM — sequence expressions, exponentiation (zmath.pow spec-compliant), do-while (+15 opcodes total across 4 turns, 0 regressions).**
 - **v0.3.12: Unificación de Error/NativeError/AggregateError en ZObject con [[ErrorData]] + Error.isError (+75 PASS)**.
-- **0 CRASH**: All prior crashes eliminated; TIMEOUT reduced from 108 to 18.
+- **v0.3.14: Soporte real de Detached ArrayBuffer en `z-buffer` + `$262.detachArrayBuffer` (+184 PASS, 0 regresiones PASS->FAIL; 26 crashes mid-call corregidos en v0.3.15)**.
 
 Compared with the October v0.2.0 sweep, zero real PASS regressions reproduced.
 The lookbehind test `test/built-ins/RegExp/named-groups/lookbehind.js` remains a known gap: z-regex v0.9.1 does not support backward lookbehind with captures under `u` (`/(?<=(?<a>\w){3})f/u`).
 
-Input: `/tmp/sweep-9a49291.jsonl`.
+Input: `/tmp/sweep-a650d83.jsonl`.
 Regenerate the committed report with:
 
 ```sh
-python3 report.py /tmp/sweep-9a49291.jsonl > REPORT.md
+python3 report.py /tmp/sweep-a650d83.jsonl > REPORT.md
 ```
 
 ## Historical measurement: z-interpreter v0.1.0 / Zig 0.17.0

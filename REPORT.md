@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 36087 (79.1% of those ran)** | FAIL: 9534 | CRASH: 0 | TIMEOUT: 18 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 36271 (79.5% of those ran)** | FAIL: 9319 | CRASH: 26 | TIMEOUT: 23 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -10,18 +10,18 @@ Total: 47381 tests | ran: 45639 | **PASS: 36087 (79.1% of those ran)** | FAIL: 9
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 22 | 3 | 0 | 0 | 0 | 88.0% |
 | test/built-ins/Array | 2120 | 924 | 0 | 1 | 36 | 69.6% |
-| test/built-ins/ArrayBuffer | 91 | 130 | 0 | 0 | 0 | 41.2% |
+| test/built-ins/ArrayBuffer | 96 | 125 | 0 | 0 | 0 | 43.4% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/AsyncFromSyncIteratorPrototype | 8 | 29 | 0 | 1 | 0 | 21.1% |
+| test/built-ins/AsyncFromSyncIteratorPrototype | 8 | 27 | 0 | 3 | 0 | 21.1% |
 | test/built-ins/AsyncFunction | 9 | 9 | 0 | 0 | 0 | 50.0% |
 | test/built-ins/AsyncGeneratorFunction | 8 | 15 | 0 | 0 | 0 | 34.8% |
 | test/built-ins/AsyncGeneratorPrototype | 2 | 45 | 0 | 1 | 0 | 4.2% |
 | test/built-ins/AsyncIteratorPrototype | 0 | 13 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Atomics | 207 | 180 | 0 | 0 | 2 | 53.5% |
+| test/built-ins/Atomics | 210 | 177 | 0 | 0 | 2 | 54.3% |
 | test/built-ins/BigInt | 70 | 7 | 0 | 0 | 0 | 90.9% |
 | test/built-ins/Boolean | 47 | 4 | 0 | 0 | 0 | 92.2% |
-| test/built-ins/DataView | 406 | 155 | 0 | 0 | 0 | 72.4% |
+| test/built-ins/DataView | 440 | 117 | 4 | 0 | 0 | 78.4% |
 | test/built-ins/Date | 569 | 25 | 0 | 0 | 0 | 95.8% |
 | test/built-ins/DisposableStack | 0 | 93 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/Error | 52 | 41 | 0 | 0 | 0 | 55.9% |
@@ -39,7 +39,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36087 (79.1% of those ran)** | FAIL: 9
 | test/built-ins/NativeErrors | 76 | 18 | 0 | 0 | 0 | 80.9% |
 | test/built-ins/Number | 276 | 64 | 0 | 0 | 0 | 81.2% |
 | test/built-ins/Object | 3009 | 391 | 0 | 0 | 11 | 88.5% |
-| test/built-ins/Promise | 261 | 465 | 0 | 0 | 3 | 36.0% |
+| test/built-ins/Promise | 261 | 464 | 0 | 1 | 3 | 36.0% |
 | test/built-ins/Proxy | 148 | 152 | 0 | 0 | 11 | 49.3% |
 | test/built-ins/Reflect | 123 | 30 | 0 | 0 | 0 | 80.4% |
 | test/built-ins/RegExp | 1766 | 112 | 0 | 0 | 1 | 94.0% |
@@ -54,9 +54,9 @@ Total: 47381 tests | ran: 45639 | **PASS: 36087 (79.1% of those ran)** | FAIL: 9
 | test/built-ins/Symbol | 71 | 25 | 0 | 0 | 2 | 74.0% |
 | test/built-ins/Temporal | 4579 | 24 | 0 | 0 | 0 | 99.5% |
 | test/built-ins/ThrowTypeError | 0 | 14 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/TypedArray | 1090 | 348 | 0 | 0 | 8 | 75.8% |
-| test/built-ins/TypedArrayConstructors | 619 | 103 | 0 | 0 | 16 | 85.7% |
-| test/built-ins/Uint8Array | 6 | 64 | 0 | 0 | 0 | 8.6% |
+| test/built-ins/TypedArray | 1196 | 228 | 14 | 0 | 8 | 83.2% |
+| test/built-ins/TypedArrayConstructors | 650 | 64 | 8 | 0 | 16 | 90.0% |
+| test/built-ins/Uint8Array | 8 | 62 | 0 | 0 | 0 | 11.4% |
 | test/built-ins/WeakMap | 111 | 29 | 0 | 1 | 0 | 78.7% |
 | test/built-ins/WeakRef | 27 | 2 | 0 | 0 | 0 | 93.1% |
 | test/built-ins/WeakSet | 82 | 3 | 0 | 0 | 0 | 96.5% |
@@ -80,10 +80,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 36087 (79.1% of those ran)** | FAIL: 9
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 96 | 31 | 0 | 0 | 220 | 75.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7922 | 2586 | 0 | 6 | 588 | 75.3% |
+| test/language/expressions | 7922 | 2587 | 0 | 5 | 588 | 75.3% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
-| test/language/global-code | 21 | 16 | 0 | 0 | 5 | 56.8% |
+| test/language/global-code | 24 | 13 | 0 | 0 | 5 | 64.9% |
 | test/language/identifier-resolution | 8 | 1 | 0 | 0 | 5 | 88.9% |
 | test/language/identifiers | 264 | 4 | 0 | 0 | 0 | 98.5% |
 | test/language/import | 13 | 115 | 0 | 0 | 0 | 10.2% |
@@ -96,7 +96,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36087 (79.1% of those ran)** | FAIL: 9
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 7042 | 1820 | 0 | 3 | 472 | 79.4% |
+| test/language/statements | 7042 | 1817 | 0 | 6 | 472 | 79.4% |
 | test/language/types | 101 | 3 | 0 | 0 | 9 | 97.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -104,16 +104,14 @@ Total: 47381 tests | ran: 45639 | **PASS: 36087 (79.1% of those ran)** | FAIL: 9
 
 - **560x** `async incomplete: SyntaxError: UnexpectedToken`
   - e.g.: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
-- **526x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+- **530x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/arguments-object/10.6-13-c-1-s.js`
 - **516x** `SyntaxError: UnexpectedToken`
   - e.g.: `test/language/comments/hashbang/line-terminator-line-separator.js`
 - **470x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/expressions/assignment/dstr/array-empty-iter-close-err.js`
-- **402x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
+- **403x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - e.g.: `test/language/expressions/arrow-function/dstr/ary-ptrn-elem-id-iter-val-array-prototype.js`
-- **338x** `Uncaught ReferenceError: $N is not defined`
-  - e.g.: `test/language/eval-code/indirect/realm.js`
 - **228x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: TypeError Expected SameValue(«[object Functio`
   - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-not-callable-boolean-throw.js`
 - **218x** `async incomplete: `
@@ -124,6 +122,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 36087 (79.1% of those ran)** | FAIL: 9
   - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-null-sync-get-abrupt.js`
 - **182x** `Uncaught { message: Expected SameValue(«[object Function]», «N») to be true }`
   - e.g.: `test/language/expressions/class/elements/after-same-line-gen-rs-private-getter-alt.js`
+- **172x** `Uncaught TypeError: createRealm is not a function`
+  - e.g.: `test/language/eval-code/indirect/realm.js`
+- **168x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+  - e.g.: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **153x** `Uncaught TypeError: resize is not a function`
   - e.g.: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
 - **142x** `Uncaught { message: Expected a ReferenceError to be thrown but no exception was thrown at all }`
@@ -132,14 +134,12 @@ Total: 47381 tests | ran: 45639 | **PASS: 36087 (79.1% of those ran)** | FAIL: 9
   - e.g.: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **132x** `Uncaught RangeError: Maximum call stack size exceeded`
   - e.g.: `test/language/expressions/tco-pos.js`
-- **117x** `async incomplete: Out of memory: OutOfMemory`
+- **114x** `async incomplete: Out of memory: OutOfMemory`
   - e.g.: `test/language/expressions/async-generator/dstr/ary-init-iter-close.js`
-- **111x** `Out of memory: OutOfMemory`
-  - e.g.: `test/language/expressions/arrow-function/dstr/ary-init-iter-close.js`
-- **109x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
-  - e.g.: `test/language/arguments-object/10.6-13-c-3-s.js`
-- **102x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
+- **110x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - e.g.: `test/language/eval-code/indirect/var-env-func-non-strict.js`
+- **109x** `Out of memory: OutOfMemory`
+  - e.g.: `test/language/expressions/arrow-function/dstr/dflt-ary-init-iter-close.js`
 - **97x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
   - e.g.: `test/language/expressions/array/spread-obj-mult-spread-getter.js`
 - **96x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: reject reason Expected SameValue(«TestNError:`
@@ -154,39 +154,44 @@ Total: 47381 tests | ran: 45639 | **PASS: 36087 (79.1% of those ran)** | FAIL: 9
   - e.g.: `test/language/arguments-object/10.6-11-b-1.js`
 - **76x** `Uncaught { message: implements ArrayBuffer.prototype.resize Expected SameValue(«"undefined"», «"function"») to`
   - e.g.: `test/built-ins/DataView/prototype/getBigInt64/resizable-buffer.js`
-- **76x** `Uncaught ReferenceError: $N is not defined (Testing with FloatNArray and makePassthrough.)`
-  - e.g.: `test/built-ins/TypedArray/prototype/Symbol.toStringTag/detached-buffer.js`
-- **72x** `Uncaught ReferenceError: $N is not defined (Testing with BigIntNArray and makePassthrough.)`
-  - e.g.: `test/built-ins/TypedArray/prototype/Symbol.toStringTag/BigInt/detached-buffer.js`
 - **70x** `Uncaught ReferenceError: AsyncDisposableStack is not defined`
   - e.g.: `test/built-ins/AsyncDisposableStack/instance-extensible.js`
-- **57x** `Uncaught { message: Expected a TestNError but got a TypeError }`
+- **61x** `async incomplete: Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+  - e.g.: `test/built-ins/AsyncGeneratorFunction/invoked-as-constructor-no-arguments.js`
+- **58x** `Uncaught { message: Expected a TestNError but got a TypeError }`
   - e.g.: `test/language/expressions/assignment/dstr/array-elem-trlg-iter-rest-rtrn-close-err.js`
+- **57x** `Uncaught ReferenceError: ShadowRealm is not defined`
+  - e.g.: `test/built-ins/ShadowRealm/extensibility.js`
 
 ## Top features present in FAILs
 
-- 1493x async-iteration
-- 1210x generators
-- 1127x Symbol.iterator
+- 1491x async-iteration
+- 1208x generators
+- 1124x Symbol.iterator
 - 1065x class
-- 1061x destructuring-binding
+- 1059x destructuring-binding
 - 680x class-fields-public
-- 613x TypedArray
 - 604x dynamic-import
 - 500x Symbol.asyncIterator
+- 449x TypedArray
 - 439x class-methods-private
 - 436x default-parameters
-- 404x resizable-arraybuffer
+- 402x resizable-arraybuffer
 - 395x class-fields-private
 - 350x explicit-resource-management
 - 347x class-static-methods-private
 - 274x Proxy
-- 264x BigInt
 - 258x top-level-await
-- 240x Symbol
-- 202x Reflect
-- 197x arrow-function
+- 229x Symbol
+- 194x arrow-function
+- 188x Reflect
 - 185x SharedArrayBuffer
-- 180x Atomics
+- 184x BigInt
+- 177x Atomics
 - 175x cross-realm
 - 158x async-functions
+
+## CRASHES (the most severe)
+
+- **26x** `exit -N: `
+  - e.g.: `test/built-ins/DataView/prototype/getInt8/detached-buffer.js`

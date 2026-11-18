@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9616 | CRASH: 0 | TIMEOUT: 11 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 36087 (79.1% of those ran)** | FAIL: 9534 | CRASH: 0 | TIMEOUT: 18 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -9,7 +9,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 22 | 3 | 0 | 0 | 0 | 88.0% |
-| test/built-ins/Array | 2111 | 933 | 0 | 1 | 36 | 69.3% |
+| test/built-ins/Array | 2120 | 924 | 0 | 1 | 36 | 69.6% |
 | test/built-ins/ArrayBuffer | 91 | 130 | 0 | 0 | 0 | 41.2% |
 | test/built-ins/ArrayIteratorPrototype | 10 | 9 | 0 | 0 | 8 | 52.6% |
 | test/built-ins/AsyncDisposableStack | 0 | 104 | 0 | 0 | 0 | 0.0% |
@@ -24,7 +24,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
 | test/built-ins/DataView | 406 | 155 | 0 | 0 | 0 | 72.4% |
 | test/built-ins/Date | 569 | 25 | 0 | 0 | 0 | 95.8% |
 | test/built-ins/DisposableStack | 0 | 93 | 0 | 0 | 0 | 0.0% |
-| test/built-ins/Error | 33 | 60 | 0 | 0 | 0 | 35.5% |
+| test/built-ins/Error | 52 | 41 | 0 | 0 | 0 | 55.9% |
 | test/built-ins/FinalizationRegistry | 45 | 2 | 0 | 0 | 0 | 95.7% |
 | test/built-ins/Function | 223 | 198 | 0 | 0 | 88 | 53.0% |
 | test/built-ins/GeneratorFunction | 8 | 15 | 0 | 0 | 0 | 34.8% |
@@ -36,9 +36,9 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
 | test/built-ins/MapIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/Math | 327 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/NaN | 4 | 0 | 0 | 0 | 2 | 100.0% |
-| test/built-ins/NativeErrors | 68 | 26 | 0 | 0 | 0 | 72.3% |
+| test/built-ins/NativeErrors | 76 | 18 | 0 | 0 | 0 | 80.9% |
 | test/built-ins/Number | 276 | 64 | 0 | 0 | 0 | 81.2% |
-| test/built-ins/Object | 2978 | 422 | 0 | 0 | 11 | 87.6% |
+| test/built-ins/Object | 3009 | 391 | 0 | 0 | 11 | 88.5% |
 | test/built-ins/Promise | 261 | 465 | 0 | 0 | 3 | 36.0% |
 | test/built-ins/Proxy | 148 | 152 | 0 | 0 | 11 | 49.3% |
 | test/built-ins/Reflect | 123 | 30 | 0 | 0 | 0 | 80.4% |
@@ -80,7 +80,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 96 | 31 | 0 | 0 | 220 | 75.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 7922 | 2590 | 0 | 2 | 588 | 75.3% |
+| test/language/expressions | 7922 | 2586 | 0 | 6 | 588 | 75.3% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 21 | 16 | 0 | 0 | 5 | 56.8% |
@@ -96,7 +96,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 7034 | 1831 | 0 | 0 | 472 | 79.3% |
+| test/language/statements | 7042 | 1820 | 0 | 3 | 472 | 79.4% |
 | test/language/types | 101 | 3 | 0 | 0 | 9 | 97.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -116,7 +116,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
   - e.g.: `test/language/eval-code/indirect/realm.js`
 - **228x** `async incomplete: TestN:AsyncTestFailure:TestNError: TestNError: TypeError Expected SameValue(«[object Functio`
   - e.g.: `test/language/expressions/async-generator/named-yield-star-getiter-async-not-callable-boolean-throw.js`
-- **219x** `async incomplete: `
+- **218x** `async incomplete: `
   - e.g.: `test/language/expressions/async-generator/expression-yield-star-before-newline.js`
 - **196x** `SyntaxError: MissingSemicolon`
   - e.g.: `test/language/asi/do-while-same-line.js`
@@ -132,11 +132,11 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
   - e.g.: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **132x** `Uncaught RangeError: Maximum call stack size exceeded`
   - e.g.: `test/language/expressions/tco-pos.js`
-- **118x** `async incomplete: Out of memory: OutOfMemory`
-  - e.g.: `test/language/expressions/async-generator/named-yield-star-sync-return.js`
-- **117x** `Out of memory: OutOfMemory`
+- **117x** `async incomplete: Out of memory: OutOfMemory`
+  - e.g.: `test/language/expressions/async-generator/dstr/ary-init-iter-close.js`
+- **111x** `Out of memory: OutOfMemory`
   - e.g.: `test/language/expressions/arrow-function/dstr/ary-init-iter-close.js`
-- **111x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+- **109x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/language/arguments-object/10.6-13-c-3-s.js`
 - **102x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - e.g.: `test/language/eval-code/indirect/var-env-func-non-strict.js`
@@ -165,11 +165,11 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
 
 ## Top features present in FAILs
 
-- 1494x async-iteration
-- 1217x generators
-- 1134x Symbol.iterator
-- 1068x destructuring-binding
-- 1066x class
+- 1493x async-iteration
+- 1210x generators
+- 1127x Symbol.iterator
+- 1065x class
+- 1061x destructuring-binding
 - 680x class-fields-public
 - 613x TypedArray
 - 604x dynamic-import
@@ -181,9 +181,9 @@ Total: 47381 tests | ran: 45639 | **PASS: 36012 (78.9% of those ran)** | FAIL: 9
 - 350x explicit-resource-management
 - 347x class-static-methods-private
 - 274x Proxy
-- 265x BigInt
+- 264x BigInt
 - 258x top-level-await
-- 241x Symbol
+- 240x Symbol
 - 202x Reflect
 - 197x arrow-function
 - 185x SharedArrayBuffer

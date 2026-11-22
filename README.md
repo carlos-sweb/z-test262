@@ -23,9 +23,9 @@ The suite is cloned separately (`git clone --depth 1 https://github.com/tc39/tes
 Use the capped ReleaseFast recipe below for measurements comparable to the
 historical baseline; a default Debug binary or an uncapped sweep changes results.
 
-## Current measurement: z-interpreter v0.4.17 / Zig 0.17.0
+## Current measurement: z-interpreter v0.4.18 / Zig 0.17.0
 
-The **2026-11-22** ReleaseFast sweep uses **z-interpreter v0.4.17** (`ee97b5e`), **z-run** (`1c7d468`), and package cascade: **z-array v0.2.1**, **z-object v0.2.1**, **z-buffer v0.1.2**, **z-value v0.1.5**, **z-json v0.1.5**, **z-yaml v0.2.4**, **z-toml v0.2.4**, **z-temporal v0.2.9**, and **z-regex v0.9.1**.
+The **2026-11-22** ReleaseFast sweep uses **z-interpreter v0.4.18** (`689c177`), **z-run** (`730a6b0`), and package cascade: **z-array v0.2.1**, **z-object v0.2.1**, **z-buffer v0.1.2**, **z-value v0.1.5**, **z-json v0.1.5**, **z-yaml v0.2.4**, **z-toml v0.2.4**, **z-temporal v0.2.9**, and **z-regex v0.9.1**.
 Test262 checkout: `9e61c12835c5e4a3bdba93850427e6742c4f64c4`.
 Scope: `test/language test/built-ins`, 4 workers, 5-second timeout and a
 2 GiB per-process address-space cap. The runner is unchanged and has no
@@ -33,15 +33,15 @@ separately selectable UTF-16/WTF-8 modes.
 
 | Result | Count |
 |---|---:|
-| PASS | 40,863 |
-| FAIL | 4,775 |
+| PASS | 41,226 |
+| FAIL | 4,413 |
 | CRASH | 0 |
-| TIMEOUT | 1 |
+| TIMEOUT | 0 |
 | SKIP | 1,742 |
 | Total | 47,381 |
 | Executed | 45,639 |
 
-Pass rate: **89.54% of executed tests** (40,863 / 45,639; up +364 PASS from 40,499 in v0.4.16, TIMEOUT down from 13 to 1, 0 regressions). Key consolidation milestones across this progression:
+Pass rate: **90.33% of executed tests** (41,226 / 45,639; up +363 PASS from 40,863 in v0.4.17, TIMEOUT down from 1 to 0, 0 regressions). Key consolidation milestones across this progression:
 - **Bytecode VM**: JSValue 16B execution loop (fib 1.02s vs tree-walker 6.3s).
 - **Temporal 99.5%**: 4,579 PASS / 24 FAIL (zero regressions; counted by exact `test/built-ins/Temporal/` prefix in `report.py`, whereas `check.sh` uses `'Temporal' in path` substring which includes 8 `Date.prototype.toTemporalInstant` tests for 4,587/24).
 - **Object & Array conformance**: E3/E4 conformance consolidated with zero generic array regressions.
@@ -58,15 +58,16 @@ Pass rate: **89.54% of executed tests** (40,863 / 45,639; up +364 PASS from 40,4
 - **v0.3.16–v0.3.20: Bloques 1–4 de E3/E4 — `Array.prototype` array-like genérico, descriptores/bags en builtins, `delete`/`for-in` en `Array`/`arguments`, `ArraySpeciesCreate` + `@@isConcatSpreadable`, `Reflect.preventExtensions`/`isExtensible`, invariantes de `Proxy`, `hoistDeclarations` + `liveElem` descriptors, Annex B `Object.prototype` accessors, `Object.groupBy` y `Object.fromEntries` (+856 PASS desde v0.3.15, 37,153 PASS / 81.4%, 0 CRASH)**.
 - **v0.4.x–v0.4.16 (Fases 1–3 Test262, 40,499 PASS / 88.74%, 0 CRASH)**: Fase 1 (Parser/Runtime/Builtins), Fase 2 (`Array.prototype[Symbol.iterator]` en destructuring, `GetMethod`/`AsyncFromSyncIterator` estricto, `yield*` sync/async: 40,335 PASS / 88.38%), Fase 3 (`DataView.prototype.{getFloat16,setFloat16}` + detached, `Uint8Array` Base64/Hex, `TypedArray` exotic `[[Set]]`/`[[DefineOwnProperty]]`/`[[Delete]]` + `Reflect.set` `Receiver`: +164 PASS, 0 regresiones, `Temporal` 4,587/4,611).
 - **v0.4.17 (Fase 4 Test262, 40,863 PASS / 89.54%, `TIMEOUT=1`, 0 CRASH)**: `SuppressedError`, `DisposableStack`, `AsyncDisposableStack`, `Symbol.{dispose,asyncDispose}` en iteradores, `Iterator.{concat,zip,zipKeyed}`, `%ArrayIteratorPrototype%` en Array/TypedArray, y cierre de 12/13 `TIMEOUT` en `Map`/`WeakMap`/`Set`/`WeakSet` y `Array.prototype.{splice,with}` (+364 PASS, 0 regresiones, `Temporal` 4,587/4,611).
+- **v0.4.18 (Fase 5 Test262, 41,226 PASS / 90.33%, `TIMEOUT=0`, 0 CRASH)**: `Promise.{allKeyed,allSettledKeyed}`, `AsyncGeneratorQueue` FIFO (`TIMEOUT` 1→0), huecos reales en `new Array(len)` y elisiones `[,]`, `liveElem` con prototipos, `Array.prototype.{indexOf,lastIndexOf}` e índices de `Array` en `hasProperty`/`Object.keys`, literales `0x`/`0b`/`0o` en `toNumber`, `Function.prototype.{toString,apply,bind,Symbol.hasInstance}` y `OrdinaryHasInstance` (+363 PASS, 0 regresiones, `Temporal` 4,587/4,611).
 
 Compared with the October v0.2.0 sweep, zero real PASS regressions reproduced.
 The lookbehind test `test/built-ins/RegExp/named-groups/lookbehind.js` remains a known gap: z-regex v0.9.1 does not support backward lookbehind with captures under `u` (`/(?<=(?<a>\w){3})f/u`).
 
-Input: `/tmp/sweep-ee97b5e.jsonl`.
+Input: `/tmp/sweep-7c6a416.jsonl`.
 Regenerate the committed report with:
 
 ```sh
-python3 report.py /tmp/sweep-ee97b5e.jsonl > REPORT.md
+python3 report.py /tmp/sweep-7c6a416.jsonl > REPORT.md
 ```
 
 ## Historical measurement: z-interpreter v0.1.0 / Zig 0.17.0

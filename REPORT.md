@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 42211 (92.5% of those ran)** | FAIL: 3428 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 42383 (92.9% of those ran)** | FAIL: 3256 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -9,10 +9,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 42211 (92.5% of those ran)** | FAIL: 3
 |---|---|---|---|---|---|---|
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 23 | 2 | 0 | 0 | 0 | 92.0% |
-| test/built-ins/Array | 2859 | 186 | 0 | 0 | 36 | 93.9% |
+| test/built-ins/Array | 2861 | 184 | 0 | 0 | 36 | 94.0% |
 | test/built-ins/ArrayBuffer | 113 | 108 | 0 | 0 | 0 | 51.1% |
 | test/built-ins/ArrayIteratorPrototype | 13 | 6 | 0 | 0 | 8 | 68.4% |
-| test/built-ins/AsyncDisposableStack | 101 | 3 | 0 | 0 | 0 | 97.1% |
+| test/built-ins/AsyncDisposableStack | 103 | 1 | 0 | 0 | 0 | 99.0% |
 | test/built-ins/AsyncFromSyncIteratorPrototype | 38 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/AsyncFunction | 10 | 8 | 0 | 0 | 0 | 55.6% |
 | test/built-ins/AsyncGeneratorFunction | 11 | 12 | 0 | 0 | 0 | 47.8% |
@@ -23,10 +23,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 42211 (92.5% of those ran)** | FAIL: 3
 | test/built-ins/Boolean | 49 | 2 | 0 | 0 | 0 | 96.1% |
 | test/built-ins/DataView | 514 | 47 | 0 | 0 | 0 | 91.6% |
 | test/built-ins/Date | 571 | 23 | 0 | 0 | 0 | 96.1% |
-| test/built-ins/DisposableStack | 91 | 2 | 0 | 0 | 0 | 97.8% |
+| test/built-ins/DisposableStack | 92 | 1 | 0 | 0 | 0 | 98.9% |
 | test/built-ins/Error | 83 | 10 | 0 | 0 | 0 | 89.2% |
 | test/built-ins/FinalizationRegistry | 46 | 1 | 0 | 0 | 0 | 97.9% |
-| test/built-ins/Function | 299 | 122 | 0 | 0 | 88 | 71.0% |
+| test/built-ins/Function | 303 | 118 | 0 | 0 | 88 | 72.0% |
 | test/built-ins/GeneratorFunction | 12 | 11 | 0 | 0 | 0 | 52.2% |
 | test/built-ins/GeneratorPrototype | 60 | 1 | 0 | 0 | 0 | 98.4% |
 | test/built-ins/Infinity | 4 | 0 | 0 | 0 | 2 | 100.0% |
@@ -38,17 +38,17 @@ Total: 47381 tests | ran: 45639 | **PASS: 42211 (92.5% of those ran)** | FAIL: 3
 | test/built-ins/NaN | 4 | 0 | 0 | 0 | 2 | 100.0% |
 | test/built-ins/NativeErrors | 82 | 12 | 0 | 0 | 0 | 87.2% |
 | test/built-ins/Number | 334 | 6 | 0 | 0 | 0 | 98.2% |
-| test/built-ins/Object | 3298 | 102 | 0 | 0 | 11 | 97.0% |
-| test/built-ins/Promise | 705 | 21 | 0 | 0 | 3 | 97.1% |
+| test/built-ins/Object | 3302 | 98 | 0 | 0 | 11 | 97.1% |
+| test/built-ins/Promise | 707 | 19 | 0 | 0 | 3 | 97.4% |
 | test/built-ins/Proxy | 238 | 62 | 0 | 0 | 11 | 79.3% |
 | test/built-ins/Reflect | 147 | 6 | 0 | 0 | 0 | 96.1% |
-| test/built-ins/RegExp | 1773 | 105 | 0 | 0 | 1 | 94.4% |
+| test/built-ins/RegExp | 1775 | 103 | 0 | 0 | 1 | 94.5% |
 | test/built-ins/RegExpStringIteratorPrototype | 17 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/Set | 376 | 6 | 0 | 0 | 1 | 98.4% |
 | test/built-ins/SetIteratorPrototype | 1 | 10 | 0 | 0 | 0 | 9.1% |
 | test/built-ins/ShadowRealm | 0 | 64 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SharedArrayBuffer | 74 | 30 | 0 | 0 | 0 | 71.2% |
-| test/built-ins/String | 1189 | 31 | 0 | 0 | 3 | 97.5% |
+| test/built-ins/String | 1193 | 27 | 0 | 0 | 3 | 97.8% |
 | test/built-ins/StringIteratorPrototype | 0 | 7 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SuppressedError | 20 | 2 | 0 | 0 | 0 | 90.9% |
 | test/built-ins/Symbol | 71 | 25 | 0 | 0 | 2 | 74.0% |
@@ -78,9 +78,9 @@ Total: 47381 tests | ran: 45639 | **PASS: 42211 (92.5% of those ran)** | FAIL: 3
 | test/language/computed-property-names | 47 | 1 | 0 | 0 | 0 | 97.9% |
 | test/language/destructuring | 17 | 1 | 0 | 0 | 1 | 94.4% |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
-| test/language/eval-code | 98 | 29 | 0 | 0 | 220 | 77.2% |
+| test/language/eval-code | 99 | 28 | 0 | 0 | 220 | 78.0% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 9617 | 897 | 0 | 0 | 588 | 91.5% |
+| test/language/expressions | 9716 | 798 | 0 | 0 | 588 | 92.4% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 24 | 13 | 0 | 0 | 5 | 64.9% |
@@ -96,20 +96,20 @@ Total: 47381 tests | ran: 45639 | **PASS: 42211 (92.5% of those ran)** | FAIL: 3
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 8475 | 390 | 0 | 0 | 472 | 95.6% |
+| test/language/statements | 8526 | 339 | 0 | 0 | 472 | 96.2% |
 | test/language/types | 101 | 3 | 0 | 0 | 9 | 97.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
 ## Top FAIL causes (normalized message)
 
-- **496x** `async incomplete: SyntaxError: UnexpectedToken`
-  - e.g.: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
-- **419x** `SyntaxError: UnexpectedToken`
+- **467x** `async incomplete: SyntaxError: UnexpectedToken`
+  - e.g.: `test/language/expressions/class/cpn-class-expr-accessors-computed-property-name-from-await-expression.js`
+- **324x** `SyntaxError: UnexpectedToken`
   - e.g.: `test/language/comments/hashbang/line-terminator-line-separator.js`
-- **190x** `SyntaxError: MissingSemicolon`
-  - e.g.: `test/language/asi/do-while-same-line.js`
-- **174x** `Uncaught TypeError: createRealm is not a function`
+- **175x** `Uncaught TypeError: createRealm is not a function`
   - e.g.: `test/language/eval-code/indirect/realm.js`
+- **145x** `SyntaxError: MissingSemicolon`
+  - e.g.: `test/language/asi/do-while-same-line.js`
 - **107x** `Uncaught TypeError: resize is not a function`
   - e.g.: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
 - **77x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
@@ -119,21 +119,21 @@ Total: 47381 tests | ran: 45639 | **PASS: 42211 (92.5% of those ran)** | FAIL: 3
 - **76x** `Uncaught TypeError: undefined is not a function`
   - e.g.: `test/built-ins/Array/prototype/at/coerced-index-resize.js`
 - **76x** `Uncaught { message: implements ArrayBuffer.prototype.resize Expected SameValue(«"undefined"», «"function"») to`
-  - e.g.: `test/built-ins/DataView/prototype/getBigInt64/resizable-buffer.js`
+  - e.g.: `test/built-ins/DataView/prototype/getFloat32/resizable-buffer.js`
 - **67x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/eval-code/indirect/non-definable-global-function.js`
 - **57x** `Uncaught ReferenceError: ShadowRealm is not defined`
   - e.g.: `test/built-ins/ShadowRealm/extensibility.js`
 - **55x** `async incomplete: Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/built-ins/AsyncGeneratorFunction/invoked-as-constructor-no-arguments.js`
-- **51x** `async incomplete: SyntaxError: MissingSemicolon`
+- **54x** `async incomplete: SyntaxError: MissingSemicolon`
   - e.g.: `test/language/import/import-attributes/json-idempotency.js`
 - **35x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - e.g.: `test/language/expressions/object/method-definition/generator-prototype-prop.js`
 - **35x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
   - e.g.: `test/language/statementList/eval-block-with-statment-block.js`
 - **32x** `Uncaught { message: The value of `typeof Atomics.waitAsync` is "function" Expected SameValue(«"undefined"», «"`
-  - e.g.: `test/built-ins/Atomics/waitAsync/bad-range.js`
+  - e.g.: `test/built-ins/Atomics/waitAsync/not-an-object-throws.js`
 - **22x** `Engine error: StackOverflow`
   - e.g.: `test/language/expressions/tco-pos.js`
 - **21x** `Uncaught { message: Expected SameValue(«"inside"», «"outside"») to be true }`
@@ -141,27 +141,27 @@ Total: 47381 tests | ran: 45639 | **PASS: 42211 (92.5% of those ran)** | FAIL: 3
 - **19x** `Uncaught { message: Expected SameValue(«N», «N») to be true }`
   - e.g.: `test/language/statements/let/syntax/let-closure-inside-condition.js`
 - **19x** `Uncaught TypeError: Cannot set properties of undefined (setting '…')`
-  - e.g.: `test/built-ins/Function/S15.3.5_A2_T1.js`
+  - e.g.: `test/built-ins/Function/prototype/apply/S15.3.4.3_A3_T1.js`
 - **18x** `Uncaught TypeError: transferToImmutable is not a function`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/this-is-immutable-arraybuffer-object.js`
 - **18x** `Uncaught { message: no arg factories match include immutable and exclude undefined }`
   - e.g.: `test/built-ins/Atomics/add/immutable-buffer.js`
-- **17x** `Uncaught { message: Expected true but got false }`
-  - e.g.: `test/language/expressions/object/__proto__-poisoned-object-prototype.js`
 - **16x** `SyntaxError: UnexpectedCharacter`
   - e.g.: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
+- **16x** `Uncaught ReferenceError: await is not defined`
+  - e.g.: `test/language/module-code/top-level-await/syntax/block-await-expr-template-literal.js`
 - **15x** `Uncaught { message: Expected a SyntaxError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/arguments-object/10.5-7-b-1-s.js`
-- **15x** `Uncaught SyntaxError: Invalid or unexpected token in eval`
-  - e.g.: `test/language/eval-code/direct/new.target-fn.js`
+- **15x** `Uncaught { message: Expected true but got false }`
+  - e.g.: `test/language/expressions/object/__proto__-poisoned-object-prototype.js`
 - **14x** `Uncaught { message: Expected a RangeError but got a TypeError }`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/new-length-excessive.js`
 - **13x** `Uncaught { message: Expected SameValue(«false», «true») to be true }`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resizable/detached-buffer.js`
 - **12x** `Out of memory: OutOfMemory`
   - e.g.: `test/built-ins/ArrayBuffer/allocation-limit.js`
-- **12x** `Uncaught TypeError: transfer is not a function`
-  - e.g.: `test/built-ins/ArrayBuffer/prototype/transfer/from-fixed-to-larger-no-resizable.js`
+- **12x** `Uncaught TypeError: transferToFixedLength is not a function`
+  - e.g.: `test/built-ins/ArrayBuffer/prototype/transferToFixedLength/from-fixed-to-larger-no-resizable.js`
 
 ## Top features present in FAILs
 
@@ -172,21 +172,21 @@ Total: 47381 tests | ran: 45639 | **PASS: 42211 (92.5% of those ran)** | FAIL: 3
 - 183x SharedArrayBuffer
 - 177x Atomics
 - 175x cross-realm
-- 161x class
 - 155x BigInt
 - 154x import-defer
-- 134x Symbol
-- 123x Reflect
-- 123x explicit-resource-management
-- 121x arrow-function
+- 146x class
+- 132x Symbol
+- 120x explicit-resource-management
+- 119x arrow-function
 - 118x Proxy
-- 114x async-iteration
+- 117x Reflect
 - 101x Atomics.waitAsync
 - 98x source-phase-imports
-- 88x async-functions
+- 92x async-iteration
 - 84x ArrayBuffer
 - 81x import-attributes
-- 72x generators
 - 70x regexp-modifiers
+- 65x async-functions
 - 64x immutable-arraybuffer
 - 64x ShadowRealm
+- 58x generators

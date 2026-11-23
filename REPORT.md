@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 42041 (92.1% of those ran)** | FAIL: 3598 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 42211 (92.5% of those ran)** | FAIL: 3428 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -80,7 +80,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 42041 (92.1% of those ran)** | FAIL: 3
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 98 | 29 | 0 | 0 | 220 | 77.2% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 9560 | 954 | 0 | 0 | 588 | 90.9% |
+| test/language/expressions | 9617 | 897 | 0 | 0 | 588 | 91.5% |
 | test/language/function-code | 100 | 8 | 0 | 0 | 109 | 92.6% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 24 | 13 | 0 | 0 | 5 | 64.9% |
@@ -90,23 +90,23 @@ Total: 47381 tests | ran: 45639 | **PASS: 42041 (92.1% of those ran)** | FAIL: 3
 | test/language/keywords | 25 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/line-terminators | 39 | 2 | 0 | 0 | 0 | 95.1% |
 | test/language/literals | 519 | 1 | 0 | 0 | 14 | 99.8% |
-| test/language/module-code | 217 | 382 | 0 | 0 | 0 | 36.2% |
+| test/language/module-code | 223 | 376 | 0 | 0 | 0 | 37.2% |
 | test/language/punctuators | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/reserved-words | 27 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 8368 | 497 | 0 | 0 | 472 | 94.4% |
+| test/language/statements | 8475 | 390 | 0 | 0 | 472 | 95.6% |
 | test/language/types | 101 | 3 | 0 | 0 | 9 | 97.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
 ## Top FAIL causes (normalized message)
 
-- **560x** `async incomplete: SyntaxError: UnexpectedToken`
+- **496x** `async incomplete: SyntaxError: UnexpectedToken`
   - e.g.: `test/language/expressions/async-function/named-returns-async-arrow-returns-newtarget.js`
-- **516x** `SyntaxError: UnexpectedToken`
+- **419x** `SyntaxError: UnexpectedToken`
   - e.g.: `test/language/comments/hashbang/line-terminator-line-separator.js`
-- **196x** `SyntaxError: MissingSemicolon`
+- **190x** `SyntaxError: MissingSemicolon`
   - e.g.: `test/language/asi/do-while-same-line.js`
 - **174x** `Uncaught TypeError: createRealm is not a function`
   - e.g.: `test/language/eval-code/indirect/realm.js`
@@ -123,7 +123,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 42041 (92.1% of those ran)** | FAIL: 3
 - **67x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/eval-code/indirect/non-definable-global-function.js`
 - **57x** `Uncaught ReferenceError: ShadowRealm is not defined`
-  - e.g.: `test/built-ins/ShadowRealm/prototype/evaluate/nested-realms.js`
+  - e.g.: `test/built-ins/ShadowRealm/extensibility.js`
 - **55x** `async incomplete: Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/built-ins/AsyncGeneratorFunction/invoked-as-constructor-no-arguments.js`
 - **51x** `async incomplete: SyntaxError: MissingSemicolon`
@@ -169,12 +169,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 42041 (92.1% of those ran)** | FAIL: 3
 - 400x resizable-arraybuffer
 - 331x TypedArray
 - 258x top-level-await
-- 192x destructuring-binding
-- 191x class
 - 183x SharedArrayBuffer
-- 178x async-iteration
 - 177x Atomics
 - 175x cross-realm
+- 161x class
 - 155x BigInt
 - 154x import-defer
 - 134x Symbol
@@ -182,11 +180,13 @@ Total: 47381 tests | ran: 45639 | **PASS: 42041 (92.1% of those ran)** | FAIL: 3
 - 123x explicit-resource-management
 - 121x arrow-function
 - 118x Proxy
-- 111x generators
+- 114x async-iteration
 - 101x Atomics.waitAsync
 - 98x source-phase-imports
 - 88x async-functions
 - 84x ArrayBuffer
 - 81x import-attributes
+- 72x generators
 - 70x regexp-modifiers
 - 64x immutable-arraybuffer
+- 64x ShadowRealm

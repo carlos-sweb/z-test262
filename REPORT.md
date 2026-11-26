@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 42820 (93.8% of those ran)** | FAIL: 2819 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 42952 (94.1% of those ran)** | FAIL: 2687 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -24,7 +24,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 42820 (93.8% of those ran)** | FAIL: 2
 | test/built-ins/DataView | 514 | 47 | 0 | 0 | 0 | 91.6% |
 | test/built-ins/Date | 579 | 15 | 0 | 0 | 0 | 97.5% |
 | test/built-ins/DisposableStack | 92 | 1 | 0 | 0 | 0 | 98.9% |
-| test/built-ins/Error | 84 | 9 | 0 | 0 | 0 | 90.3% |
+| test/built-ins/Error | 85 | 8 | 0 | 0 | 0 | 91.4% |
 | test/built-ins/FinalizationRegistry | 46 | 1 | 0 | 0 | 0 | 97.9% |
 | test/built-ins/Function | 386 | 35 | 0 | 0 | 88 | 91.7% |
 | test/built-ins/GeneratorFunction | 20 | 3 | 0 | 0 | 0 | 87.0% |
@@ -39,7 +39,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 42820 (93.8% of those ran)** | FAIL: 2
 | test/built-ins/NativeErrors | 82 | 12 | 0 | 0 | 0 | 87.2% |
 | test/built-ins/Number | 336 | 4 | 0 | 0 | 0 | 98.8% |
 | test/built-ins/Object | 3341 | 59 | 0 | 0 | 11 | 98.3% |
-| test/built-ins/Promise | 707 | 19 | 0 | 0 | 3 | 97.4% |
+| test/built-ins/Promise | 720 | 6 | 0 | 0 | 3 | 99.2% |
 | test/built-ins/Proxy | 240 | 60 | 0 | 0 | 11 | 80.0% |
 | test/built-ins/Reflect | 147 | 6 | 0 | 0 | 0 | 96.1% |
 | test/built-ins/RegExp | 1777 | 101 | 0 | 0 | 1 | 94.6% |
@@ -80,7 +80,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 42820 (93.8% of those ran)** | FAIL: 2
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 115 | 12 | 0 | 0 | 220 | 90.6% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 9758 | 756 | 0 | 0 | 588 | 92.8% |
+| test/language/expressions | 9812 | 702 | 0 | 0 | 588 | 93.3% |
 | test/language/function-code | 106 | 2 | 0 | 0 | 109 | 98.1% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 24 | 13 | 0 | 0 | 5 | 64.9% |
@@ -95,8 +95,8 @@ Total: 47381 tests | ran: 45639 | **PASS: 42820 (93.8% of those ran)** | FAIL: 2
 | test/language/reserved-words | 27 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/statementList | 76 | 4 | 0 | 0 | 0 | 95.0% |
-| test/language/statements | 8566 | 299 | 0 | 0 | 472 | 96.6% |
+| test/language/statementList | 80 | 0 | 0 | 0 | 0 | 100.0% |
+| test/language/statements | 8626 | 239 | 0 | 0 | 472 | 97.3% |
 | test/language/types | 101 | 3 | 0 | 0 | 9 | 97.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -106,36 +106,32 @@ Total: 47381 tests | ran: 45639 | **PASS: 42820 (93.8% of those ran)** | FAIL: 2
   - e.g.: `test/language/expressions/class/cpn-class-expr-accessors-computed-property-name-from-await-expression.js`
 - **324x** `SyntaxError: UnexpectedToken`
   - e.g.: `test/language/comments/hashbang/line-terminator-line-separator.js`
-- **175x** `Uncaught TypeError: createRealm is not a function`
+- **172x** `Uncaught TypeError: createRealm is not a function`
   - e.g.: `test/language/eval-code/indirect/realm.js`
 - **145x** `SyntaxError: MissingSemicolon`
   - e.g.: `test/language/asi/do-while-same-line.js`
 - **107x** `Uncaught TypeError: resize is not a function`
   - e.g.: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
-- **76x** `Uncaught TypeError: undefined is not a function`
-  - e.g.: `test/built-ins/Array/prototype/at/coerced-index-resize.js`
+- **79x** `Uncaught TypeError: undefined is not a function`
+  - e.g.: `test/language/expressions/class/private-getter-brand-check-multiple-evaluations-of-class-realm-function-ctor.js`
 - **76x** `Uncaught { message: implements ArrayBuffer.prototype.resize Expected SameValue(«"undefined"», «"function"») to`
   - e.g.: `test/built-ins/DataView/prototype/getBigInt64/resizable-buffer.js`
-- **70x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
-  - e.g.: `test/language/expressions/optional-chaining/optional-call-preserves-this.js`
 - **69x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - e.g.: `test/language/global-code/decl-lex-configurable-global.js`
+- **68x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+  - e.g.: `test/language/expressions/optional-chaining/optional-call-preserves-this.js`
 - **57x** `Uncaught ReferenceError: ShadowRealm is not defined`
   - e.g.: `test/built-ins/ShadowRealm/extensibility.js`
 - **54x** `async incomplete: SyntaxError: MissingSemicolon`
   - e.g.: `test/language/import/import-attributes/json-idempotency.js`
 - **53x** `async incomplete: Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/built-ins/Atomics/waitAsync/false-for-timeout-agent.js`
-- **38x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
-  - e.g.: `test/language/expressions/assignment/target-super-computed-reference-null.js`
-- **32x** `Uncaught { message: Expected SameValue(«undefined», «N») to be true }`
-  - e.g.: `test/language/statementList/eval-block-with-statment-block.js`
 - **32x** `Uncaught { message: The value of `typeof Atomics.waitAsync` is "function" Expected SameValue(«"undefined"», «"`
   - e.g.: `test/built-ins/Atomics/waitAsync/bad-range.js`
+- **27x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+  - e.g.: `test/language/expressions/assignment/target-super-computed-reference-null.js`
 - **22x** `Engine error: StackOverflow`
   - e.g.: `test/language/expressions/tco-pos.js`
-- **21x** `Uncaught { message: Expected SameValue(«"inside"», «"outside"») to be true }`
-  - e.g.: `test/language/expressions/arrow-function/scope-paramsbody-var-open.js`
 - **18x** `Uncaught TypeError: transferToImmutable is not a function`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/this-is-immutable-arraybuffer-object.js`
 - **18x** `Uncaught { message: no arg factories match include immutable and exclude undefined }`
@@ -150,18 +146,22 @@ Total: 47381 tests | ran: 45639 | **PASS: 42820 (93.8% of those ran)** | FAIL: 2
   - e.g.: `test/language/arguments-object/10.5-7-b-1-s.js`
 - **12x** `async incomplete: Uncaught { message: The value of `typeof Atomics.waitAsync` is "function" Expected SameValue`
   - e.g.: `test/built-ins/Atomics/waitAsync/false-for-timeout.js`
-- **11x** `Uncaught { message: Expected a TypeError but got a TestNError }`
-  - e.g.: `test/language/expressions/member-expression/computed-reference-null-or-undefined.js`
-- **11x** `Uncaught { message: Expected true but got false }`
-  - e.g.: `test/language/expressions/postfix-decrement/S11.3.2_A6_T3.js`
 - **11x** `Uncaught { message: Expected a RangeError but got a TypeError }`
   - e.g.: `test/built-ins/Array/prototype/toSpliced/length-exceeding-array-length-limit.js`
-- **11x** `async incomplete: Uncaught TypeError: Promise.prototype.then called on a non-promise`
-  - e.g.: `test/built-ins/Promise/all/invoke-resolve-on-promises-every-iteration-of-custom.js`
-- **10x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
-  - e.g.: `test/language/statements/class/elements/public-class-field-initialization-is-visible-to-proxy.js`
 - **10x** `Uncaught RangeError: Invalid or out-of-range Temporal value`
   - e.g.: `test/built-ins/Temporal/Duration/compare/relativeto-string-limits.js`
+- **8x** `Uncaught RangeError: Maximum call stack size exceeded`
+  - e.g.: `test/language/expressions/tagged-template/tco-call.js`
+- **8x** `Uncaught { message: Expected SameValue(«[object Object]», «undefined») to be true }`
+  - e.g.: `test/language/module-code/eval-this.js`
+- **8x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
+  - e.g.: `test/language/statements/class/elements/public-class-field-initialization-is-visible-to-proxy.js`
+- **8x** `Uncaught { message: Expected SameValue(«[object Object]», «function Error() { [native code] }») to be true }`
+  - e.g.: `test/built-ins/AggregateError/proto.js`
+- **8x** `Uncaught { message: Expected a RangeError to be thrown but no exception was thrown at all }`
+  - e.g.: `test/built-ins/ArrayBuffer/options-maxbytelength-diminuitive.js`
+- **8x** `Uncaught TypeError: Cannot convert undefined or null to object`
+  - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/length.js`
 
 ## Top features present in FAILs
 
@@ -174,11 +174,11 @@ Total: 47381 tests | ran: 45639 | **PASS: 42820 (93.8% of those ran)** | FAIL: 2
 - 175x cross-realm
 - 154x import-defer
 - 149x BigInt
-- 133x class
 - 120x explicit-resource-management
 - 117x Symbol
-- 117x arrow-function
 - 116x Reflect
+- 112x arrow-function
+- 103x class
 - 101x Atomics.waitAsync
 - 98x source-phase-imports
 - 90x Proxy

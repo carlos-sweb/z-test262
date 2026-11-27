@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 43111 (94.5% of those ran)** | FAIL: 2528 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 43128 (94.5% of those ran)** | FAIL: 2511 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -42,16 +42,16 @@ Total: 47381 tests | ran: 45639 | **PASS: 43111 (94.5% of those ran)** | FAIL: 2
 | test/built-ins/Promise | 725 | 1 | 0 | 0 | 3 | 99.9% |
 | test/built-ins/Proxy | 244 | 56 | 0 | 0 | 11 | 81.3% |
 | test/built-ins/Reflect | 151 | 2 | 0 | 0 | 0 | 98.7% |
-| test/built-ins/RegExp | 1777 | 101 | 0 | 0 | 1 | 94.6% |
+| test/built-ins/RegExp | 1779 | 99 | 0 | 0 | 1 | 94.7% |
 | test/built-ins/RegExpStringIteratorPrototype | 17 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/Set | 381 | 1 | 0 | 0 | 1 | 99.7% |
 | test/built-ins/SetIteratorPrototype | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/ShadowRealm | 0 | 64 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/SharedArrayBuffer | 75 | 29 | 0 | 0 | 0 | 72.1% |
-| test/built-ins/String | 1208 | 12 | 0 | 0 | 3 | 99.0% |
+| test/built-ins/String | 1216 | 4 | 0 | 0 | 3 | 99.7% |
 | test/built-ins/StringIteratorPrototype | 7 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/SuppressedError | 21 | 1 | 0 | 0 | 0 | 95.5% |
-| test/built-ins/Symbol | 71 | 25 | 0 | 0 | 2 | 74.0% |
+| test/built-ins/Symbol | 77 | 19 | 0 | 0 | 2 | 80.2% |
 | test/built-ins/Temporal | 4603 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/ThrowTypeError | 13 | 1 | 0 | 0 | 0 | 92.9% |
 | test/built-ins/TypedArray | 1229 | 209 | 0 | 0 | 8 | 85.5% |
@@ -96,7 +96,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43111 (94.5% of those ran)** | FAIL: 2
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 80 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/statements | 8650 | 215 | 0 | 0 | 472 | 97.6% |
+| test/language/statements | 8651 | 214 | 0 | 0 | 472 | 97.6% |
 | test/language/types | 102 | 2 | 0 | 0 | 9 | 98.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -105,7 +105,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43111 (94.5% of those ran)** | FAIL: 2
 - **467x** `async incomplete: SyntaxError: UnexpectedToken`
   - e.g.: `test/language/expressions/class/cpn-class-expr-accessors-computed-property-name-from-await-expression.js`
 - **322x** `SyntaxError: UnexpectedToken`
-  - e.g.: `test/language/expressions/dynamic-import/always-create-new-promise.js`
+  - e.g.: `test/language/expressions/dynamic-import/returns-promise.js`
 - **172x** `Uncaught TypeError: createRealm is not a function`
   - e.g.: `test/language/eval-code/indirect/realm.js`
 - **142x** `SyntaxError: MissingSemicolon`
@@ -116,9 +116,9 @@ Total: 47381 tests | ran: 45639 | **PASS: 43111 (94.5% of those ran)** | FAIL: 2
   - e.g.: `test/language/expressions/class/private-getter-brand-check-multiple-evaluations-of-class-realm-function-ctor.js`
 - **76x** `Uncaught { message: implements ArrayBuffer.prototype.resize Expected SameValue(«"undefined"», «"function"») to`
   - e.g.: `test/built-ins/DataView/prototype/getBigInt64/resizable-buffer.js`
-- **69x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
+- **68x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - e.g.: `test/language/global-code/decl-lex-configurable-global.js`
-- **68x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+- **67x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/language/expressions/optional-chaining/optional-call-preserves-this.js`
 - **57x** `Uncaught ReferenceError: ShadowRealm is not defined`
   - e.g.: `test/built-ins/ShadowRealm/extensibility.js`
@@ -130,7 +130,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43111 (94.5% of those ran)** | FAIL: 2
   - e.g.: `test/built-ins/Atomics/waitAsync/bad-range.js`
 - **22x** `Engine error: StackOverflow`
   - e.g.: `test/language/expressions/tco-pos.js`
-- **21x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+- **20x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/expressions/assignment/target-super-computed-reference-null.js`
 - **18x** `Uncaught TypeError: transferToImmutable is not a function`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/this-is-immutable-arraybuffer-object.js`
@@ -154,14 +154,14 @@ Total: 47381 tests | ran: 45639 | **PASS: 43111 (94.5% of those ran)** | FAIL: 2
   - e.g.: `test/language/module-code/eval-this.js`
 - **8x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/statements/class/elements/public-class-field-initialization-is-visible-to-proxy.js`
-- **8x** `Uncaught TypeError: Cannot convert undefined or null to object`
-  - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/length.js`
 - **7x** `Uncaught TypeError: evalScript is not a function`
   - e.g.: `test/language/global-code/script-decl-func-dups.js`
 - **7x** `Uncaught { message: Expected true but got false }`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/coerced-new-length-detach.js`
 - **7x** `Uncaught { message: Method must exist. Expected SameValue(«"undefined"», «"function"») to be true }`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/sliceToImmutable/this-becomes-detached.js`
+- **6x** `Uncaught TypeError: iterator.next is not a function`
+  - e.g.: `test/language/expressions/assignment/dstr/array-elem-iter-rtrn-close-err.js`
 
 ## Top features present in FAILs
 
@@ -173,14 +173,14 @@ Total: 47381 tests | ran: 45639 | **PASS: 43111 (94.5% of those ran)** | FAIL: 2
 - 177x Atomics
 - 175x cross-realm
 - 154x import-defer
-- 142x BigInt
+- 141x BigInt
 - 119x explicit-resource-management
-- 113x Symbol
+- 111x Symbol
 - 110x arrow-function
 - 107x Reflect
 - 101x Atomics.waitAsync
 - 98x source-phase-imports
-- 92x class
+- 90x class
 - 84x ArrayBuffer
 - 81x import-attributes
 - 81x Proxy

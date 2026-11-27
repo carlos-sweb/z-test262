@@ -23,9 +23,9 @@ The suite is cloned separately (`git clone --depth 1 https://github.com/tc39/tes
 Use the capped ReleaseFast recipe below for measurements comparable to the
 historical baseline; a default Debug binary or an uncapped sweep changes results.
 
-## Current measurement: z-interpreter@fce0fd6 (v0.4.19 + Parser Capa 1/2 + Fases 7–8 + JIT J2.5–J3 + Spec Quickwins 1–3 + Temporal 100% + Operación 27 + Fase A Lote 1) / Zig 0.17.0
+## Current measurement: z-interpreter@82965b1 (v0.4.19 + Parser Capa 1/2 + Fases 7–8 + JIT J2.5–J3 + Spec Quickwins 1–3 + Temporal 100% + Operación 27 + Fase A Lotes 1–2) / Zig 0.17.0
 
-The **2026-11-27** ReleaseFast sweep uses **z-interpreter** (`fce0fd6`), **z-run** (`83632ed`), and package cascade: **z-parser v0.1.2**, **z-statements v0.2.2**, **z-functions v0.2.2**, **z-array v0.2.1**, **z-object v0.2.1**, **z-buffer v0.1.2**, **z-value v0.1.5**, **z-json v0.1.5**, **z-yaml v0.2.4**, **z-toml v0.2.4**, **z-temporal v0.2.9** (`913675a`), and **z-regex v0.9.1**.
+The **2026-11-27** ReleaseFast sweep uses **z-interpreter** (`82965b1`), **z-run** (`09667ad`), and package cascade: **z-parser v0.1.2**, **z-statements v0.2.2**, **z-functions v0.2.2**, **z-array v0.2.1**, **z-object v0.2.1**, **z-buffer v0.1.2**, **z-value v0.1.5**, **z-json v0.1.5**, **z-yaml v0.2.4**, **z-toml v0.2.4**, **z-temporal v0.2.9** (`913675a`), and **z-regex v0.9.1**.
 Test262 checkout: `9e61c12835c5e4a3bdba93850427e6742c4f64c4`.
 Scope: `test/language test/built-ins`, 4 workers, 5-second timeout and a
 2 GiB per-process address-space cap. The runner is unchanged and has no
@@ -33,15 +33,15 @@ separately selectable UTF-16/WTF-8 modes.
 
 | Result | Count |
 |---|---:|
-| PASS | 43,111 |
-| FAIL | 2,528 |
+| PASS | 43,128 |
+| FAIL | 2,511 |
 | CRASH | 0 |
 | TIMEOUT | 0 |
 | SKIP | 1,742 |
 | Total | 47,381 |
 | Executed | 45,639 |
 
-Pass rate: **94.46% of executed tests** (43,111 / 45,639; **94.5%** in `REPORT.md`, up +90 PASS from `1813ebe` / +136 PASS from `c7bb14b` / +1,070 PASS from `v0.4.19`, 0 regressions). Key consolidation milestones across this progression:
+Pass rate: **94.50% of executed tests** (43,128 / 45,639; **94.5%** in `REPORT.md`, up +17 PASS from `fce0fd6` / +107 PASS from `1813ebe` / +1,087 PASS from `v0.4.19`, 0 regressions). Key consolidation milestones across this progression:
 - **Bytecode VM**: JSValue 16B execution loop (fib 1.02s vs tree-walker 6.3s).
 - **Temporal 100.0% absolute**: 4,603 PASS / 0 FAIL in `test/built-ins/Temporal/` (4,611 / 4,611 including the 8 `Date.prototype.toTemporalInstant` tests; zero failures remaining).
 - **Object & Array conformance**: E3/E4 conformance consolidated with zero generic array regressions.
@@ -67,15 +67,16 @@ Pass rate: **94.46% of executed tests** (43,111 / 45,639; **94.5%** in `REPORT.m
 - **JIT Fases J2.5–J3 + Spec Quickwins 1–3 + Temporal 100.0% (`z-interpreter@c7bb14b`, 42,975 PASS / 94.16%, `TIMEOUT=0`, 0 CRASH)**: Fase J2.5 (fast-paths `i32` para índices/bitwise y hoisting de arrays invariantes en OSR), Fase J3.1 (`OsrPropIC` inline para valores heap con retain/release y `.load_global` inline vía `JitGlobalSlot`), Fase J3.2 (8 intrínsecos `Math.*` en OSR con elisión en preheader), Fase J3.3 (inlining OSR de funciones/métodos hoja `ops.len <= 16`), Spec Quickwins 1–3 (`NamedEvaluation` en `&&=`/`||=`/`??=`, `delete super`/`null`, single-eval `++`/`--`, `var_env` separado con default params, `UpdateEmpty` en sentencias/bucles, adopción de subclases `Promise`/`Date`, `Promise.prototype.then` species y métodos privados de instancia) y cierre de Temporal (`4,610/4,611`, `100.0%` en `REPORT.md`) (+155 PASS vs `f684bf7` / +934 vs `v0.4.19`, 0 regresiones).
 - **Operación 27 (`z-interpreter@1813ebe`, 43,021 PASS / 94.26%, `TIMEOUT=0`, 0 CRASH)**: Cierre de **4,611 / 4,611 (100% absoluto)** en Temporal (`Duration.prototype.total` `relativeTo` date limits), **100.0%** en `GeneratorPrototype` (`61/61`), `asi` (`102/102`), `literals` (`520/520`), `identifier-resolution` (`9/9`) y `line-terminators` (`41/41`), más `Promise.prototype.finally` (`725/726` = 99.9%), `Iterator` (`513/514` = 99.8%), `Number` (`339/340` = 99.7%), `Set` (`381/382` = 99.7%), `Map` (`202/203` = 99.5%), `AggregateError` (`24/25`), `SuppressedError` (`21/22`) y `NativeErrors` (`88/94`) (+46 PASS vs `c7bb14b`, 0 regresiones).
 - **Fase A Micro-Lotes 1 (`z-interpreter@fce0fd6`, 43,111 PASS / 94.46% [94.5% en REPORT.md], `TIMEOUT=0`, 0 CRASH)**: Cierre de **100.0%** en `AsyncGeneratorPrototype` (`48/48`), `arguments-object` (`206/206`), `computed-property-names` (`48/48`) y `function-code` (`108/108`), y cierre de **100% de los casos no-`createRealm`** en `Date` (`591/594` = 99.5%), `JSON` (`163/165` = 98.8%), `BigInt` (`76/77` = 98.7%), `Reflect` (`151/153` = 98.7%), `AsyncFunction` (`17/18` = 94.4%), `GeneratorFunction` (`21/23` = 91.3%), `AsyncGeneratorFunction` (`21/23` = 91.3%) y `Error` (`88/93` = 94.6%), además de `comments` (`51/52` = 98.1%), `subclass/GeneratorFunction` y `types/reference` (+90 PASS vs `1813ebe`, 0 regresiones).
+- **Fase A Micro-Lote 2 (`z-interpreter@82965b1`, 43,128 PASS / 94.50%, `TIMEOUT=0`, 0 CRASH)**: `String` (`1,216/1,220` = **99.7%**, +8 PASS: `ToString` en `Array`/`arguments` vía `ToPrimitive`, `new String(Symbol)` `TypeError`, `String.fromCharCode(0n)` `TypeError`, `localeCompare` equivalencia canónica NFC y subclases `RegExp` en `replaceAll`), `Symbol.prototype[Symbol.toPrimitive]` (+6 PASS en `Symbol`, subiendo a `77/96` = 80.2%), `proto_refs` en `.regex` (+2 PASS en `RegExp/named-groups` y +1 en `statements/class/subclass`), y fast-paths en stack para `decodeURI`, concatenación de strings cortos y acceso indexado a strings en la Bytecode VM (+17 PASS vs `fce0fd6` / +107 PASS en Fase A, 0 regresiones).
 
 Compared with the October v0.2.0 sweep, zero real PASS regressions reproduced.
 The lookbehind test `test/built-ins/RegExp/named-groups/lookbehind.js` remains a known gap: z-regex v0.9.1 does not support backward lookbehind with captures under `u` (`/(?<=(?<a>\w){3})f/u`).
 
-Input: `/tmp/sweep-fce0fd6.jsonl`.
+Input: `/tmp/sweep-82965b1.jsonl`.
 Regenerate the committed report with:
 
 ```sh
-python3 report.py /tmp/sweep-fce0fd6.jsonl > REPORT.md
+python3 report.py /tmp/sweep-82965b1.jsonl > REPORT.md
 ```
 
 ## Historical measurement: z-interpreter v0.1.0 / Zig 0.17.0

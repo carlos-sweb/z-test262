@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 43128 (94.5% of those ran)** | FAIL: 2511 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 43172 (94.6% of those ran)** | FAIL: 2467 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -38,7 +38,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43128 (94.5% of those ran)** | FAIL: 2
 | test/built-ins/NaN | 4 | 0 | 0 | 0 | 2 | 100.0% |
 | test/built-ins/NativeErrors | 88 | 6 | 0 | 0 | 0 | 93.6% |
 | test/built-ins/Number | 339 | 1 | 0 | 0 | 0 | 99.7% |
-| test/built-ins/Object | 3351 | 49 | 0 | 0 | 11 | 98.6% |
+| test/built-ins/Object | 3353 | 47 | 0 | 0 | 11 | 98.6% |
 | test/built-ins/Promise | 725 | 1 | 0 | 0 | 3 | 99.9% |
 | test/built-ins/Proxy | 244 | 56 | 0 | 0 | 11 | 81.3% |
 | test/built-ins/Reflect | 151 | 2 | 0 | 0 | 0 | 98.7% |
@@ -78,12 +78,12 @@ Total: 47381 tests | ran: 45639 | **PASS: 43128 (94.5% of those ran)** | FAIL: 2
 | test/language/computed-property-names | 48 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/destructuring | 17 | 1 | 0 | 0 | 1 | 94.4% |
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
-| test/language/eval-code | 115 | 12 | 0 | 0 | 220 | 90.6% |
+| test/language/eval-code | 126 | 1 | 0 | 0 | 220 | 99.2% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 9819 | 695 | 0 | 0 | 588 | 93.4% |
+| test/language/expressions | 9826 | 688 | 0 | 0 | 588 | 93.5% |
 | test/language/function-code | 108 | 0 | 0 | 0 | 109 | 100.0% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
-| test/language/global-code | 24 | 13 | 0 | 0 | 5 | 64.9% |
+| test/language/global-code | 36 | 1 | 0 | 0 | 5 | 97.3% |
 | test/language/identifier-resolution | 9 | 0 | 0 | 0 | 5 | 100.0% |
 | test/language/identifiers | 264 | 4 | 0 | 0 | 0 | 98.5% |
 | test/language/import | 13 | 115 | 0 | 0 | 0 | 10.2% |
@@ -96,7 +96,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43128 (94.5% of those ran)** | FAIL: 2
 | test/language/rest-parameters | 11 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/source-text | 1 | 0 | 0 | 0 | 0 | 100.0% |
 | test/language/statementList | 80 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/statements | 8651 | 214 | 0 | 0 | 472 | 97.6% |
+| test/language/statements | 8663 | 202 | 0 | 0 | 472 | 97.7% |
 | test/language/types | 102 | 2 | 0 | 0 | 9 | 98.1% |
 | test/language/white-space | 67 | 0 | 0 | 0 | 0 | 100.0% |
 
@@ -105,7 +105,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43128 (94.5% of those ran)** | FAIL: 2
 - **467x** `async incomplete: SyntaxError: UnexpectedToken`
   - e.g.: `test/language/expressions/class/cpn-class-expr-accessors-computed-property-name-from-await-expression.js`
 - **322x** `SyntaxError: UnexpectedToken`
-  - e.g.: `test/language/expressions/dynamic-import/returns-promise.js`
+  - e.g.: `test/language/expressions/dynamic-import/always-create-new-promise.js`
 - **172x** `Uncaught TypeError: createRealm is not a function`
   - e.g.: `test/language/eval-code/indirect/realm.js`
 - **142x** `SyntaxError: MissingSemicolon`
@@ -116,10 +116,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 43128 (94.5% of those ran)** | FAIL: 2
   - e.g.: `test/language/expressions/class/private-getter-brand-check-multiple-evaluations-of-class-realm-function-ctor.js`
 - **76x** `Uncaught { message: implements ArrayBuffer.prototype.resize Expected SameValue(«"undefined"», «"function"») to`
   - e.g.: `test/built-ins/DataView/prototype/getBigInt64/resizable-buffer.js`
-- **68x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
-  - e.g.: `test/language/global-code/decl-lex-configurable-global.js`
 - **67x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/language/expressions/optional-chaining/optional-call-preserves-this.js`
+- **67x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
+  - e.g.: `test/built-ins/AbstractModuleSource/length.js`
 - **57x** `Uncaught ReferenceError: ShadowRealm is not defined`
   - e.g.: `test/built-ins/ShadowRealm/extensibility.js`
 - **54x** `async incomplete: SyntaxError: MissingSemicolon`
@@ -146,22 +146,22 @@ Total: 47381 tests | ran: 45639 | **PASS: 43128 (94.5% of those ran)** | FAIL: 2
   - e.g.: `test/built-ins/Atomics/waitAsync/false-for-timeout.js`
 - **11x** `Uncaught { message: Expected a RangeError but got a TypeError }`
   - e.g.: `test/built-ins/Array/prototype/toSpliced/length-exceeding-array-length-limit.js`
-- **10x** `Uncaught { message: Expected a SyntaxError to be thrown but no exception was thrown at all }`
-  - e.g.: `test/language/eval-code/direct/strict-caller-function-context.js`
 - **8x** `Uncaught RangeError: Maximum call stack size exceeded`
   - e.g.: `test/language/expressions/tagged-template/tco-call.js`
 - **8x** `Uncaught { message: Expected SameValue(«[object Object]», «undefined») to be true }`
   - e.g.: `test/language/module-code/eval-this.js`
 - **8x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/statements/class/elements/public-class-field-initialization-is-visible-to-proxy.js`
-- **7x** `Uncaught TypeError: evalScript is not a function`
-  - e.g.: `test/language/global-code/script-decl-func-dups.js`
 - **7x** `Uncaught { message: Expected true but got false }`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/coerced-new-length-detach.js`
 - **7x** `Uncaught { message: Method must exist. Expected SameValue(«"undefined"», «"function"») to be true }`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/sliceToImmutable/this-becomes-detached.js`
 - **6x** `Uncaught TypeError: iterator.next is not a function`
   - e.g.: `test/language/expressions/assignment/dstr/array-elem-iter-rtrn-close-err.js`
+- **6x** `Uncaught TypeError: This operation is not supported by this engine yet`
+  - e.g.: `test/language/expressions/does-not-equals/bigint-and-incomparable-primitive.js`
+- **6x** `Uncaught { message: Expected a RangeError to be thrown but no exception was thrown at all }`
+  - e.g.: `test/built-ins/ArrayBuffer/options-maxbytelength-diminuitive.js`
 
 ## Top features present in FAILs
 

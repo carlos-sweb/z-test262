@@ -23,9 +23,9 @@ The suite is cloned separately (`git clone --depth 1 https://github.com/tc39/tes
 Use the capped ReleaseFast recipe below for measurements comparable to the
 historical baseline; a default Debug binary or an uncapped sweep changes results.
 
-## Current measurement: z-interpreter@ead3437 (v0.4.19 + Parser Capa 1/2 + Fases 7–8 + JIT J2.5–J3 + Spec Quickwins 1–3) / Zig 0.17.0
+## Current measurement: z-interpreter@c7bb14b (v0.4.19 + Parser Capa 1/2 + Fases 7–8 + JIT J2.5–J3 + Spec Quickwins 1–3 + Temporal 100%) / Zig 0.17.0
 
-The **2026-11-26** ReleaseFast sweep uses **z-interpreter** (`ead3437`), **z-run** (`a77732f`), and package cascade: **z-parser v0.1.2**, **z-statements v0.2.2**, **z-functions v0.2.2**, **z-array v0.2.1**, **z-object v0.2.1**, **z-buffer v0.1.2**, **z-value v0.1.5**, **z-json v0.1.5**, **z-yaml v0.2.4**, **z-toml v0.2.4**, **z-temporal v0.2.9**, and **z-regex v0.9.1**.
+The **2026-11-26** ReleaseFast sweep uses **z-interpreter** (`c7bb14b`), **z-run** (`a1725e0`), and package cascade: **z-parser v0.1.2**, **z-statements v0.2.2**, **z-functions v0.2.2**, **z-array v0.2.1**, **z-object v0.2.1**, **z-buffer v0.1.2**, **z-value v0.1.5**, **z-json v0.1.5**, **z-yaml v0.2.4**, **z-toml v0.2.4**, **z-temporal v0.2.9** (`913675a`), and **z-regex v0.9.1**.
 Test262 checkout: `9e61c12835c5e4a3bdba93850427e6742c4f64c4`.
 Scope: `test/language test/built-ins`, 4 workers, 5-second timeout and a
 2 GiB per-process address-space cap. The runner is unchanged and has no
@@ -33,17 +33,17 @@ separately selectable UTF-16/WTF-8 modes.
 
 | Result | Count |
 |---|---:|
-| PASS | 42,952 |
-| FAIL | 2,687 |
+| PASS | 42,975 |
+| FAIL | 2,664 |
 | CRASH | 0 |
 | TIMEOUT | 0 |
 | SKIP | 1,742 |
 | Total | 47,381 |
 | Executed | 45,639 |
 
-Pass rate: **94.11% of executed tests** (42,952 / 45,639; up +6 PASS from `f684bf7` / +785 PASS from `v0.4.19`, 0 regressions). Key consolidation milestones across this progression:
+Pass rate: **94.16% of executed tests** (42,975 / 45,639; up +155 PASS from `f684bf7` / +934 PASS from `v0.4.19`, 0 regressions). Key consolidation milestones across this progression:
 - **Bytecode VM**: JSValue 16B execution loop (fib 1.02s vs tree-walker 6.3s).
-- **Temporal 99.5%**: 4,579 PASS / 24 FAIL (zero regressions; counted by exact `test/built-ins/Temporal/` prefix in `report.py`, whereas `check.sh` uses `'Temporal' in path` substring which includes 8 `Date.prototype.toTemporalInstant` tests for 4,587/24).
+- **Temporal 100.0%**: 4,602 PASS / 1 FAIL in `test/built-ins/Temporal/` (4,610 / 4,611 including the 8 `Date.prototype.toTemporalInstant` tests; zero regressions).
 - **Object & Array conformance**: E3/E4 conformance consolidated with zero generic array regressions.
 - **18 E3/E4 gaps resolved**: TypedArray exotic numeric index traps, Object.assign string coercion, Object.defineProperty bag synchronization, Object.getOwnPropertySymbols Proxy invariants, Promise newTarget, and Proxy.setPrototypeOf.
 - **Small battles batch 1**: NativeErrors prototype inheritance & properties (`EvalError`, `RangeError`, `ReferenceError`, `SyntaxError`, `TypeError`, `URIError`), `Number.isSafeInteger`, generic `Date.prototype.toJSON` per spec, and `BigInt.asIntN`/`asUintN` `ToIndex` (+60 net PASS).
@@ -64,16 +64,16 @@ Pass rate: **94.11% of executed tests** (42,952 / 45,639; up +6 PASS from `f684b
 - **Parser Capa 2 + `z-interpreter@47da5d9` (42,383 PASS / 92.87%, `TIMEOUT=0`, 0 CRASH)**: `z-parser v0.1.2` (`new.target` + *tagged templates* con escapes inválidos y `raw` normalizado), `z-statements v0.2.2` (claves computadas `[expr]: pat` en `ObjectPattern`), `z-functions v0.2.2` (`new_target_allowed` en scopes de función/clase) y runtime en `z-interpreter` (`new.target` en `Environment`/constructores/arrows/`eval`, `GetTemplateObject` cacheado/congelado y `setArrayProperty` en arrays congelados) (+172 PASS vs `cda23db` / +342 vs `v0.4.19`, 0 regresiones, `Temporal` 4,587/4,611).
 - **Fase 7 + `z-interpreter@c4d5ca5` (42,602 PASS / 93.35%, `TIMEOUT=0`, 0 CRASH)**: `Function.prototype.toString` (Proxy callable, métodos/getters/setters/computed/privados, `Function`/`GeneratorFunction`/`AsyncFunction`/`AsyncGeneratorFunction`), `call`/`apply` strict vs sloppy (`this` boxing / `globalThis`), `ArrayBuffer.prototype.{transfer,transferToFixedLength}` + `slice` detached, `Object.prototype.{toString,valueOf,isPrototypeOf,hasOwnProperty,propertyIsEnumerable}` + inmutabilidad de `Object.prototype` y prototipos intrínsecos `async`/generadores (+219 PASS vs `47da5d9` / +561 vs `v0.4.19`, 0 regresiones, `Temporal` 4,587/4,611).
 - **Fase 8 + fix JIT OSR (`z-interpreter@f684bf7`, 42,820 PASS / 93.82%, `TIMEOUT=0`, 0 CRASH)**: `eval` indirecto, `Array.prototype`, `%*IteratorPrototype%` (`Array`/`Map`/`Set`/`String`), `OOM→RangeError`, clases/`super`/`extends null`/TDZ de `this` derivado, `String.prototype` (`replaceAll`/`Symbol.iterator`/`localeCompare`/`toString`/`valueOf`), `TypedArray.prototype` (detached/species/`copyWithin`/`join`/`slice`/`subarray`), `for-in` (TDZ, shadowing no-enumerable, eliminación, completion value), `expressions/object` (`__proto__`, Proxy Symbol spread/rest, métodos generadores `.prototype`) y fix SIGSEGV en Baseline JIT OSR `.get_elem`/`.set_elem` (+218 PASS vs `c4d5ca5` / +779 vs `v0.4.19`, 0 regresiones, `Temporal` 4,587/4,611).
-- **JIT Fases J2.5–J3 (`z-interpreter@ead3437`, 42,952 PASS / 94.11%, `TIMEOUT=0`, 0 CRASH)**: Fase J2.5 (fast-paths `i32` para índices/bitwise y hoisting de arrays invariantes en OSR), Fase J3.1 (`OsrPropIC` inline para valores heap con retain/release y `.load_global` inline vía `JitGlobalSlot`), Fase J3.2 (8 intrínsecos `Math.*` en OSR con elisión en preheader) y Fase J3.3 (`perf(jit): phase J3.3 inline small leaf functions and prototype methods in OSR`, `ops.len <= 16` con elisión `.get_prop`+`.call` y guardas de shape/prototipo/`global_version`) (+6 PASS vs `f684bf7` / +785 vs `v0.4.19`, 0 regresiones, `Temporal` 4,587/4,611).
+- **JIT Fases J2.5–J3 + Spec Quickwins 1–3 + Temporal 100.0% (`z-interpreter@c7bb14b`, 42,975 PASS / 94.16%, `TIMEOUT=0`, 0 CRASH)**: Fase J2.5 (fast-paths `i32` para índices/bitwise y hoisting de arrays invariantes en OSR), Fase J3.1 (`OsrPropIC` inline para valores heap con retain/release y `.load_global` inline vía `JitGlobalSlot`), Fase J3.2 (8 intrínsecos `Math.*` en OSR con elisión en preheader), Fase J3.3 (inlining OSR de funciones/métodos hoja `ops.len <= 16`), Spec Quickwins 1–3 (`NamedEvaluation` en `&&=`/`||=`/`??=`, `delete super`/`null`, single-eval `++`/`--`, `var_env` separado con default params, `UpdateEmpty` en sentencias/bucles, adopción de subclases `Promise`/`Date`, `Promise.prototype.then` species y métodos privados de instancia) y cierre de Temporal (`4,610/4,611`, `100.0%` en `REPORT.md`) (+155 PASS vs `f684bf7` / +934 vs `v0.4.19`, 0 regresiones).
 
 Compared with the October v0.2.0 sweep, zero real PASS regressions reproduced.
 The lookbehind test `test/built-ins/RegExp/named-groups/lookbehind.js` remains a known gap: z-regex v0.9.1 does not support backward lookbehind with captures under `u` (`/(?<=(?<a>\w){3})f/u`).
 
-Input: `/tmp/sweep-ead3437.jsonl`.
+Input: `/tmp/sweep-c7bb14b.jsonl`.
 Regenerate the committed report with:
 
 ```sh
-python3 report.py /tmp/sweep-ead3437.jsonl > REPORT.md
+python3 report.py /tmp/sweep-c7bb14b.jsonl > REPORT.md
 ```
 
 ## Historical measurement: z-interpreter v0.1.0 / Zig 0.17.0

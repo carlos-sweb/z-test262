@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 42952 (94.1% of those ran)** | FAIL: 2687 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 42975 (94.2% of those ran)** | FAIL: 2664 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -52,7 +52,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 42952 (94.1% of those ran)** | FAIL: 2
 | test/built-ins/StringIteratorPrototype | 7 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/SuppressedError | 20 | 2 | 0 | 0 | 0 | 90.9% |
 | test/built-ins/Symbol | 71 | 25 | 0 | 0 | 2 | 74.0% |
-| test/built-ins/Temporal | 4579 | 24 | 0 | 0 | 0 | 99.5% |
+| test/built-ins/Temporal | 4602 | 1 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/ThrowTypeError | 13 | 1 | 0 | 0 | 0 | 92.9% |
 | test/built-ins/TypedArray | 1229 | 209 | 0 | 0 | 8 | 85.5% |
 | test/built-ins/TypedArrayConstructors | 683 | 39 | 0 | 0 | 16 | 94.6% |
@@ -148,8 +148,6 @@ Total: 47381 tests | ran: 45639 | **PASS: 42952 (94.1% of those ran)** | FAIL: 2
   - e.g.: `test/built-ins/Atomics/waitAsync/false-for-timeout.js`
 - **11x** `Uncaught { message: Expected a RangeError but got a TypeError }`
   - e.g.: `test/built-ins/Array/prototype/toSpliced/length-exceeding-array-length-limit.js`
-- **10x** `Uncaught RangeError: Invalid or out-of-range Temporal value`
-  - e.g.: `test/built-ins/Temporal/Duration/compare/relativeto-string-limits.js`
 - **8x** `Uncaught RangeError: Maximum call stack size exceeded`
   - e.g.: `test/language/expressions/tagged-template/tco-call.js`
 - **8x** `Uncaught { message: Expected SameValue(«[object Object]», «undefined») to be true }`
@@ -158,10 +156,12 @@ Total: 47381 tests | ran: 45639 | **PASS: 42952 (94.1% of those ran)** | FAIL: 2
   - e.g.: `test/language/statements/class/elements/public-class-field-initialization-is-visible-to-proxy.js`
 - **8x** `Uncaught { message: Expected SameValue(«[object Object]», «function Error() { [native code] }») to be true }`
   - e.g.: `test/built-ins/AggregateError/proto.js`
-- **8x** `Uncaught { message: Expected a RangeError to be thrown but no exception was thrown at all }`
-  - e.g.: `test/built-ins/ArrayBuffer/options-maxbytelength-diminuitive.js`
 - **8x** `Uncaught TypeError: Cannot convert undefined or null to object`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/length.js`
+- **7x** `Uncaught TypeError: evalScript is not a function`
+  - e.g.: `test/language/global-code/script-decl-func-dups.js`
+- **7x** `Uncaught { message: Expected true but got false }`
+  - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/coerced-new-length-detach.js`
 
 ## Top features present in FAILs
 

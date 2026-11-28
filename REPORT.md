@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 43172 (94.6% of those ran)** | FAIL: 2467 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 43187 (94.6% of those ran)** | FAIL: 2452 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -26,7 +26,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43172 (94.6% of those ran)** | FAIL: 2
 | test/built-ins/DisposableStack | 92 | 1 | 0 | 0 | 0 | 98.9% |
 | test/built-ins/Error | 88 | 5 | 0 | 0 | 0 | 94.6% |
 | test/built-ins/FinalizationRegistry | 46 | 1 | 0 | 0 | 0 | 97.9% |
-| test/built-ins/Function | 391 | 30 | 0 | 0 | 88 | 92.9% |
+| test/built-ins/Function | 405 | 16 | 0 | 0 | 88 | 96.2% |
 | test/built-ins/GeneratorFunction | 21 | 2 | 0 | 0 | 0 | 91.3% |
 | test/built-ins/GeneratorPrototype | 61 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/Infinity | 4 | 0 | 0 | 0 | 2 | 100.0% |
@@ -80,7 +80,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43172 (94.6% of those ran)** | FAIL: 2
 | test/language/directive-prologue | 5 | 0 | 0 | 0 | 57 | 100.0% |
 | test/language/eval-code | 126 | 1 | 0 | 0 | 220 | 99.2% |
 | test/language/export | 3 | 0 | 0 | 0 | 0 | 100.0% |
-| test/language/expressions | 9826 | 688 | 0 | 0 | 588 | 93.5% |
+| test/language/expressions | 9827 | 687 | 0 | 0 | 588 | 93.5% |
 | test/language/function-code | 108 | 0 | 0 | 0 | 109 | 100.0% |
 | test/language/future-reserved-words | 48 | 0 | 0 | 0 | 7 | 100.0% |
 | test/language/global-code | 36 | 1 | 0 | 0 | 5 | 97.3% |
@@ -103,9 +103,9 @@ Total: 47381 tests | ran: 45639 | **PASS: 43172 (94.6% of those ran)** | FAIL: 2
 ## Top FAIL causes (normalized message)
 
 - **467x** `async incomplete: SyntaxError: UnexpectedToken`
-  - e.g.: `test/language/expressions/class/cpn-class-expr-accessors-computed-property-name-from-await-expression.js`
+  - e.g.: `test/language/expressions/class/cpn-class-expr-computed-property-name-from-await-expression.js`
 - **322x** `SyntaxError: UnexpectedToken`
-  - e.g.: `test/language/expressions/dynamic-import/always-create-new-promise.js`
+  - e.g.: `test/language/expressions/dynamic-import/returns-promise.js`
 - **172x** `Uncaught TypeError: createRealm is not a function`
   - e.g.: `test/language/eval-code/indirect/realm.js`
 - **142x** `SyntaxError: MissingSemicolon`
@@ -130,7 +130,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43172 (94.6% of those ran)** | FAIL: 2
   - e.g.: `test/built-ins/Atomics/waitAsync/bad-range.js`
 - **22x** `Engine error: StackOverflow`
   - e.g.: `test/language/expressions/tco-pos.js`
-- **20x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+- **19x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/expressions/assignment/target-super-computed-reference-null.js`
 - **18x** `Uncaught TypeError: transferToImmutable is not a function`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/this-is-immutable-arraybuffer-object.js`
@@ -183,7 +183,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43172 (94.6% of those ran)** | FAIL: 2
 - 90x class
 - 84x ArrayBuffer
 - 81x import-attributes
-- 81x Proxy
+- 80x Proxy
 - 70x regexp-modifiers
 - 65x async-iteration
 - 64x immutable-arraybuffer

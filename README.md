@@ -23,9 +23,9 @@ The suite is cloned separately (`git clone --depth 1 https://github.com/tc39/tes
 Use the capped ReleaseFast recipe below for measurements comparable to the
 historical baseline; a default Debug binary or an uncapped sweep changes results.
 
-## Current measurement: z-interpreter@8f01750 (v0.4.19 + Parser Capa 1/2 + Fases 7–8 + JIT J2.5–J3 + Spec Quickwins 1–3 + Temporal 100% + Operación 27 + Fase A Lotes 1–3) / Zig 0.17.0
+## Current measurement: z-interpreter@1ac8b74 (v0.4.19 + Parser Capa 1/2 + Fases 7–8 + JIT J2.5–J3 + Spec Quickwins 1–3 + Temporal 100% + Operación 27 + Fase A Lotes 1–4) / Zig 0.17.0
 
-The **2026-11-27** ReleaseFast sweep uses **z-interpreter** (`8f01750`), **z-run** (`e19ac33`), and package cascade: **z-parser v0.1.2**, **z-statements v0.2.2**, **z-functions v0.2.2**, **z-array v0.2.1**, **z-object v0.2.1**, **z-buffer v0.1.2**, **z-value v0.1.5**, **z-json v0.1.5**, **z-yaml v0.2.4**, **z-toml v0.2.4**, **z-temporal v0.2.9** (`913675a`), and **z-regex v0.9.1**.
+The **2026-11-27** ReleaseFast sweep uses **z-interpreter** (`1ac8b74`), **z-run** (`8f6892c`), and package cascade: **z-parser v0.1.2**, **z-statements v0.2.2**, **z-functions v0.2.2**, **z-array v0.2.1**, **z-object v0.2.1**, **z-buffer v0.1.2**, **z-value v0.1.5**, **z-json v0.1.5**, **z-yaml v0.2.4**, **z-toml v0.2.4**, **z-temporal v0.2.9** (`913675a`), and **z-regex v0.9.1**.
 Test262 checkout: `9e61c12835c5e4a3bdba93850427e6742c4f64c4`.
 Scope: `test/language test/built-ins`, 4 workers, 5-second timeout and a
 2 GiB per-process address-space cap. The runner is unchanged and has no
@@ -33,15 +33,15 @@ separately selectable UTF-16/WTF-8 modes.
 
 | Result | Count |
 |---|---:|
-| PASS | 43,172 |
-| FAIL | 2,467 |
+| PASS | 43,187 |
+| FAIL | 2,452 |
 | CRASH | 0 |
 | TIMEOUT | 0 |
 | SKIP | 1,742 |
 | Total | 47,381 |
 | Executed | 45,639 |
 
-Pass rate: **94.59% of executed tests** (43,172 / 45,639; **94.6%** in `REPORT.md`, up +44 PASS from `82965b1` / +151 PASS from `1813ebe` / +1,131 PASS from `v0.4.19`, 0 regressions). Key consolidation milestones across this progression:
+Pass rate: **94.63% of executed tests** (43,187 / 45,639; **94.6%** in `REPORT.md`, up +15 PASS from `8f01750` / +166 PASS from `1813ebe` / +1,146 PASS from `v0.4.19`, 0 regressions). Key consolidation milestones across this progression:
 - **Bytecode VM**: JSValue 16B execution loop (fib 1.02s vs tree-walker 6.3s).
 - **Temporal 100.0% absolute**: 4,603 PASS / 0 FAIL in `test/built-ins/Temporal/` (4,611 / 4,611 including the 8 `Date.prototype.toTemporalInstant` tests; zero failures remaining).
 - **Object & Array conformance**: E3/E4 conformance consolidated with zero generic array regressions.
@@ -69,15 +69,16 @@ Pass rate: **94.59% of executed tests** (43,172 / 45,639; **94.6%** in `REPORT.m
 - **Fase A Micro-Lotes 1 (`z-interpreter@fce0fd6`, 43,111 PASS / 94.46% [94.5% en REPORT.md], `TIMEOUT=0`, 0 CRASH)**: Cierre de **100.0%** en `AsyncGeneratorPrototype` (`48/48`), `arguments-object` (`206/206`), `computed-property-names` (`48/48`) y `function-code` (`108/108`), y cierre de **100% de los casos no-`createRealm`** en `Date` (`591/594` = 99.5%), `JSON` (`163/165` = 98.8%), `BigInt` (`76/77` = 98.7%), `Reflect` (`151/153` = 98.7%), `AsyncFunction` (`17/18` = 94.4%), `GeneratorFunction` (`21/23` = 91.3%), `AsyncGeneratorFunction` (`21/23` = 91.3%) y `Error` (`88/93` = 94.6%), además de `comments` (`51/52` = 98.1%), `subclass/GeneratorFunction` y `types/reference` (+90 PASS vs `1813ebe`, 0 regresiones).
 - **Fase A Micro-Lote 2 (`z-interpreter@82965b1`, 43,128 PASS / 94.50%, `TIMEOUT=0`, 0 CRASH)**: `String` (`1,216/1,220` = **99.7%**, +8 PASS: `ToString` en `Array`/`arguments` vía `ToPrimitive`, `new String(Symbol)` `TypeError`, `String.fromCharCode(0n)` `TypeError`, `localeCompare` equivalencia canónica NFC y subclases `RegExp` en `replaceAll`), `Symbol.prototype[Symbol.toPrimitive]` (+6 PASS en `Symbol`, subiendo a `77/96` = 80.2%), `proto_refs` en `.regex` (+2 PASS en `RegExp/named-groups` y +1 en `statements/class/subclass`), y fast-paths en stack para `decodeURI`, concatenación de strings cortos y acceso indexado a strings en la Bytecode VM (+17 PASS vs `fce0fd6` / +107 PASS en Fase A, 0 regresiones).
 - **Fase A Micro-Lote 3 (`z-interpreter@8f01750`, 43,172 PASS / 94.59% [94.6% en REPORT.md], `TIMEOUT=0`, 0 CRASH)**: `$262.evalScript` y `GlobalDeclarationInstantiation` (`language/global-code` sube de 64.9% a **97.3% [36/37]**, +12 PASS), `language/eval-code` directo e indirecto (sube de 90.6% a **99.2% [126/127, 100% de los casos no-`createRealm`]**, +11 PASS), sincronización completa del modelo de propiedades de `globalThis` (`Object.defineProperty`, `getOwnPropertyDescriptor`, `propertyIsEnumerable`, `Object.keys`, `CreateGlobalVarBinding` y `CreateGlobalFunctionBinding` con `configurable: true` en `eval` no estricto), `typeof (ident)` con paréntesis, validación de `return`/`break`/`continue` de nivel superior y palabras reservadas de modo estricto en `eval` (+12 PASS en `language/statements`, +7 PASS en `language/expressions`, +2 PASS en `built-ins/Object`; **+44 PASS** vs `82965b1` / **+151 PASS** acumulados en Fase A, 0 regresiones).
+- **Fase A Micro-Lote 4 (`z-interpreter@1ac8b74`, 43,187 PASS / 94.63% [94.6% en REPORT.md], `TIMEOUT=0`, 0 CRASH)**: `Function` y `Function.prototype` (`built-ins/Function` sube de 92.9% a **96.2% [405/421]**, +14 PASS + 1 PASS en `language/expressions/property-accessors`: `Function.prototype` como objeto función intrínseco callable con `typeof === "function"`, `[[Class]] === "Function"`, `length: 0`, `name: ""` y orden de propiedades `["length", "name", ...]`, `delete fn.length` / `delete fn.name` en lecturas de propiedades, rechazo temprano de `with` estricto y `AllPrivateIdentifiersValid` en `new Function(...)`, y verificación de Proxy revocado en `GetFunctionRealm` durante `[[Construct]]`; **+15 PASS** vs `8f01750` / **+166 PASS** acumulados en Fase A, 0 regresiones).
 
 Compared with the October v0.2.0 sweep, zero real PASS regressions reproduced.
 The lookbehind test `test/built-ins/RegExp/named-groups/lookbehind.js` remains a known gap: z-regex v0.9.1 does not support backward lookbehind with captures under `u` (`/(?<=(?<a>\w){3})f/u`).
 
-Input: `/tmp/sweep-8f01750.jsonl`.
+Input: `/tmp/sweep-1ac8b74.jsonl`.
 Regenerate the committed report with:
 
 ```sh
-python3 report.py /tmp/sweep-8f01750.jsonl > REPORT.md
+python3 report.py /tmp/sweep-1ac8b74.jsonl > REPORT.md
 ```
 
 ## Historical measurement: z-interpreter v0.1.0 / Zig 0.17.0

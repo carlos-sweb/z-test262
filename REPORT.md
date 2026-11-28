@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 43187 (94.6% of those ran)** | FAIL: 2452 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 43229 (94.7% of those ran)** | FAIL: 2410 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -38,7 +38,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43187 (94.6% of those ran)** | FAIL: 2
 | test/built-ins/NaN | 4 | 0 | 0 | 0 | 2 | 100.0% |
 | test/built-ins/NativeErrors | 88 | 6 | 0 | 0 | 0 | 93.6% |
 | test/built-ins/Number | 339 | 1 | 0 | 0 | 0 | 99.7% |
-| test/built-ins/Object | 3353 | 47 | 0 | 0 | 11 | 98.6% |
+| test/built-ins/Object | 3395 | 5 | 0 | 0 | 11 | 99.9% |
 | test/built-ins/Promise | 725 | 1 | 0 | 0 | 3 | 99.9% |
 | test/built-ins/Proxy | 244 | 56 | 0 | 0 | 11 | 81.3% |
 | test/built-ins/Reflect | 151 | 2 | 0 | 0 | 0 | 98.7% |
@@ -115,11 +115,11 @@ Total: 47381 tests | ran: 45639 | **PASS: 43187 (94.6% of those ran)** | FAIL: 2
 - **79x** `Uncaught TypeError: undefined is not a function`
   - e.g.: `test/language/expressions/class/private-getter-brand-check-multiple-evaluations-of-class-realm-function-ctor.js`
 - **76x** `Uncaught { message: implements ArrayBuffer.prototype.resize Expected SameValue(«"undefined"», «"function"») to`
-  - e.g.: `test/built-ins/DataView/prototype/getBigInt64/resizable-buffer.js`
-- **67x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
-  - e.g.: `test/language/expressions/optional-chaining/optional-call-preserves-this.js`
+  - e.g.: `test/built-ins/DataView/prototype/getFloat16/resizable-buffer.js`
 - **67x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - e.g.: `test/built-ins/AbstractModuleSource/length.js`
+- **64x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+  - e.g.: `test/language/expressions/optional-chaining/optional-call-preserves-this.js`
 - **57x** `Uncaught ReferenceError: ShadowRealm is not defined`
   - e.g.: `test/built-ins/ShadowRealm/extensibility.js`
 - **54x** `async incomplete: SyntaxError: MissingSemicolon`
@@ -130,12 +130,12 @@ Total: 47381 tests | ran: 45639 | **PASS: 43187 (94.6% of those ran)** | FAIL: 2
   - e.g.: `test/built-ins/Atomics/waitAsync/bad-range.js`
 - **22x** `Engine error: StackOverflow`
   - e.g.: `test/language/expressions/tco-pos.js`
-- **19x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
-  - e.g.: `test/language/expressions/assignment/target-super-computed-reference-null.js`
 - **18x** `Uncaught TypeError: transferToImmutable is not a function`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/this-is-immutable-arraybuffer-object.js`
 - **18x** `Uncaught { message: no arg factories match include immutable and exclude undefined }`
   - e.g.: `test/built-ins/Atomics/add/immutable-buffer.js`
+- **17x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
+  - e.g.: `test/language/expressions/assignment/target-super-computed-reference-null.js`
 - **16x** `SyntaxError: UnexpectedCharacter`
   - e.g.: `test/language/expressions/class/decorator/syntax/class-valid/decorator-member-expr-private-identifier.js`
 - **16x** `Uncaught ReferenceError: await is not defined`
@@ -150,8 +150,6 @@ Total: 47381 tests | ran: 45639 | **PASS: 43187 (94.6% of those ran)** | FAIL: 2
   - e.g.: `test/language/expressions/tagged-template/tco-call.js`
 - **8x** `Uncaught { message: Expected SameValue(«[object Object]», «undefined») to be true }`
   - e.g.: `test/language/module-code/eval-this.js`
-- **8x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
-  - e.g.: `test/language/statements/class/elements/public-class-field-initialization-is-visible-to-proxy.js`
 - **7x** `Uncaught { message: Expected true but got false }`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/coerced-new-length-detach.js`
 - **7x** `Uncaught { message: Method must exist. Expected SameValue(«"undefined"», «"function"») to be true }`
@@ -160,6 +158,8 @@ Total: 47381 tests | ran: 45639 | **PASS: 43187 (94.6% of those ran)** | FAIL: 2
   - e.g.: `test/language/expressions/assignment/dstr/array-elem-iter-rtrn-close-err.js`
 - **6x** `Uncaught TypeError: This operation is not supported by this engine yet`
   - e.g.: `test/language/expressions/does-not-equals/bigint-and-incomparable-primitive.js`
+- **6x** `Uncaught { message: Expected a TestNError to be thrown but no exception was thrown at all }`
+  - e.g.: `test/language/statements/class/elements/public-class-field-initialization-is-visible-to-proxy.js`
 - **6x** `Uncaught { message: Expected a RangeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/built-ins/ArrayBuffer/options-maxbytelength-diminuitive.js`
 
@@ -173,18 +173,18 @@ Total: 47381 tests | ran: 45639 | **PASS: 43187 (94.6% of those ran)** | FAIL: 2
 - 177x Atomics
 - 175x cross-realm
 - 154x import-defer
-- 141x BigInt
+- 140x BigInt
 - 119x explicit-resource-management
-- 111x Symbol
-- 110x arrow-function
-- 107x Reflect
+- 108x arrow-function
+- 101x Symbol
 - 101x Atomics.waitAsync
+- 99x Reflect
 - 98x source-phase-imports
-- 90x class
+- 89x class
 - 84x ArrayBuffer
 - 81x import-attributes
-- 80x Proxy
 - 70x regexp-modifiers
+- 68x Proxy
 - 65x async-iteration
 - 64x immutable-arraybuffer
 - 64x ShadowRealm

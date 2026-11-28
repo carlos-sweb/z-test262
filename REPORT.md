@@ -1,6 +1,6 @@
 # Test262 — z-* engine divergence report
 
-Total: 47381 tests | ran: 45639 | **PASS: 43229 (94.7% of those ran)** | FAIL: 2410 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
+Total: 47381 tests | ran: 45639 | **PASS: 43285 (94.8% of those ran)** | FAIL: 2354 | CRASH: 0 | TIMEOUT: 0 | SKIP (by design): 1742
 
 
 ## Pass rate by area
@@ -10,7 +10,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43229 (94.7% of those ran)** | FAIL: 2
 | test/built-ins/AbstractModuleSource | 0 | 8 | 0 | 0 | 0 | 0.0% |
 | test/built-ins/AggregateError | 24 | 1 | 0 | 0 | 0 | 96.0% |
 | test/built-ins/Array | 2899 | 146 | 0 | 0 | 36 | 95.2% |
-| test/built-ins/ArrayBuffer | 154 | 67 | 0 | 0 | 0 | 69.7% |
+| test/built-ins/ArrayBuffer | 178 | 43 | 0 | 0 | 0 | 80.5% |
 | test/built-ins/ArrayIteratorPrototype | 19 | 0 | 0 | 0 | 8 | 100.0% |
 | test/built-ins/AsyncDisposableStack | 103 | 1 | 0 | 0 | 0 | 99.0% |
 | test/built-ins/AsyncFromSyncIteratorPrototype | 38 | 0 | 0 | 0 | 0 | 100.0% |
@@ -18,10 +18,10 @@ Total: 47381 tests | ran: 45639 | **PASS: 43229 (94.7% of those ran)** | FAIL: 2
 | test/built-ins/AsyncGeneratorFunction | 21 | 2 | 0 | 0 | 0 | 91.3% |
 | test/built-ins/AsyncGeneratorPrototype | 48 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/AsyncIteratorPrototype | 13 | 0 | 0 | 0 | 0 | 100.0% |
-| test/built-ins/Atomics | 210 | 177 | 0 | 0 | 2 | 54.3% |
+| test/built-ins/Atomics | 219 | 168 | 0 | 0 | 2 | 56.6% |
 | test/built-ins/BigInt | 76 | 1 | 0 | 0 | 0 | 98.7% |
 | test/built-ins/Boolean | 50 | 1 | 0 | 0 | 0 | 98.0% |
-| test/built-ins/DataView | 514 | 47 | 0 | 0 | 0 | 91.6% |
+| test/built-ins/DataView | 525 | 36 | 0 | 0 | 0 | 93.6% |
 | test/built-ins/Date | 591 | 3 | 0 | 0 | 0 | 99.5% |
 | test/built-ins/DisposableStack | 92 | 1 | 0 | 0 | 0 | 98.9% |
 | test/built-ins/Error | 88 | 5 | 0 | 0 | 0 | 94.6% |
@@ -54,9 +54,9 @@ Total: 47381 tests | ran: 45639 | **PASS: 43229 (94.7% of those ran)** | FAIL: 2
 | test/built-ins/Symbol | 77 | 19 | 0 | 0 | 2 | 80.2% |
 | test/built-ins/Temporal | 4603 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/ThrowTypeError | 13 | 1 | 0 | 0 | 0 | 92.9% |
-| test/built-ins/TypedArray | 1229 | 209 | 0 | 0 | 8 | 85.5% |
-| test/built-ins/TypedArrayConstructors | 683 | 39 | 0 | 0 | 16 | 94.6% |
-| test/built-ins/Uint8Array | 68 | 2 | 0 | 0 | 0 | 97.1% |
+| test/built-ins/TypedArray | 1237 | 201 | 0 | 0 | 8 | 86.0% |
+| test/built-ins/TypedArrayConstructors | 685 | 37 | 0 | 0 | 16 | 94.9% |
+| test/built-ins/Uint8Array | 70 | 0 | 0 | 0 | 0 | 100.0% |
 | test/built-ins/WeakMap | 140 | 1 | 0 | 0 | 0 | 99.3% |
 | test/built-ins/WeakRef | 28 | 1 | 0 | 0 | 0 | 96.6% |
 | test/built-ins/WeakSet | 84 | 1 | 0 | 0 | 0 | 98.8% |
@@ -103,14 +103,14 @@ Total: 47381 tests | ran: 45639 | **PASS: 43229 (94.7% of those ran)** | FAIL: 2
 ## Top FAIL causes (normalized message)
 
 - **467x** `async incomplete: SyntaxError: UnexpectedToken`
-  - e.g.: `test/language/expressions/class/cpn-class-expr-computed-property-name-from-await-expression.js`
+  - e.g.: `test/language/expressions/class/cpn-class-expr-accessors-computed-property-name-from-await-expression.js`
 - **322x** `SyntaxError: UnexpectedToken`
   - e.g.: `test/language/expressions/dynamic-import/returns-promise.js`
 - **172x** `Uncaught TypeError: createRealm is not a function`
   - e.g.: `test/language/eval-code/indirect/realm.js`
 - **142x** `SyntaxError: MissingSemicolon`
   - e.g.: `test/language/import/import-attributes/json-extensibility-array.js`
-- **107x** `Uncaught TypeError: resize is not a function`
+- **109x** `Uncaught TypeError: resize is not a function`
   - e.g.: `test/language/destructuring/binding/typedarray-backed-by-resizable-buffer.js`
 - **79x** `Uncaught TypeError: undefined is not a function`
   - e.g.: `test/language/expressions/class/private-getter-brand-check-multiple-evaluations-of-class-realm-function-ctor.js`
@@ -118,7 +118,7 @@ Total: 47381 tests | ran: 45639 | **PASS: 43229 (94.7% of those ran)** | FAIL: 2
   - e.g.: `test/built-ins/DataView/prototype/getFloat16/resizable-buffer.js`
 - **67x** `Uncaught { message: Expected SameValue(«"undefined"», «"function"») to be true }`
   - e.g.: `test/built-ins/AbstractModuleSource/length.js`
-- **64x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
+- **61x** `Uncaught TypeError: Cannot read properties of undefined (reading '…')`
   - e.g.: `test/language/expressions/optional-chaining/optional-call-preserves-this.js`
 - **57x** `Uncaught ReferenceError: ShadowRealm is not defined`
   - e.g.: `test/built-ins/ShadowRealm/extensibility.js`
@@ -130,10 +130,6 @@ Total: 47381 tests | ran: 45639 | **PASS: 43229 (94.7% of those ran)** | FAIL: 2
   - e.g.: `test/built-ins/Atomics/waitAsync/bad-range.js`
 - **22x** `Engine error: StackOverflow`
   - e.g.: `test/language/expressions/tco-pos.js`
-- **18x** `Uncaught TypeError: transferToImmutable is not a function`
-  - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/this-is-immutable-arraybuffer-object.js`
-- **18x** `Uncaught { message: no arg factories match include immutable and exclude undefined }`
-  - e.g.: `test/built-ins/Atomics/add/immutable-buffer.js`
 - **17x** `Uncaught { message: Expected a TypeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/language/expressions/assignment/target-super-computed-reference-null.js`
 - **16x** `SyntaxError: UnexpectedCharacter`
@@ -152,8 +148,6 @@ Total: 47381 tests | ran: 45639 | **PASS: 43229 (94.7% of those ran)** | FAIL: 2
   - e.g.: `test/language/module-code/eval-this.js`
 - **7x** `Uncaught { message: Expected true but got false }`
   - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/coerced-new-length-detach.js`
-- **7x** `Uncaught { message: Method must exist. Expected SameValue(«"undefined"», «"function"») to be true }`
-  - e.g.: `test/built-ins/ArrayBuffer/prototype/sliceToImmutable/this-becomes-detached.js`
 - **6x** `Uncaught TypeError: iterator.next is not a function`
   - e.g.: `test/language/expressions/assignment/dstr/array-elem-iter-rtrn-close-err.js`
 - **6x** `Uncaught TypeError: This operation is not supported by this engine yet`
@@ -162,16 +156,22 @@ Total: 47381 tests | ran: 45639 | **PASS: 43229 (94.7% of those ran)** | FAIL: 2
   - e.g.: `test/language/statements/class/elements/public-class-field-initialization-is-visible-to-proxy.js`
 - **6x** `Uncaught { message: Expected a RangeError to be thrown but no exception was thrown at all }`
   - e.g.: `test/built-ins/ArrayBuffer/options-maxbytelength-diminuitive.js`
+- **6x** `Uncaught TypeError: Cannot convert undefined or null to object`
+  - e.g.: `test/built-ins/ArrayBuffer/prototype/resize/length.js`
+- **6x** `Uncaught RangeError: Offset is outside the bounds of the buffer (Testing with FloatNArray and makePassthrough.`
+  - e.g.: `test/built-ins/TypedArray/prototype/filter/speciesctor-destination-resizable.js`
+- **6x** `Uncaught RangeError: Offset is outside the bounds of the buffer (Testing with BigIntNArray and makePassthrough`
+  - e.g.: `test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-destination-resizable.js`
 
 ## Top features present in FAILs
 
 - 604x dynamic-import
-- 388x resizable-arraybuffer
-- 321x TypedArray
+- 387x resizable-arraybuffer
+- 309x TypedArray
 - 258x top-level-await
-- 182x SharedArrayBuffer
-- 177x Atomics
+- 179x SharedArrayBuffer
 - 175x cross-realm
+- 168x Atomics
 - 154x import-defer
 - 140x BigInt
 - 119x explicit-resource-management
@@ -181,12 +181,12 @@ Total: 47381 tests | ran: 45639 | **PASS: 43229 (94.7% of those ran)** | FAIL: 2
 - 99x Reflect
 - 98x source-phase-imports
 - 89x class
-- 84x ArrayBuffer
 - 81x import-attributes
+- 73x ArrayBuffer
 - 70x regexp-modifiers
 - 68x Proxy
 - 65x async-iteration
-- 64x immutable-arraybuffer
 - 64x ShadowRealm
 - 51x async-functions
 - 41x source-phase-imports-module-source
+- 33x Symbol.toPrimitive
